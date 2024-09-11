@@ -1,14 +1,13 @@
 {
-  "name": "namste-react-v4",
-  "version": "1.0.0",
+  "name": "namaste-react-v4",
+  "version": "4.0.0",
   "description": "Nmaste React Course Project",
   "main": "App.js",
   "scripts": {
     "test": "jest"
   },
   "keywords": [
-    "react",
-    "course"
+    "react course"
   ],
   "author": "LSI",
   "license": "MIT"
