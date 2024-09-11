@@ -1,0 +1,15 @@
+{
+  "name": "namste-react-v4",
+  "version": "1.0.0",
+  "description": "Nmaste React Course Project",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "course"
+  ],
+  "author": "LSI",
+  "license": "MIT"
+}
