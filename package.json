@@ -2,13 +2,23 @@
   "name": "namaste-react-v4",
   "version": "4.0.0",
   "description": "Nmaste React Course Project",
-  "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "keywords": [
     "react course"
   ],
   "author": "LSI",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+  
 }

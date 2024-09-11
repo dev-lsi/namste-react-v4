@@ -1,4 +1,5 @@
-
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const reactHeading1 = React.createElement("h1", {id:"heading"}, "Hello 1!");
 const reactHeading2 = React.createElement("h1", {id:"heading"}, "Hello 2!");
