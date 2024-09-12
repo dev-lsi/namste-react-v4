@@ -7,6 +7,7 @@ import About from "./src/components/About";
 import Contacts from "./src/components/Contacts";
 import LoginLogout from "./src/components/LoginLogout";
 import Cart from "./src/components/Cart";
+import Menu from "./src/components/Menu";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             path: "/login",
             element: <LoginLogout />,
         },
+        {
+          path: "/menu/:id",
+          element: <Menu />,
+      },
       ],
     },
   ]);
