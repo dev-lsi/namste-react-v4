@@ -1,16 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import Header from "./src/components/Header";
 
-const reactHeading1 = React.createElement("h1", {id:"heading"}, "Hello 1!");
-const reactHeading2 = React.createElement("h1", {id:"heading"}, "Hello 2!");
+const App=()=>{
+    return (
+        <div className="app">
+            <Header/>
+        </div>
+    );
+};
 
-const root1 = document.getElementById("root1");
-const root2 = document.getElementById("root2");
+export default App;
 
-const reactRoot1 = ReactDOM.createRoot(root1);
-const reactRoot2 = ReactDOM.createRoot(root2);
-
-reactRoot1.render(reactHeading1);
-reactRoot2.render(reactHeading2);
 
 
