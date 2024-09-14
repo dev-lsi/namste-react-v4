@@ -3,11 +3,14 @@ import { Base_URL } from "../utils/constants";
 import RestaurantCard from "./RestaurantCard";
 import Button from "./Button";
 import s from "./Home.module.css";
+import { useGeoLocation } from "../hooks/useGeoLocation";
 
 
-const Home=()=>{
+ const Home=()=>{
     
     const [data,setData] = useState(null);
+    const userGL = useGeoLocation();
+
     useEffect(()=>{
         getRestaurants();
     },[]);

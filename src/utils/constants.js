@@ -1,4 +1,5 @@
 export const resList = [];
+export const url_base="https://www.swiggy.com/api/seo/getListing?";
 
 export const Base_URL =
   "https://www.swiggy.com/api/seo/getListing?lat=12.960059122809971&lng=77.57337538383284";
