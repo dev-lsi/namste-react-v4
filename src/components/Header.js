@@ -21,7 +21,6 @@ const Header=()=>{
     
     function handleResize(){
       setWindowWidth(window.innerWidth);
-      console.log(windowWidth)
     }
   
     return (

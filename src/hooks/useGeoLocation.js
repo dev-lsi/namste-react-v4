@@ -19,8 +19,8 @@ export function useGeoLocation(){
       // Success callback
       function success(position) {
         const lat = position.coords.latitude;
-        const long = position.coords.longitude;
-        setGL({ response: { lat, long } })
+        const lng = position.coords.longitude;
+        setGL({ response: { lat, lng } })
       }
     
       // Error callback
