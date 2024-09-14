@@ -3,22 +3,37 @@ import githubIcon from "../assets/291716_github_logo_social network_social_icon.
 import faceBookIcon from "../assets/4202867_facebook_icon.png";
 import linkedInIcon from "../assets/107159_circle_linkedin_icon.png"
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import NavMain from "./NavMain";
+import NavMobile from "./NavMobile";
+
 const Header=()=>{
+
+  const [windowWidth,setWindowWidth] = useState(window.innerWidth);
+  const [isOpen,setIsOpen] = useState(false);
+  
+  
+  useEffect(()=>{
+      window.addEventListener('resize',handleResize);
+      return ()=>{window.removeEventListener('resize', handleResize)}
+    }
+    ,[windowWidth]);
+    
+    function handleResize(){
+      setWindowWidth(window.innerWidth);
+      console.log(windowWidth)
+    }
+  
     return (
-        <div className="header  bg-slate-900 text-slate-300">
+        <div className="header  bg-slate-900 text-slate-100 fixed top-0 left-0 right-0 z-10 h-12 border-slate-100 border-b-2">
             <div className="left">
               <img className="logo" src={logo} alt="logo"></img>
             </div>
             <div className="middle">
-              <nav>
-                <ul>
-                 <li><Link to="/">Home</Link></li>
-                 <li><Link to="/about">About this.Project</Link></li>
-                 <li><Link to="/contacts">Contact me</Link></li>
-                 <li><Link to="/cart">Cart</Link></li>
-                 <li><Link to="/login">LogIn/LogOut</Link></li>    
-                </ul>
-              </nav>
+              {windowWidth>=440
+              ?<NavMain/>
+              :<NavMobile/>}
+              
                     
             </div>
             <div className="right">

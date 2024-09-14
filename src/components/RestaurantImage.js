@@ -1,11 +1,27 @@
 import { RES_IMAGES_URL } from "../utils/constants";
+import s from "./Home.module.css";
+import logo from "../assets/logo512.png";
+import { useEffect, useState } from "react";
 
 const RestaurantImage = ({ id }) => {
+  const [currImage,setCurrImage] = useState(null)
+  useEffect(()=>{
+     
+     const img = <img
+        className={s["restaurant-image"]}
+        src={RES_IMAGES_URL + id}
+        alt="restaurant image"
+      ></img>
+      setCurrImage(img);
+    
+  },[])
   return (
-    <div className="image-container w-40 h-40 object-cover overflow-hidden border-2 border-slate-600">
-      <img className="w-60" src={RES_IMAGES_URL + id} alt="restaurant image"></img>
+    <div className={s["restaurant-image-container"]}>
+      {!currImage?<img src={logo} alt="loading..."/>:currImage}
     </div>
   );
 };
+
+
 
 export default RestaurantImage;

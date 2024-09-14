@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Base_URL } from "../utils/constants";
 import RestaurantCard from "./RestaurantCard";
-import { Link } from "react-router-dom";
 import Button from "./Button";
+import s from "./Home.module.css";
 
 
 const Home=()=>{
@@ -13,7 +13,7 @@ const Home=()=>{
     },[]);
 
     async function getRestaurants(){
-        const response=await fetch(Base_URL);
+        const response = await fetch(Base_URL);
         const responseData = await response.json();
         console.log(responseData.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants)
         const restaurants = responseData.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants;
@@ -23,17 +23,21 @@ const Home=()=>{
 
     return (
 
-        <div className="home">
-            <Button data={data} setData={setData}/>
-            <div className="restaurants-container">
+        <div className={s.home}>
+            <p className={s["restaurants-counter-display"]}>{data?data.length:0} restaurants loaded</p>
+            <div className={s["restaurants-container"]}>
                 {!data
                     ?"Loading..."
-                    :data.map(r=><Link to={"/menu/" + r.info.id}>
-                    <RestaurantCard key={r.info.id} resData = {r.info}/>
-                    </Link>)
+                    :data.map(r=>
+                    <RestaurantCard key={r.info.id}  restaurantData = {r.info} id={r.info.id}/>
+                    )
                 }
+                <div className={s["restaurant-card-shifter"]}></div>
+                <div className={s["restaurant-card-shifter"]}></div>
+                <div className={s["restaurant-card-shifter"]}></div>
+
             </div>
-           
+            <Button data={data} setData={setData}/>
         </div>
     );
 };

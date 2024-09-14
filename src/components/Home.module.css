@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{font-size:2.8em; font-weight: bold;}
+h2{font-size:2.4em ;}
+h3{font-size:1.9em ;}
+h4{font-size:1.6em ;}
+h5{font-size:1.25em ;}
+h6{font-size:1em ;}
+.home{
+    min-width: 100px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2em;
+    padding-inline: 1em;
+    padding-block: 2em;
+    padding-top: 6em;
+   
+    background-color: rgb(34, 33, 33);
+}
+
+.restaurants-counter-display{
+   flex-basis: 100%;
+   background-color: rgb(32, 31, 31);
+   border:1px solid antiquewhite;
+   color:antiquewhite;
+   text-align: center;
+}
+
+.restaurants-container{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2em;
+  row-gap: 4em;
+  padding-block: 3em;
+  padding-inline: 2em;
+  justify-content: space-evenly;
+  background-color: rgb(27, 26, 26);
+  border:1px solid antiquewhite;
+}
+
+.restaurant-card{
+    position: relative;
+    max-width: 12vw;
+    min-width: 140px;
+    border:1px solid antiquewhite;
+    border-radius: 0.2em;
+    background-color: rgb(23, 23, 23);
+    color:antiquewhite;
+    box-shadow:1em 1em rgb(49, 49, 49),
+               -2em 2em rgb(68, 67, 67),
+               3em 3em rgb(32, 32, 32),
+               -2em -2em rgb(45, 45, 45);
+    transition: display 2s;
+}
+
+.restaurant-card-shifter{
+    max-width: 16vw;
+    min-width: 160px;
+    height: 0;
+}
+
+
+.restaurant-image-container{
+   width: 100%;
+   aspect-ratio: 1/1;
+   overflow: hidden;
+   border: 1px solid antiquewhite;
+  
+}
+
+.restaurant-image{
+    scale: 1.2;
+    transition: scale 1s;
+}
+.restaurant-image:hover{
+    scale: 1.4;
+}
+
+.restaurant-info{
+ font-size: 0.6em;
+ display: flex;
+ flex-wrap: wrap;
+ width: 100%;
+ overflow: clip;
+ padding: 0.2em;
+}
+
+.show-menu-link{
+    position: absolute;
+    height: 2.4em;
+    width:2.4em;
+    border-radius: 50%;
+    top: 0.2em;
+    right: 0.4em;
+    background-color: rgb(1, 54, 54);
+    display: flex;
+    justify-content: center;
+}
+.show-menu-link span{
+    color:beige;
+    margin: auto 0;
+    background-color: rgb(1, 54, 54);
+    text-wrap: nowrap;
+    padding-inline: 0.8em;
+    padding-block: 0.2em;
+    font-size: 0.6em;
+    border-radius: 50%;
+    transition:all 0.15s ;
+}
+.show-menu-link span:hover{
+    
+    background-color: rgb(2, 95, 95);
+    color:rgb(247, 247, 245);
+    text-wrap: nowrap;
+    padding-inline: 0.8em;
+    padding-block: 0.2em;
+    font-size: 0.7em;
+    border-radius: 40%;
+}
+
+.load-more-button{
+    width: 8em;
+    padding-block: 0.2em;
+    background-color: rgb(16, 14, 32);
+    color:bisque;
+    text-align: center;
+    border: 2px solid bisque;
+}
+
+@media (max-width: 420px) {
+    .restaurant-card{
+        
+        position: relative;
+        max-width: 90%;
+        min-width: 200px;
+        border:1px solid rgb(61, 58, 58);
+        border-radius: 0.2em;
+    }
+}

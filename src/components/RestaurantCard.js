@@ -1,26 +1,21 @@
 import RestaurantImage from "./RestaurantImage";
+import RestaurantInfo from "./RestaurantInfo";
+import s from "./Home.module.css";
+import { Link } from "react-router-dom";
 
-const RestaurantCard = ({resData}) => {
-  const {
-    id,
-    name,
-    cloudinaryImageId,
-    avgRating,
-    cuisines,
-    areaName,
-    locality,
-    sla,
-  } = resData;
-  return <div className="restaurant-card">
-      <RestaurantImage id={cloudinaryImageId}/>
-      <div className="restaurant-info">
-        <h1>{name}</h1>
-        <h2>{areaName}</h2>
-        <h3>{locality}</h3>
-        <h4>{avgRating}</h4>
-        <h5>{cuisines.join(",")}</h5>
-      </div>
-  </div>;
+const RestaurantCard = ({ restaurantData,id }) => {
+  const { cloudinaryImageId } = restaurantData;
+
+  return (
+    <div className={s["restaurant-card"]}>
+      
+      <RestaurantImage id={cloudinaryImageId} />
+      <RestaurantInfo restaurantData={restaurantData} />
+      <Link className={s["show-menu-link"]}  to={"/menu/" + id}>
+      <span> Show Menu</span>
+      </Link>
+    </div>
+  );
 };
 
 export default RestaurantCard;

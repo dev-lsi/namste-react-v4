@@ -2,19 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    column-gap: 2em;
     padding-inline: 0.6em;
     padding-block: 0.4em;
     font-size: 0.6em;
 }
-.left{
-   
+.left,.right{
+   flex-shrink: 0;
 }
 
 .logo{
+   
     height:2.4em;
     width:2.4em;
 }
@@ -43,4 +46,16 @@
     width:1em;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
+}
+
+.app{
+    min-width:140px;
+}
+
+@media (max-width: 380px) {
+    .middle nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1em;
+    }
 }
