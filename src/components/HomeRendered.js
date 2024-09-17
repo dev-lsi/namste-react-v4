@@ -4,15 +4,28 @@ import RestaurantCard from "./RestaurantCard";
 import Button from "./Button";
 import { url_base } from "../utils/constants";
 import Shirm from "./Shirm";
+import { useContext } from "react";
+import { appCTX } from "../utils/appCTX";
+import LocationButton from "./LocationButton";
+import { cities } from "../utils/citiesWithCoordinates";
 
-const HomeRendered=({currentLocation})=>{
-     const {lat,lng}=currentLocation;
+const HomeRendered=({data,setData})=>{
+    const { ctxValue, setCTXValue } = useContext(appCTX);
+    const { location } = ctxValue;
+    const { coords, isValid } = location;
+    const { lat, lng } = coords;
+    console.log("HomeRendered with location->")
+    console.log(coords);
+
      const url = url_base + "lat=" + lat + "&lng=" + lng;
-     const [data, setData] = useState(null);
+     
    
     useEffect(()=>{
-        getRestaurants(url);
-    },[]);
+        if(!data){
+            getRestaurants(url);
+        }
+        
+    },[data]);
 
     async function getRestaurants(url) {
         
@@ -30,7 +43,7 @@ const HomeRendered=({currentLocation})=>{
                     ?<Shirm/>
                     :<div className={s.home}>
                         <p className={s["restaurants-counter-display"]}>
-                            {data ? data.length : 0} restaurants loaded
+                            {data ? data.length : 0} restaurants loaded :  {"lat:"+lat+"lng:"+lng}
                        </p>
                         <div className={s["restaurants-container"]}>
                             {!data
@@ -45,8 +58,9 @@ const HomeRendered=({currentLocation})=>{
                             <div className={s["restaurant-card-shifter"]}></div>
                             <div className={s["restaurant-card-shifter"]}></div>
                             <div className={s["restaurant-card-shifter"]}></div>
-                        </div>   
-                        <Button data={data} setData={setData} currentLocation={currentLocation} />
+                        </div>
+                        <LocationButton city={cities.Bengaluru} setData={setData}/>   
+                        <Button data={data} setData={setData} currentLocation={coords} />
                    
                     </div>
                         

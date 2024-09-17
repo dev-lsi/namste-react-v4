@@ -2,18 +2,10 @@ import { createApp } from "./src/utils/createApp";
 import { getUserLocation } from "./src/utils/getUserLocation";
 import { checkIsValidUserLocation } from "./src/utils/checkIsValidUserLocation";
 
-async function start() {
-
-  async function configureLocation() {
-    const userLocationData = await getUserLocation();
-    return checkIsValidUserLocation(userLocationData);
-  }
-
-  return createApp(await configureLocation());
+async function startApp() {
+  const userLocationCoordinates = await getUserLocation();
+  const userLocationData = await checkIsValidUserLocation(userLocationCoordinates);
+  return createApp( userLocationData );
 }
 
-
-start();
-
-
-
+startApp();
