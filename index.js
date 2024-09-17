@@ -4,8 +4,18 @@ import { checkIsValidUserLocation } from "./src/utils/checkIsValidUserLocation";
 
 async function startApp() {
   const userLocationCoordinates = await getUserLocation();
-  const userLocationData = await checkIsValidUserLocation(userLocationCoordinates);
-  return createApp( userLocationData );
+
+  const isUserLocationInRange = await checkIsValidUserLocation(
+    userLocationCoordinates
+  );
+
+  const locationData = {
+    city: "",
+    coords: userLocationCoordinates,
+    isValid: isUserLocationInRange,
+  };
+
+  return createApp(locationData);
 }
 
 startApp();

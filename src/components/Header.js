@@ -6,18 +6,35 @@ import { useEffect, useState } from "react";
 import NavMain from "./NavMain";
 import NavMobile from "./NavMobile";
 import { useContext } from "react";
-import { appCTX } from "../utils/appCTX";
+import { locationContext,restaurantsContext } from "../utils/context";
 
 const Header=()=>{
-  const { ctxValue, setCTXValue } = useContext(appCTX);
-  const { location } = ctxValue;
-  const { coords, isValid } = location;
+  const { locationContextValue} = useContext(locationContext);
+  const { coords } = locationContextValue;
   const { lat, lng } = coords;
-  console.log("DefaultHome with location->");
-  console.log(coords);
+  const city = locationContextValue.city;
+  
+  const {restaurantsContextValue} = useContext(restaurantsContext);
+  const {restaurants} = restaurantsContextValue;
 
   const [windowWidth,setWindowWidth] = useState(window.innerWidth);
   const [isOpen,setIsOpen] = useState(false);
+  const [isOnline,setIsOnline]=useState(true);
+
+  useEffect(()=>{
+    const handleOnline=()=>setIsOnline(true);
+    const handleOffline=()=>setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline',handleOffline);
+
+  return ()=>{
+    removeEventListener('online',handleOnline);
+    removeEventListener('offline',handleOffline);
+  }
+  },[]);
+  
+  
   
   useEffect(()=>{
       window.addEventListener('resize',handleResize);
@@ -30,7 +47,7 @@ const Header=()=>{
     }
   
     return (
-        <div className="header  bg-slate-900 text-slate-100 fixed top-0 left-0 right-0 z-10 h-12 border-slate-100 border-b-2">
+        <div className="header  bg-slate-900 text-slate-100 fixed top-0 left-0 right-0 z-10  border-slate-100 border-b-2">
             <div className="left">
               <img className="logo" src={logo} alt="logo"></img>
             </div>
@@ -54,9 +71,11 @@ const Header=()=>{
                 </li>
               </ul>
             </div>
-            <div className="display basis-full">
-               <p>City:{location.name?location.name:"N/A"} </p>
-               <p>Coords: lat={coords.lat} lng={lng}</p>
+            <div className="restaurants-info-display">
+               <p>City:{city}</p>
+               <p>Coords: lat={lat} lng={lng}</p>
+               <p>{restaurants?restaurants.length:"0"} restaurants shown</p>
+               <p>📡: {isOnline?" ✅" : "⭕" }</p>
             </div>
         </div>
     )

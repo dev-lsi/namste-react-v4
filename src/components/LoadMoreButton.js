@@ -1,10 +1,8 @@
 import { useState } from "react";
 import s from "./Home.module.css";
-import { mockResInfo } from "../utils/mockData";
 import { url_base } from "../utils/constants";
 
-
-const Button=({data,setData,currentLocation})=>{
+const LoadMoreButton=({data,setData,currentLocation})=>{
     
     const {lat,lng}=currentLocation;
     const url = url_base + "lat=" + lat + "&lng=" + lng;
@@ -16,7 +14,7 @@ const Button=({data,setData,currentLocation})=>{
         <div className={s["load-more-button"]}>
 
             <button onClick={async()=>{
-               setCurrData([...data,mockResInfo])
+               setCurrData([...data])
                const response = await fetch(url,{
                 method:"POST",
                 headers: {
@@ -42,4 +40,4 @@ const Button=({data,setData,currentLocation})=>{
     )
 }
 
-export default Button;
+export default LoadMoreButton;

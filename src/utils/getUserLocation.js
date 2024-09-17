@@ -20,5 +20,5 @@ function handleSuccess(position) {
 }
 
 function HandleError() {
-  return {lat:"Not Present",lng:"Not Present"};
+  return {lat:"N/A",lng:"N/A"};
 }

@@ -1,28 +1,32 @@
 import Header from "./src/components/Header";
 import Main from "./src/components/Main";
 import Footer from "./src/components/Footer";
-import { appCTX } from "./src/utils/appCTX";
+import { locationContext,restaurantsContext } from "./src/utils/context";
 import { useState } from "react";
 
 const App = ({ location }) => {
-  console.log("APP rendered")
-  
-  const initialContextValue = {
-    location,
-    user: null,
-    data: null,
-  };
-  
-  const [ctxValue,setCTXValue] = useState(initialContextValue);
+  console.log("APP rendered");
+
+  const initialLocationContextValue = location;
+  const [locationContextValue, setLocationContextValue] = useState(
+    initialLocationContextValue
+  );
+
+  const initialRestaurantsValue = {restaurants:[]};
+  const [restaurantsContextValue,setRestaurantsContextValue]=useState(initialRestaurantsValue);
 
   return (
-    <appCTX.Provider value={{ctxValue,setCTXValue}}>
+    <restaurantsContext.Provider value={{restaurantsContextValue,setRestaurantsContextValue}}>
+    <locationContext.Provider
+      value={{ locationContextValue, setLocationContextValue }}
+    >
       <div className="app">
         <Header />
         <Main />
         <Footer />
       </div>
-    </appCTX.Provider>
+    </locationContext.Provider>
+    </restaurantsContext.Provider>
   );
 };
 export default App;

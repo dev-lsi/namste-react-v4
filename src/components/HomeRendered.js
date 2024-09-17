@@ -1,24 +1,21 @@
-import { useEffect,useState } from "react";
+import { useEffect} from "react";
+import { useContext } from "react";
+import { locationContext } from "../utils/context";
+import { cities } from "../utils/citiesWithCoordinates";
+import { url_base } from "../utils/constants";
 import s from "./Home.module.css";
 import RestaurantCard from "./RestaurantCard";
-import Button from "./Button";
-import { url_base } from "../utils/constants";
+import LoadMoreButton from "./LoadMoreButton";
 import Shirm from "./Shirm";
-import { useContext } from "react";
-import { appCTX } from "../utils/appCTX";
 import LocationButton from "./LocationButton";
-import { cities } from "../utils/citiesWithCoordinates";
+
 
 const HomeRendered=({data,setData})=>{
-    const { ctxValue, setCTXValue } = useContext(appCTX);
-    const { location } = ctxValue;
-    const { coords, isValid } = location;
+    const { locationContextValue, setLocationContextValue } = useContext(locationContext);
+    const { coords, isValid, city } = locationContextValue;
     const { lat, lng } = coords;
-    console.log("HomeRendered with location->")
-    console.log(coords);
 
-     const url = url_base + "lat=" + lat + "&lng=" + lng;
-     
+    const url = url_base + "lat=" + lat + "&lng=" + lng;
    
     useEffect(()=>{
         if(!data){
@@ -60,7 +57,7 @@ const HomeRendered=({data,setData})=>{
                             <div className={s["restaurant-card-shifter"]}></div>
                         </div>
                         <LocationButton city={cities.Bengaluru} setData={setData}/>   
-                        <Button data={data} setData={setData} currentLocation={coords} />
+                        <LoadMoreButton data={data} setData={setData} currentLocation={coords} />
                    
                     </div>
                         
