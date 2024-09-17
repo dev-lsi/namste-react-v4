@@ -1,6 +1,6 @@
 import { useEffect} from "react";
 import { useContext } from "react";
-import { locationContext } from "../utils/context";
+import { locationContext, restaurantsContext } from "../utils/context";
 import { cities } from "../utils/citiesWithCoordinates";
 import { url_base } from "../utils/constants";
 import s from "./Home.module.css";
@@ -14,9 +14,12 @@ const HomeRendered=({data,setData})=>{
     const { locationContextValue, setLocationContextValue } = useContext(locationContext);
     const { coords, isValid, city } = locationContextValue;
     const { lat, lng } = coords;
-
     const url = url_base + "lat=" + lat + "&lng=" + lng;
-   
+    
+    const {restaurantsContextValue,setRestaurantsContextValue} = useContext(restaurantsContext);
+    const {restaurants} = restaurantsContextValue;
+    console.log(restaurants)
+    
     useEffect(()=>{
         if(!data){
             getRestaurants(url);
@@ -28,17 +31,25 @@ const HomeRendered=({data,setData})=>{
         
         const response = await fetch(url);
         const responseData = await response.json();
-      
+
+        const restaurantsArr=responseData.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants;
         console.log(responseData.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         
         setData(responseData.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setRestaurantsContextValue({'restaurants':[...restaurants,...restaurantsArr]})
+        
     }
     
     return (
               <div>
                 { !data
                     ?<Shirm/>
-                    :<div className={s.home}>
+                    :<div className={(s["home"]) + " " + " text-slate-200"}>
+                        <div className="text-left mb-8">
+                            <h2>{city}</h2>
+                            <h4>restaurants delivering food in your area</h4>
+                            <h6>{restaurants.length}</h6>
+                        </div>
                         <p className={s["restaurants-counter-display"]}>
                             {data ? data.length : 0} restaurants loaded :  {"lat:"+lat+"lng:"+lng}
                        </p>
