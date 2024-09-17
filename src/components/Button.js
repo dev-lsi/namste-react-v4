@@ -5,7 +5,8 @@ import { url_base } from "../utils/constants";
 
 const Button=({data,setData,currentLocation})=>{
     
-    const {lat,lng} = (currentLocation.response)||{lat:"0",lng:"0"};
+    const {lat,lng}=currentLocation;
+    const url = url_base + "lat=" + lat + "&lng=" + lng;
     const [currData,setCurrData] = useState(data);
     const [newData,setNewData] = useState(null);
     const [counter,setCounter] = useState(11);
@@ -15,13 +16,13 @@ const Button=({data,setData,currentLocation})=>{
 
             <button onClick={async()=>{
                setCurrData([...data,mockResInfo])
-               const response = await fetch(url_base+"lat="+lat+"&lng="+lng,{
+               const response = await fetch(url,{
                 method:"POST",
                 headers: {
                     'Content-Type': 'application/json'
                   },
                 body: JSON.stringify(payload)
-               })
+               });
             
                 const responseData = await response.json();
                 
