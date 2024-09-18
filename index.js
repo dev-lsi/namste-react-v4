@@ -2,6 +2,7 @@ import { createApp } from "./src/utils/createApp";
 import { getUserLocation } from "./src/utils/getUserLocation";
 import { checkIsValidUserLocation } from "./src/utils/checkIsValidUserLocation";
 
+return document.getElementById('root').innerHTML="Loaded"
 function startApp() {
   
    return (<h1>"App Started!"</h1>)
