@@ -5,8 +5,8 @@ import { checkIsValidUserLocation } from "./src/utils/checkIsValidUserLocation";
 
 async function startApp() {
   
-  const userLocationCoordinates =await getUserLocation();
-  
+  const userLocationCoordinates = await getUserLocation();
+  alert(userLocationCoordinates)
   if(userLocationCoordinates){
     const isUserLocationInRange = await checkIsValidUserLocation(
       userLocationCoordinates

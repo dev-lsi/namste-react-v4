@@ -17,11 +17,9 @@ export async function getUserLocation() {
 function handleSuccess(position) {
   const lat = position.coords.latitude;
   const lng = position.coords.longitude;
-  alert (`Success ${lat} ${lng}`)
   return { lat, lng };
 }
 
 function HandleError() {
-  alert (`Unsuccessful operation`)
   return null;
 }
