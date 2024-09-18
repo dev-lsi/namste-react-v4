@@ -5,8 +5,8 @@ import { locationContext,restaurantsContext } from "./src/utils/context";
 import { useState } from "react";
 
 const App = ({ location }) => {
-  alert("APP rendered");
-  alert("NEXT RETURN lat:"+location.coords.lat+"isValid:"+ Object.keys(location))
+  console.log("APP rendered");
+ 
   const initialLocationContextValue = location;
   const [locationContextValue, setLocationContextValue] = useState(
     initialLocationContextValue
