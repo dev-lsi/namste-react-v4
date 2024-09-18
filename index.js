@@ -3,10 +3,10 @@ import { getUserLocation } from "./src/utils/getUserLocation";
 import { checkIsValidUserLocation } from "./src/utils/checkIsValidUserLocation";
 
 
-function startApp() {
+async function startApp() {
   
-  const userLocationCoordinates = getUserLocation();
-  return userLocationCoordinates;
+  const userLocationCoordinates =await getUserLocation();
+  
   if(userLocationCoordinates){
     const isUserLocationInRange = await checkIsValidUserLocation(
       userLocationCoordinates
