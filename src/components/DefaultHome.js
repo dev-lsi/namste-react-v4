@@ -16,9 +16,9 @@ const DefaultHome = ({ setData }) => {
         <h6 className="text-slate-300 basis-full">
           To try the App you can choose among locations below
         </h6>
-        <LocationButton city={cities.Delhi} setData={setData} />
-        <LocationButton city={cities.Bengaluru} setData={setData} />
-        <LocationButton city={cities.Satara} setData={setData} />
+        <LocationButton city={cities.Delhi}/>
+        <LocationButton city={cities.Bengaluru}/>
+        <LocationButton city={cities.Satara}/>
       </div>
       <h1>Choose location</h1>
       <h4>Choose location</h4>

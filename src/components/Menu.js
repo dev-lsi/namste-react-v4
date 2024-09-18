@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { resMenu } from "../utils/constants";
+import s from "./Home.module.css";
 
 const Menu = () => {
     const {id} = useParams();
@@ -21,7 +22,7 @@ const Menu = () => {
         setData(categories);
     }
     return (
-        <div className="menu-page">
+        <div className={s["home"] + " text-slate-200"}>
             {!data
              ?"Loading Data..."
              :data.map(cat=>cat.title)}
