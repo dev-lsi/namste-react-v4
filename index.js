@@ -22,8 +22,9 @@ async function startApp() {
     
     return createApp(locationData);
   }else {
-    
-    return createApp(null);}
+    alert("NANANANANAN")
+    return createApp(null);
+  }
   
 }
 
