@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const App = ({ location }) => {
   alert("APP rendered");
-  alert("NEXT RETURN lat:"+location.coords.lat+"isValid:"+isValid)
+  alert("NEXT RETURN lat:"+location.coords.lat+"isValid:"+ Object.keys(location))
   const initialLocationContextValue = location;
   const [locationContextValue, setLocationContextValue] = useState(
     initialLocationContextValue

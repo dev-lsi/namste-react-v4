@@ -11,7 +11,7 @@ import Menu from "../components/Menu";
 
 export function createApp(location) {
   alert("createApp function called with location->");
-  alert("create app : lat:"+location.coords.lat+"isValid:"+isValid)
+  alert("create app : lat:"+location.coords.lat+"isValid:"+Object.keys(location))
 
   const router = createBrowserRouter([
     {
