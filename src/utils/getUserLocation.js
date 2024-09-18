@@ -1,11 +1,16 @@
 async function getCurrentPositionAsync() {
-  
+
   if(navigator.geolocation.getCurrentPosition){
+    alert("Has getCurrentPosition")
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resolve, reject);
     });
-  }else return document.getElementById("root").innerHTML="Not n.g"  
-  
+  }else 
+  return new Promise((resolve, reject) => {
+    alert("No getCurrentPosition")
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+    document.getElementById("root").innerHTML="Not n.g"
+  });
 }
 
 export async function getUserLocation() {
