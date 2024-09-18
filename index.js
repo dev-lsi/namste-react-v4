@@ -17,7 +17,7 @@ async function startApp() {
       coords: userLocationCoordinates,
       isValid: isUserLocationInRange,
     };
-  
+    alert("lat:"+locationData.coords.lat+"isValid:"+isValid)
     return createApp(locationData);
   }else return createApp(null);
   
