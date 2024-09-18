@@ -10,8 +10,8 @@ import Cart from "../components/Cart";
 import Menu from "../components/Menu";
 
 export function createApp(location) {
-  console.log("createApp function called with location->");
-  console.log(location);
+  alert("createApp function called with location->");
+  alert("create app : lat:"+location.coords.lat+"isValid:"+isValid)
 
   const router = createBrowserRouter([
     {
@@ -47,5 +47,6 @@ export function createApp(location) {
   ]);
 
   const root = ReactDOM.createRoot(document.getElementById("root"));
+  alert(Object.keys(router))
   root.render(<RouterProvider router={router} />);
 }

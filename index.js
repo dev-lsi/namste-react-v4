@@ -9,7 +9,7 @@ async function startApp() {
   alert(userLocationCoordinates.lat +":"+userLocationCoordinates.lng)
   
   if(userLocationCoordinates){
-    alert("lat:"+locationData.coords.lat+"isValid:"+isValid)
+    
     const isUserLocationInRange = await checkIsValidUserLocation(
       userLocationCoordinates
     );
@@ -22,7 +22,7 @@ async function startApp() {
     
     return createApp(locationData);
   }else {
-    alert("NEXT RETURN lat:"+locationData.coords.lat+"isValid:"+isValid)
+    
     return createApp(null);}
   
 }
