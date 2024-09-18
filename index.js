@@ -2,12 +2,11 @@ import { createApp } from "./src/utils/createApp";
 import { getUserLocation } from "./src/utils/getUserLocation";
 import { checkIsValidUserLocation } from "./src/utils/checkIsValidUserLocation";
 
-return document.getElementById('root').innerHTML="Loaded"
+
 function startApp() {
   
-   return (<h1>"App Started!"</h1>)
-  const userLocationCoordinates = await getUserLocation();
-  
+  const userLocationCoordinates = getUserLocation();
+  return userLocationCoordinates;
   if(userLocationCoordinates){
     const isUserLocationInRange = await checkIsValidUserLocation(
       userLocationCoordinates
