@@ -1,15 +1,7 @@
 async function getCurrentPositionAsync() {
-
-  if(navigator.geolocation.getCurrentPosition){
-    alert("Has getCurrentPosition")
-    return new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(resolve, reject);
-    });
-  }else 
+  
   return new Promise((resolve, reject) => {
-    alert("No getCurrentPosition")
     navigator.geolocation.getCurrentPosition(resolve, reject);
-    document.getElementById("root").innerHTML="Not n.g"
   });
 }
 
@@ -25,9 +17,11 @@ export async function getUserLocation() {
 function handleSuccess(position) {
   const lat = position.coords.latitude;
   const lng = position.coords.longitude;
+  alert (`Success ${lat} ${lng}`)
   return { lat, lng };
 }
 
 function HandleError() {
+  alert (`Unsuccessful operation`)
   return null;
 }
