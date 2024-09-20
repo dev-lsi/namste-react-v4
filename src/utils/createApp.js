@@ -2,12 +2,12 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../../App";
-import Home from "../components/Home";
+import HomePage from "../components/HomePage";
 import About from "../components/About";
 import Contacts from "../components/Contacts";
 import LoginLogout from "../components/LoginLogout";
 import Cart from "../components/Cart";
-import Menu from "../components/Menu";
+import MenuPage from "../components/MenuPage";
 
 export function createApp(location) {
   
@@ -19,7 +19,7 @@ export function createApp(location) {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <HomePage />,
         },
         {
           path: "/about",
@@ -39,7 +39,7 @@ export function createApp(location) {
         },
         {
           path: "/menu/:id",
-          element: <Menu />,
+          element: <MenuPage />,
         },
       ],
     },

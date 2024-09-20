@@ -2,7 +2,7 @@ import s from "./Home.module.css";
 import LocationButton from "./LocationButton.js";
 import { cities } from "../utils/citiesWithCoordinates.js";
 
-const DefaultHome = ({ setData }) => {
+const HomeDefault = () => {
   return (
     <div className={s["home"]}>
       <h1>Choose location</h1>
@@ -28,4 +28,4 @@ const DefaultHome = ({ setData }) => {
     </div>
   );
 };
-export default DefaultHome;
+export default HomeDefault;
