@@ -136,18 +136,86 @@
   padding: 0.2em;
 }
 
-.name{}
-.area{}
+.sub-1{
+  flex-basis: 100%;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.sub-2{
+  flex-basis: 100%;
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.restaurant-info{
+  flex-basis: 100%;
+  padding: 0.8em;
+  margin: 0;
+}
+
+.name{
+  font-size: 1.4em;
+  line-height: 1.2em;
+  height: 2.8em;
+  font:bold;
+}
+.area{
+  flex-basis: 100%;
+}
+.area-logo{
+
+}
+.area-name{
+  font-size: 1.2em;
+}
 .open-closed{
   
 }
+.open{
+  font-size: 1.6em;
+  color:greenyellow;
+}
+.closed{
+  font-size: 1.6em;
+  color:red;
+}
 .delivery-time{
+  
+}
+.delivery-time-logo{}
+.delivery-time-number{
+  font-size: 1.6em;
+  color:greenyellow;
+}
+.delivery-time-min{}
+
+.rating{
 
 }
-.rating{}
-.cuisines{}
+.rating-logo{
+  font-size: 1.6em;
+}
 
+.rating-number{
+  color:yellow;
+  font-size:1.4em ;
+}
 
+.cuisines-container{
+  
+}
+.cuisines-header{
+  text-align: center;
+  font-size:1.4em;
+  color:goldenrod;
+}
+.cuisines-list{
+  font-size:1.2em;
+  color:goldenrod;
+}
+
+/* Controls.................................................. */
 .show-menu-link {
   position: absolute;
   height: 2.4em;
