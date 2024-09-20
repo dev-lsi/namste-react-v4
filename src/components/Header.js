@@ -7,6 +7,7 @@ import NavMain from "./NavMain";
 import NavMobile from "./NavMobile";
 import { useContext } from "react";
 import { locationContext,restaurantsContext } from "../utils/context";
+import s from "./Header.module.css";
 
 const Header=()=>{
   const { locationContextValue} = useContext(locationContext);
@@ -18,7 +19,6 @@ const Header=()=>{
   const {restaurants} = restaurantsContextValue;
 
   const [windowWidth,setWindowWidth] = useState(window.innerWidth);
-  const [isOpen,setIsOpen] = useState(false);
   const [isOnline,setIsOnline]=useState(true);
 
   useEffect(()=>{
@@ -47,31 +47,31 @@ const Header=()=>{
     }
   
     return (
-        <div className="header  bg-slate-900 text-slate-100 fixed top-0 left-0 right-0 z-10  border-slate-100 border-b-2">
-            <div className="left">
-              <img className="logo" src={logo} alt="logo"></img>
+        <div className={s["header"]}>
+            <div className={s["left"]}>
+              <img className={s["logo"]} src={logo} alt="logo"></img>
             </div>
-            <div className="middle">
-              {windowWidth>=440
+            <div className={s["middle"]}>
+              {windowWidth>=480
               ?<NavMain/>
               :<NavMobile/>}
               
                     
             </div>
-            <div className="right">
+            <div className={s["right"]}>
               <ul className="">
                 <li>
-                    <img className="social-icon" src={githubIcon} alt="GitHub icon"/>  
+                    <img className={s["social-icon"]} src={githubIcon} alt="GitHub icon"/>  
                 </li>
                 <li>
-                    <img className="social-icon" src={linkedInIcon} alt="linkedIn icon"/>
+                    <img className={s["social-icon"]} src={linkedInIcon} alt="linkedIn icon"/>
                 </li>
                 <li>
-                    <img className="social-icon" src={faceBookIcon} alt="FaceBook icon"/>
+                    <img className={s["social-icon"]} src={faceBookIcon} alt="FaceBook icon"/>
                 </li>
               </ul>
             </div>
-            <div className="restaurants-info-display">
+            <div className={s["restaurants-info-display"]}>
                <p>City:{city}</p>
                <p>Coords: lat={lat} lng={lng}</p>
                <p>{restaurants?restaurants.length:"0"} restaurants shown</p>

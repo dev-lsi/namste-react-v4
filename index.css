@@ -2,73 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.header{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 2em;
-    row-gap: 0.2em;
-    padding-inline: 0.6em;
-    padding-block: 0.4em;
-    font-size: 0.6em;
-}
-.left,.right{
-   flex-shrink: 0;
+:root{
+    --header-height:8em;
 }
 
-.logo{
-   
-    height:2.4em;
-    width:2.4em;
-}
-.middle nav ul {
-    display: flex;
-    column-gap: 1em;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: antiquewhite;
 }
 
-.right ul{
-   display: flex;
-   column-gap: 0.8em;
-   justify-content: center;
-   padding-right: 2em; 
+h1 {
+  font-size: 2.8em;
+  line-height:2.8em;
 }
-
-.right ul li{
-  display:flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  column-gap: 0.4em;
-  
+h2 {
+  font-size: 2.4em;
+  line-height:2.4em;
 }
-
-.social-icon{
-    height:1em;
-    width:1em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50%;
+h3 {
+  font-size: 1.9em;
+  line-height:1.9em;
 }
-
-.app{
-    min-width:140px;
+h4 {
+  font-size: 1.6em;
+  line-height:1.6em;
 }
-
-.restaurants-info-display{
-    flex-basis: 100%;
-    display: flex;
-    justify-content: flex-start;
-    column-gap: 2em;
-    border:1px solid rgb(255, 255, 255);
-    padding-inline: 1em;
-    padding-block: 0.2em;
-    font-size: 1.2em;
+h5 {
+  font-size: 1.25em;
+  line-height:1.25em;
 }
-
-@media (max-width: 380px) {
-    .middle nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 1em;
-    }
+h6 {
+  font-size: 1em;
+  line-height:1em;
 }

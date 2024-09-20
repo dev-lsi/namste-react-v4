@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { locationContext,restaurantsContext } from "../utils/context.js";
-
+import s from "./Home.module.css";
 const LocationButton = ({ city }) => {
   const { name, coords } = city;
   const { locationContextValue, setLocationContextValue } =
@@ -9,7 +9,7 @@ const LocationButton = ({ city }) => {
     
   return (
     <button
-      className=" w-40 h-8 font-bold text-stone-200 border border-slate-200 rounded-sm px-4 inline-block"
+      className={s["location-button"]}
       onClick={() => {
         setRestaurantsContextValue({
           restaurants:[]

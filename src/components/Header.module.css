@@ -1,0 +1,74 @@
+.header{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    z-index:100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2em;
+    row-gap: 0.2em;
+    padding-block: 0.4em;
+    font-size: 0.6em;
+    background-color: rgb(28, 28, 34);
+    height:var(--header-height);
+}
+.left,.right{
+   flex-shrink: 0;
+   padding-inline: 1em;
+}
+
+.logo{
+   height:calc(var(--header-height)/2)
+}
+.middle nav ul {
+    display: flex;
+    column-gap: 1em;
+}
+
+.right ul{
+   display: flex;
+   column-gap: 0.8em;
+   justify-content: center;
+   padding-right: 2em; 
+}
+
+.right ul li{
+  display:flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 0.4em;
+  
+}
+
+.social-icon{
+    height:1em;
+    width:1em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+.app{
+    min-width:140px;
+}
+
+.restaurants-info-display{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 2em;
+    border:1px solid antiquewhite;
+    padding-inline: 1em;
+    padding-block: 0.2em;
+    font-size: 1em;
+}
+
+@media (max-width: 480px) {
+    .middle nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1em;
+    }
+} 

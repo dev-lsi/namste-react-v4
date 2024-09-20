@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import s from "./Header.module.css";
 
 const NavMain = () => {
   return (
-    <nav className="nav-main">
+    <nav className={s["nav-main"]}>
       <ul>
         <li>
           <Link to="/">Home</Link>
