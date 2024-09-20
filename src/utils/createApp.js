@@ -10,7 +10,7 @@ import Cart from "../components/Cart";
 import Menu from "../components/Menu";
 
 export function createApp(location) {
-  alert("createApp function called with location");
+  
 
   const router = createBrowserRouter([
     {

@@ -19,7 +19,8 @@ const HomeRendered=()=>{
     const {restaurantsContextValue,setRestaurantsContextValue} = useContext(restaurantsContext);
     
     const data = restaurantsContextValue.restaurants;
-    
+    console.log(data)
+    console.log(restaurantsContextValue.restaurants)
     
     useEffect(()=>{
         if(restaurantsContextValue.restaurants.length===0){
