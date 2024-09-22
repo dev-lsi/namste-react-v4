@@ -11,7 +11,12 @@
 }
 
 .menu-header{
-    border:1px solid var(--color-dark-theme);
+    
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 2em;
+    justify-content: center;
+    margin-bottom: 4em;
 }
 
 .res-image-container{
@@ -24,14 +29,61 @@
     object-fit: contain;
 }
 
+.res-info-container{
+   font-size: 0.8em;
+}
+
+.res-info-name{
+    margin-bottom: 1.4em;
+}
+
 /* ItemCard CSS.............................. */
+.item-card{
+    padding-inline: 1em;
+    padding-block: 0.5em;
+    display: flex;
+    flex-wrap: nowrap;
+    border:1px solid var(--color-dark-theme);
+}
+
+
+/* Item Left */
+ .item-info-container{
+    flex-basis: 100%;
+    font-size: 0.8em;
+ }
+
+ .item-name{
+    line-height: 1em;
+ }
+
+ .item-price{
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 0.2em;
+ }
+ .item-logo{}
+ .item-number{}
+ .item-currency-symbol{
+    color:rgb(3, 200, 3);
+ }
+
+/* Item Right */
 
 .item-image-container{
-    width: 3em;
-    height:3em;
+    flex-shrink: 0;
+    width: 5em;
+    height:5em;
+    border:1px solid var(--color-dark-theme);
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .item-image{
     object-position: center;
     object-fit: cover;
+    transition: filter 0.5s;
+}
+.item-image:hover{
+    filter:grayscale(50%)
 }

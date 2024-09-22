@@ -81,7 +81,7 @@
 .hero-heading{
     flex-basis: 100%;
     text-align: center;
-    color:red;
+    color:var(--color-dark-theme);
 }
 
 .restaurants-container {
@@ -97,7 +97,6 @@
 }
 
 .restaurant-card {
-  position: relative;
   max-width: 12vw;
   min-width: 140px;
   border: 1px solid antiquewhite;
@@ -116,6 +115,7 @@
 }
 
 .restaurant-image-container {
+  position: relative;
   width: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
@@ -133,10 +133,13 @@
 .restaurant-info {
   font-size: 0.6em;
   display: flex;
+  flex-basis: 100%;
   flex-wrap: wrap;
+  row-gap: 0.6em;
   width: 100%;
   overflow: clip;
-  padding: 0.2em;
+  padding-block: 0.2em;
+  padding-inline: 0.4em;
 }
 
 .sub-1{
@@ -149,55 +152,66 @@
   flex-basis: 100%;
   display:flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 2em;
 }
 .restaurant-info{
   flex-basis: 100%;
-  padding: 0.8em;
-  margin: 0;
 }
 
 .name{
+  flex-basis: 100%;
   font-size: 1.4em;
-  line-height: 1.2em;
-  height: 2.8em;
+  text-align: center;
+  line-height: 1.1em;
+  height: 2.2em;
   font:bold;
+  margin-bottom: 0.2em;
 }
 .area{
+  text-align: center;
   flex-basis: 100%;
+  line-height: 1.2em;
 }
 .area-logo{
-
+  
 }
 .area-name{
   font-size: 1.2em;
 }
-.open-closed{
-  
-}
-.open{
-  font-size: 1.6em;
-  color:greenyellow;
-}
-.closed{
-  font-size: 1.6em;
-  color:red;
-}
+
 .delivery-time{
+  flex-basis: 100%;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2em;
   
 }
 .delivery-time-logo{}
 .delivery-time-number{
-  font-size: 1.6em;
+  font-size: 1.2em;
   color:greenyellow;
 }
 .delivery-time-min{}
+
+.open-closed{
+  
+}
+.open{
+  font-size: 1.4em;
+  color:greenyellow;
+}
+.closed{
+  font-size: 1.4em;
+  color:red;
+}
+
 
 .rating{
 
 }
 .rating-logo{
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 
 .rating-number{
@@ -206,49 +220,48 @@
 }
 
 .cuisines-container{
-  
+  flex-basis: 100%;
+  display:flex;
+  flex-wrap: wrap;
+
 }
 .cuisines-header{
+  flex-basis: 100%;
   text-align: center;
   font-size:1.4em;
   color:goldenrod;
+  text-decoration: underline;
 }
 .cuisines-list{
+  flex-basis: 100%;
+  text-align: center;
   font-size:1.2em;
   color:goldenrod;
 }
 
 /* Controls.................................................. */
+
 .show-menu-link {
   position: absolute;
-  height: 2.4em;
-  width: 2.4em;
-  border-radius: 50%;
-  top: 0.2em;
-  right: 0.4em;
-  background-color: rgb(1, 54, 54);
-  display: flex;
-  justify-content: center;
-}
-.show-menu-link span {
-  color: beige;
-  margin: auto 0;
-  background-color: rgb(1, 54, 54);
+  color: antiquewhite;
+  background-color: rgb(34, 34, 34);
+  border:1px solid var(--color-dark-theme);
   text-wrap: nowrap;
-  padding-inline: 0.8em;
-  padding-block: 0.2em;
   font-size: 0.6em;
-  border-radius: 50%;
+  bottom: -1.6em;
+  right:-2.2em;
+  padding-inline: 1em;
+  padding-bottom: 4em;
+  padding-top: 0.2em;
+  border-radius: 0.6em;
+  transform: rotateZ(-45deg);
   transition: all 0.15s;
 }
-.show-menu-link span:hover {
-  background-color: rgb(2, 95, 95);
-  color: rgb(247, 247, 245);
+.show-menu-link:hover {
+  color: antiquewhite;
+  background-color: rgb(34, 34, 34);
   text-wrap: nowrap;
-  padding-inline: 0.8em;
-  padding-block: 0.2em;
-  font-size: 0.7em;
-  border-radius: 40%;
+  padding-bottom: 6em;
 }
 
 .load-more-button {
@@ -262,9 +275,9 @@
 
 @media (max-width: 420px) {
   .restaurant-card {
-    position: relative;
-    max-width: 90%;
-    min-width: 140px;
+    max-width: 100%;
+    
+    padding-inline: 0;
     border: 1px solid rgb(61, 58, 58);
     border-radius: 0.2em;
   }

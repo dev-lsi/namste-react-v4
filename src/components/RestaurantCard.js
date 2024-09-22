@@ -9,11 +9,9 @@ const RestaurantCard = ({ restaurantData,id }) => {
   return (
     <div className={s["restaurant-card"]}>
       
-      <RestaurantImage id={cloudinaryImageId} />
+      <RestaurantImage imageId={cloudinaryImageId} resId={id}  />
       <RestaurantInfo restaurantData={restaurantData} />
-      <Link className={s["show-menu-link"]}  to={"/menu/" + id}>
-      <span> Show Menu</span>
-      </Link>
+      
     </div>
   );
 };
