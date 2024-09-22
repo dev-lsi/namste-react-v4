@@ -34,10 +34,13 @@
 }
 
 .default-container h4,.default-container h5{
+    
     flex-basis: 90%;
+    background:none;
     font : bold;
     width:100%;
     text-align: center;
+    
 }
 
 .default-container-controls{

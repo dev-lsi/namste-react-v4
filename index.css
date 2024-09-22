@@ -4,14 +4,22 @@
 
 :root{
     --header-height:8em;
+
+    --bg-dark-theme:rgb(34,34,34);
+    --color-dark-theme:antiquewhite;
+
+    --bg-light-theme:antiquewhite;
+    --color-light-theme:rgb(34,34,34);
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: antiquewhite;
+  color:  var(--color-dark-theme);
 }
+
+
 
 h1 {
   font-size: 2.8em;

@@ -40,6 +40,12 @@ const HomeRendered = () => {
       responseData.data.success.cards[1].card.card.gridElements.infoWithStyle
         .restaurants
     );
+   //extract inner objects
+    // restaurantsArr.map(r=>
+    //   {return {...r,
+    //     deliveryTime:r.info.sla.deliveryTime,
+    //     nextCloseTime:r.info.availability.nextCloseTime
+    //   }})
 
     setRestaurantsContextValue({ restaurants: [...data, ...restaurantsArr] });
   }

@@ -1,0 +1,37 @@
+.menu-page{
+    color:var(--color-dark-theme);
+    background-color: var(--bg-dark-theme);
+    padding-top: var(--header-height);
+    padding-inline: 1em;
+    display:flex;
+    flex-wrap: wrap;
+}
+.menu-page > *{
+   flex-basis: 100%;
+}
+
+.menu-header{
+    border:1px solid var(--color-dark-theme);
+}
+
+.res-image-container{
+    width: 12em;
+    height:12em;
+    overflow: hidden;
+}
+.res-image{
+    object-position: center;
+    object-fit: contain;
+}
+
+/* ItemCard CSS.............................. */
+
+.item-image-container{
+    width: 3em;
+    height:3em;
+}
+
+.item-image{
+    object-position: center;
+    object-fit: cover;
+}
