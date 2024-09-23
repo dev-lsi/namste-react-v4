@@ -69,12 +69,12 @@ const HomeRendered = () => {
             <div className={s["restaurant-card-shifter"]}></div>
             <div className={s["restaurant-card-shifter"]}></div>
           </div>
-
           <LoadMoreButton />
-          <div>
-            <LocationButton city={cities.Delhi} />
-            <LocationButton city={cities.Bengaluru} />
-            <LocationButton city={cities.Satara} />
+          <div className={s["change-location-container"]}>
+               <h5>Change current Location</h5>
+              <LocationButton city={cities.Delhi} />
+              <LocationButton city={cities.Bengaluru} />
+              <LocationButton city={cities.Satara} />
           </div>
         </div>
       )}
