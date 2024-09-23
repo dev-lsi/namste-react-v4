@@ -10,7 +10,6 @@ const MenuItemCard=({data})=>{
 
    return (
     <div className={s["item-card"]}>
-      {/* Item INFO --> LEFT SECTION name  description isVeg price inStock */}
       <div className={s["item-info-container"]}>
         <h4 className={s["item-name"]}>{name}</h4>
         <div className={s["item-data-set"]}>
@@ -25,7 +24,7 @@ const MenuItemCard=({data})=>{
               {
               ratings.aggregatedRating.rating
               &&<h5>
-                Rating: <span>{ratings.aggregatedRating.rating}</span>
+                <span>{ratings.aggregatedRating.rating}⭐</span>
               </h5>
               }
             </div>

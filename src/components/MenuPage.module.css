@@ -1,27 +1,38 @@
+.hidden{
+    display:none;
+    transition: all 1s;
+}
+.shown{
+    display:block;
+    transition: all 1s;
+}
+
 .menu-page{
     color:var(--color-dark-theme);
     background-color: var(--bg-dark-theme);
     padding-top: var(--header-height);
+    padding-bottom:var(--header-height) ;
     padding-inline: 1em;
     display:flex;
     flex-wrap: wrap;
+    row-gap: 2em;
+    
 }
-.menu-page > *{
+.menu-page > * {
    flex-basis: 100%;
 }
 
+/* MENU PAGE HEADER etc.HERO */
 .menu-header{
-    
     display: flex;
     flex-wrap: nowrap;
     column-gap: 2em;
     justify-content: center;
-    margin-bottom: 4em;
 }
 
 .res-image-container{
-    width: 12em;
-    height:12em;
+    width: 10em;
+    height:10em;
     overflow: hidden;
 }
 .res-image{
@@ -30,15 +41,66 @@
 }
 
 .res-info-container{
-   font-size: 0.8em;
+   font-size: 0.6em;
 }
 
 .res-info-name{
     margin-bottom: 1.4em;
 }
 
+
+
+
+/* CATEGORIES CONTAINER */
+
+.menu-categories-container{
+    display:flex;
+    flex-wrap: wrap;
+    row-gap: 0.4em;
+    
+}
+
+.container-header{
+    flex-basis: 100%;
+    text-align: center;
+    text-decoration:underline;
+    margin-bottom: 1em;
+}
+
+
+.menu-category{
+    flex-basis: 100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.menu-category-header{
+    flex-basis: 100%;
+    padding-inline: 1em;
+    padding-block: 0.4em;
+    background-color: rgb(0, 0, 35);
+    border:1px solid var(--color-dark-theme);
+}
+.menu-category-header:hover{
+   background-color: black;
+   color:rgb(248, 242, 235);
+   font:bold;
+   cursor: pointer;
+}
+
+
+.items-container{
+ flex-basis:100%;
+ display:flex;
+ flex-wrap: wrap;
+}
+
 /* ItemCard CSS.............................. */
+
+
 .item-card{
+    flex-basis: 100%;
+    flex-shrink: 0;
     padding-inline: 1em;
     padding-block: 0.5em;
     display: flex;
@@ -50,11 +112,20 @@
 /* Item Left */
  .item-info-container{
     flex-basis: 100%;
-    font-size: 0.8em;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.6em;
  }
 
  .item-name{
-    line-height: 1em;
+    line-height:1em;
+ }
+
+ .item-data-set{
+    flex-basis: 100%;
+    flex-wrap: nowrap;
+    display: flex;
+    column-gap: 1em;
  }
 
  .item-price{
@@ -64,8 +135,14 @@
  }
  .item-logo{}
  .item-number{}
+
+ .item-price-number{
+    color:rgb(4, 180, 4);
+    font-size: larger;
+ }
  .item-currency-symbol{
-    color:rgb(3, 200, 3);
+    color:rgb(3, 160, 3);
+    font-size: larger;
  }
 
 /* Item Right */
@@ -86,4 +163,20 @@
 }
 .item-image:hover{
     filter:grayscale(50%)
+}
+
+.description-header{
+    color:cornflowerblue;
+    margin-block: 0.4em;
+    text-decoration: underline;
+}
+
+.description-header:hover{
+    cursor: pointer;
+    color:rgb(55, 119, 237);
+    font:bold;
+}
+
+.description-text{
+    max-width: 36em;
 }

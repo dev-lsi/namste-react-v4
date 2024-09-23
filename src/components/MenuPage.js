@@ -1,5 +1,5 @@
 import MenuHeader from "./MenuHeader";
-import MenuContainer from "./MenuContainer";
+import MenuCategoriesContainer from "./MenuCategoriesContainer";
 import s from "./MenuPage.module.css";
 
 const MenuPage = () => {
@@ -7,7 +7,7 @@ const MenuPage = () => {
     return (
         <div className={s["menu-page"]}>
            <MenuHeader/>
-           <MenuContainer/>
+           <MenuCategoriesContainer/>
         </div>
     );
 };
