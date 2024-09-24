@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { restaurantsContext } from "../utils/context";
 import Shirm from "./Shirm";
 
-const MenuHeader = ({}) => {
+const MenuHeader = () => {
   const { id } = useParams();
 
   const { restaurantsContextValue } = useContext(restaurantsContext);

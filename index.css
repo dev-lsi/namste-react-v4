@@ -19,6 +19,11 @@
   color:  var(--color-dark-theme);
 }
 
+#root{
+  min-height: 100svh;
+  background-color: var(--bg-dark-theme);
+  color:var(--color-dark-theme);
+}
 
 
 h1 {

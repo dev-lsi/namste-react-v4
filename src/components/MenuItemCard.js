@@ -2,6 +2,7 @@ import s from "./MenuPage.module.css";
 import logo from "../assets/logo512.png";
 import MenuItemDescription from "./MenuItemDescription";
 import { RES_IMAGES_URL } from "../utils/constants";
+import { useState } from "react";
 
 const MenuItemCard=({data})=>{
     

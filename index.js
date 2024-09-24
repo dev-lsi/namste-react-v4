@@ -4,7 +4,7 @@ import { checkIsValidUserLocation } from "./src/utils/checkIsValidUserLocation";
 
 
 async function startApp() {
-  
+
   const userLocationCoordinates = await getUserLocation();
   
   if(userLocationCoordinates){

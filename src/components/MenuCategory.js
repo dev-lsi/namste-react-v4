@@ -2,19 +2,38 @@ import s from "./MenuPage.module.css";
 import MenuItemCard from "./MenuItemCard";
 import { useState } from "react";
 
-const MenuCategoryHeader = ({ title, isOpenCat, setIsOpenCat }) => {
-  function toggle() {
-    setIsOpenCat(!isOpenCat);
+const MenuCategoryHeader = ({
+  title,
+  openCategoryId,
+  setOpenCategoryId,
+  categoryId,
+}) => {
+  function manageMenu(e) {
+    if (openCategoryId !== categoryId) {
+      setOpenCategoryId(null);
+      setOpenCategoryId(categoryId);
+    } else if (openCategoryId === categoryId) {
+      setOpenCategoryId(null);
+    }
   }
 
-  return <h6 className={s["menu-category-header"]} onClick={toggle}>{title}</h6>;
+  return (
+    <h6 className={s["menu-category-header"]} onClick={(e) => manageMenu(e)}>
+      {title}
+    </h6>
+  );
 };
 
-const MenuItemsContainer = ({ items, isOpenCat }) => {
-  return isOpenCat ? (
+const MenuItemsContainer = ({
+  items,
+  categoryId,
+  openCategoryId,
+  setOpenCategoryId,
+}) => {
+  return categoryId === openCategoryId ? (
     <div className={s["items-container"]}>
       {items.map((i) => (
-        <MenuItemCard key={i.card.info} data={i.card.info} />
+        <MenuItemCard key={i.card.info.name} data={i.card.info} />
       ))}
     </div>
   ) : (
@@ -22,18 +41,28 @@ const MenuItemsContainer = ({ items, isOpenCat }) => {
   );
 };
 
-const MenuCategory = ({ data }) => {
-  console.log(data);
-  const [isOpenCat, setIsOpenCat] = useState(false);
+const MenuCategory = ({
+  data,
+  categoryId,
+  openCategoryId,
+  setOpenCategoryId,
+}) => {
   const { title, items } = data;
+
   return (
     <div className={s["menu-category"]}>
       <MenuCategoryHeader
         title={title}
-        isOpenCat={isOpenCat}
-        setIsOpenCat={setIsOpenCat}
+        categoryId={categoryId}
+        openCategoryId={openCategoryId}
+        setOpenCategoryId={setOpenCategoryId}
       />
-      <MenuItemsContainer items={items} isOpenCat={isOpenCat} />
+      <MenuItemsContainer
+        items={items}
+        categoryId={categoryId}
+        openCategoryId={openCategoryId}
+        setOpenCategoryId={setOpenCategoryId}
+      />
     </div>
   );
 };
