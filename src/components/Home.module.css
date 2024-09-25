@@ -308,7 +308,7 @@
 
 @media (max-width: 420px) {
   .restaurant-card {
-    max-width: 100%;
+    max-width: 800%;
     
     padding-inline: 0;
     border: 1px solid rgb(61, 58, 58);

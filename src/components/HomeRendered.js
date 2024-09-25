@@ -13,39 +13,33 @@ import { getRestaurants } from "../utils/getRestaurants";
 const HomeRendered = () => {
   const { locationContextValue, setLocationContextValue } =
     useContext(locationContext);
-  const { coords, isValid, city } = locationContextValue;
+  const { coords, city } = locationContextValue;
   const { lat, lng } = coords;
   const url = url_base + "lat=" + lat + "&lng=" + lng;
 
   const { restaurantsContextValue, setRestaurantsContextValue } =
     useContext(restaurantsContext);
   
-  const[isfilterOn,setIsFilterOn]=useState(false);
-  const[filterValue,setFilterValue]= useState(4);
-  let data = restaurantsContextValue.restaurants;
+  const[resList,setResList] = useState(null);
+  const[data,setData]=useState(null);
+  
+  const [buttonName,setButtonName]=useState("Show Top Rated");
+  const [searchTerm,setSearchTerm]=useState("");
+  const[searchBtnName,setSearchBtnName]=useState("Search")
 
-  console.log(data);
-  console.log(restaurantsContextValue.restaurants);
+  // console.log(data);
+  // console.log(restaurantsContextValue.restaurants);
 
   useEffect(() => {
-    if (restaurantsContextValue.restaurants.length === 0) {
-      getRestaurants(url,setRestaurantsContextValue);
-    }
-  }, [data]);
+  if (restaurantsContextValue.restaurants.length === 0) {
+       getRestaurants(url,setRestaurantsContextValue);
+       
+   }
+   setResList(restaurantsContextValue.restaurants);
+    setData(restaurantsContextValue.restaurants);
+    
+  }, [restaurantsContextValue]);
 
-  if(isfilterOn&&data){
-    data=[...formatData(data,filterValue)]
-  }else{
-    data = restaurantsContextValue.restaurants
-  }
-
-  function formatData(data,filterValue){
-    return data
-    .filter(x => 
-      Number(x.info.avgRating) >= Number(filterValue))
-  }
-
-  
 
   return (
     <div>
@@ -59,25 +53,48 @@ const HomeRendered = () => {
             </div> 
 
           <div className={s["restaurants-container"]}>
-            <div className="filters-container min-w-full">
+            <div className="filters-container min-w-full flex gap-x-2 h-24 mb-6 justify-around p-0 flex-wrap gap-y-6 border rounded-sm border-slate-500">
               <button
-                className="w-36 h-12 border-2 border-slate-400 rounded-md bg-slate-900"
-                onClick={()=>{setIsFilterOn(!isfilterOn)}}
-                >Show Only With Rating Over:
+                className="top-rated-button text-xs w-36 h-8 border border-slate-400 rounded-md bg-slate-900 self-center"
+                onClick={()=>{
+                     console.log("clicked")
+                     if(buttonName==="Show Top Rated"){
+                      setButtonName("Show All");
+                      setData(data.filter(r=>Number(r.info.avgRating) >= 4));
+                     }else{
+                      setButtonName("Show Top Rated");
+                      setData(resList);
+                    } 
+                }}
+                >{buttonName}
               </button>
-              <input 
-                  className="text-slate-900 w-8 pl-2" 
-                  type="text"
-                  value={filterValue}
-                  onKeyDown={(e)=>{
-                    const key = e.key;
-                   
-                    if( /^\d$/.test(key) )
-                    //e.target.value=key;
-                    setFilterValue(Number(key));
-                  }}
-                  >
-              </input>
+              <div className="search-container flex flex-nowrap gap-x-2 self-center">
+                <input
+                  className={`bg-slate-300 text-slate-800 pl-2 h-6 self-center  outline-none w-[8em]`}
+                  type="text" 
+                  value={searchTerm} 
+                  onChange={(e)=>{
+                      setSearchTerm(e.target.value);
+                  }}/>
+                  <button
+                   className="search-button text-xs w-24 h-8 border border-slate-400 rounded-md bg-slate-900"
+                   onClick={()=>{
+                    if(searchBtnName==="Search"){
+                      setData(data.filter(x=>x.info.name.toLowerCase().includes(searchTerm.toLowerCase())));
+                      setSearchTerm("");
+                      setSearchBtnName("Show All");
+
+                    }else{
+                      setData(resList);
+                      setSearchBtnName("Search");
+
+                    }
+                      
+                      
+                   }}
+                  >{searchBtnName}</button>
+              </div>
+              
           
             </div>
             {!data
@@ -89,6 +106,8 @@ const HomeRendered = () => {
                     id={r.info.id}
                   />
                 ))}
+            <div className={s["restaurant-card-shifter"]}></div>
+            <div className={s["restaurant-card-shifter"]}></div>
             <div className={s["restaurant-card-shifter"]}></div>
             <div className={s["restaurant-card-shifter"]}></div>
             <div className={s["restaurant-card-shifter"]}></div>
