@@ -1,5 +1,5 @@
 export async function getRestaurants(url,setRestaurantsContextValue) {
-    const response = await fetch(url);
+    const response = await fetch("https://corsproxy.io/?"+url);
     const responseData = await response.json();
 
     const restaurants =
