@@ -14,7 +14,7 @@ const LoadMoreButton=()=>{
     const data = restaurantsContextValue.restaurants;
     const[page,setPage] = useState(26);
     const [btnName,setBtnName]=useState("Load More");
-    numberOfLoaded = restaurantsContextValue.restaurants.lenght;
+    const numberOfLoaded = restaurantsContextValue.restaurants.lenght;
 
     const payload = {"widgetOffset":{"NewListingView_category_bar_chicletranking_TwoRows":"","NewListingView_category_bar_chicletranking_TwoRows_Rendition":"","Restaurant_Group_WebView_PB_Theme":"","Restaurant_Group_WebView_SEO_PB_Theme":"","collectionV5RestaurantListWidget_SimRestoRelevance_food_seo":JSON.stringify(page),"inlineFacetFilter":"","restaurantCountWidget":""},"nextOffset":"CJY7ELQ4KICQjNPXvt7AJTDUEA=="};
 

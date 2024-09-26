@@ -49,7 +49,7 @@ const HomeRendered = () => {
         <div className={s["home-rendered"]}>
           <div className={s["hero"]}>
             <h1 className={s["hero-heading"]}>{city||"City name not avaiable"}</h1>
-            <h5 className={s["hero-sub-heading"]}>Restaurants delivering at Lat:{lat} Lng:{lng}</h5>
+            <h5 className={s["hero-sub-heading"]}>Lat: <span>{lat}</span> Lng: <span>{lng}</span></h5>
             </div> 
 
           <div className={s["restaurants-container"]}>

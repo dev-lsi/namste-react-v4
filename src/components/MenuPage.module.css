@@ -81,8 +81,15 @@
     /* background-color: var(--bg-dark-theme); */
     border:1px solid var(--color-dark-theme);
 }
+
+.opened-header{
+    height: 4em;
+    background-color:rgb(66, 1, 1) ;
+    font-size: x-large;
+}
+/* ." h-24 text-3xl text-center bg-red-950" */
 .menu-category-header:hover{
-   background-color: black;
+   background-color:rgb(66, 1, 1) ;
    font:bold;
    cursor: pointer;
 }

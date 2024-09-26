@@ -19,7 +19,7 @@ const MenuCategoryHeader = ({
 
   return (
     <h6 
-    className={s["menu-category-header"]+`${(openCategoryId==categoryId)?" h-24 text-3xl text-center bg-red-950":" h-12"}`} onClick={(e) => manageMenu(e)}>
+    className={s["menu-category-header"] + " " +`${(openCategoryId==categoryId)?s["opened-header"]:""}`} onClick={(e) => manageMenu(e)}>
       {title}
     </h6>
   );

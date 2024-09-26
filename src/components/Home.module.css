@@ -98,15 +98,29 @@
 .hero-heading{
     flex-basis: 100%;
     text-align: center;
-    line-height: 2em;
-    color:var(--color-dark-theme);
+    line-height: 1em;
+    font-style: oblique;
+    font-weight: 900;
+    /* color:var(--color-dark-theme); */
+    color:rgb(139, 1, 1) ;
+    text-shadow: antiquewhite 0 0 6px;
+    
 }
 
 .hero-sub-heading{
   flex-basis: 100%;
   text-align: center;
   color:var(--color-dark-theme);
-  background-color: rgba(34,34,34,0.5);
+  
+}
+.hero-sub-heading span{
+  flex-basis: 100%;
+    text-align: center;
+    font-style: oblique;
+    font-weight: 900;
+    /* color:var(--color-dark-theme); */
+    color:rgb(139, 1, 1) ;
+    text-shadow: antiquewhite 0 0 6px;
 }
 
 .restaurants-container {
