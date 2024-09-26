@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { locationContext,restaurantsContext } from "../utils/context";
 import s from "./Header.module.css";
 import { Link } from "react-router-dom";
-import cartIcon from "../assets/3dcart.png";
+import cartIcon from "../assets/3dCart.png";
 
 const Header=()=>{
   const { locationContextValue} = useContext(locationContext);
