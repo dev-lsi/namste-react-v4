@@ -53,9 +53,9 @@ const HomeRendered = () => {
             </div> 
 
           <div className={s["restaurants-container"]}>
-            <div className="filters-container min-w-full flex gap-x-2 h-24 mb-6 justify-around p-0 flex-wrap gap-y-6 border rounded-sm border-slate-500">
+            <div className={s["filters-container"]}>
               <button
-                className="top-rated-button text-xs w-36 h-8 border border-slate-400 rounded-md bg-slate-900 self-center"
+                className={s["top-rated-button"]}
                 onClick={()=>{
                      console.log("clicked")
                      if(buttonName==="Show Top Rated"){
@@ -68,16 +68,16 @@ const HomeRendered = () => {
                 }}
                 >{buttonName}
               </button>
-              <div className="search-container flex flex-nowrap gap-x-2 self-center">
+              <div className={s["search-container"]}>
                 <input
-                  className={`bg-slate-300 text-slate-800 pl-2 h-6 self-center  outline-none w-[8em]`}
+                  className={s["search-input"]}
                   type="text" 
                   value={searchTerm} 
                   onChange={(e)=>{
                       setSearchTerm(e.target.value);
                   }}/>
                   <button
-                   className="search-button text-xs w-24 h-8 border border-slate-400 rounded-md bg-slate-900"
+                   className={s["search-button"]}
                    onClick={()=>{
                     if(searchBtnName==="Search"){
                       setData(data.filter(x=>x.info.name.toLowerCase().includes(searchTerm.toLowerCase())));

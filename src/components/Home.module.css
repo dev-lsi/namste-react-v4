@@ -137,6 +137,46 @@
   min-height: 120vh;
 }
 
+.filters-container{
+  flex-basis: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 2em;
+  row-gap: 2em;
+}
+
+.filters-container button{
+  border:1px solid var(--color-dark-theme);
+  height: 2em;
+  padding-inline: 1em;
+  padding-block: 0.2em;
+  background-color: var(--bg-dark-theme);
+  color:var(--color-dark-theme);
+}
+.filters-container button:hover{
+  background-color: var(--color-dark-theme);
+  color:var(--bg-dark-theme);
+}
+.search-container{
+  text-align: center;
+  
+}
+.search-button{
+   width:6em;
+   border-top-left-radius:1em ;
+   border-bottom-left-radius:1em;
+   margin-left: -1em;
+}
+.search-input{
+  width: 6em; 
+  height:2em;
+  background-color: rgb(42,42,42);
+  border:1px solid var(--color-dark-theme);
+  border-right: none;
+  padding-left: 1em;
+}
+
 .restaurant-card {
   max-width: 12vw;
   min-width: 140px;
@@ -328,14 +368,14 @@
 }
 
 .change-location-container{
-  flex-basis: 100%;
+  flex-basis: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 1em;
   column-gap: 1em;
   padding: 2em;
- 
+  border:1px solid var(--color-dark-theme);
 }
 
 .change-location-container h5{
