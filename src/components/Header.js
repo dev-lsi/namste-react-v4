@@ -8,6 +8,8 @@ import NavMobile from "./NavMobile";
 import { useContext } from "react";
 import { locationContext,restaurantsContext } from "../utils/context";
 import s from "./Header.module.css";
+import { Link } from "react-router-dom";
+import cartIcon from "../assets/3dcart.png";
 
 const Header=()=>{
   const { locationContextValue} = useContext(locationContext);
@@ -58,6 +60,12 @@ const Header=()=>{
               
                     
             </div>
+            <div>
+            
+          <Link to="/cart">
+          <img className="cart-icon h-10" src={cartIcon}/></Link>
+      
+            </div>
             <div className={s["right"]}>
               <ul className="">
                 <li>
@@ -74,7 +82,7 @@ const Header=()=>{
             <div className={s["restaurants-info-display"]}>
                <p>City:{city}</p>
                <p>Coords: lat={lat} lng={lng}</p>
-               <p>{restaurants?restaurants.length:"0"} restaurants shown</p>
+               <p>{restaurants?restaurants.length:"0"} Restaurants Loaded</p>
                <p>📡: {isOnline?" ✅" : "⭕" }</p>
             </div>
         </div>

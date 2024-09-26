@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import s from "./Header.module.css";
+import cartIcon from "../assets/3dcart.png";
 
 const NavMain = () => {
   return (
@@ -14,9 +15,7 @@ const NavMain = () => {
         <li>
           <Link to="/contacts">Contact me</Link>
         </li>
-        <li>
-          <Link to="/cart">Cart</Link>
-        </li>
+        
         <li>
           <Link to="/login">LogIn/LogOut</Link>
         </li>
