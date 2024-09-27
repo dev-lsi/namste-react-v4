@@ -14,10 +14,16 @@ const MenuCategoriesContainer = () => {
    useEffect(()=>{
     if(id&&(!data)){
       getMenuData(resMenu+id,setData)
+      getDineout(id);
     }
    },[]);
 
-   
+   const getDineout=async (id)=>{
+    const response=
+    await fetch('https://www.swiggy.com/menu/' + id);
+    const dineout = await response.json();
+    console.log(dineout);
+   }
   
 
   return !data ? (

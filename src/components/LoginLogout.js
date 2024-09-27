@@ -1,6 +1,6 @@
 const LoginLogout=()=>{
     return (
-        <div>
+        <div className="page">
             <h1>LoginLogout Page</h1>
         </div>
     );

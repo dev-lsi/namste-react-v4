@@ -1,5 +1,7 @@
 .footer{
-    background-color: rgb(28, 28, 34);
+    background-color: var(--bg-dark-theme);
+    color:var(--color-dark-theme);
+    min-height: 20vh;
     border-top:1px solid antiquewhite;
-    min-width: 12em;
+    
 }

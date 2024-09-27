@@ -17,7 +17,7 @@ const NavMain = () => {
         </li>
         
         <li>
-          <Link to="/login">LogIn/LogOut</Link>
+          <Link to="/login">Log In</Link>
         </li>
       </ul>
     </nav>

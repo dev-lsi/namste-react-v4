@@ -25,6 +25,12 @@
   color:var(--color-dark-theme);
 }
 
+.page{
+  padding-top: 8em;
+  padding-left: 2em;
+  min-height: 80vh;
+}
+
 
 h1 {
   font-size: 2.8em;

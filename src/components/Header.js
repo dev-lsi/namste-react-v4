@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { locationContext,restaurantsContext } from "../utils/context";
 import s from "./Header.module.css";
 import { Link } from "react-router-dom";
-import cartIcon from "../assets/cart.png";
+import cartIcon from "../assets/cart-colored.png";
 
 const Header=()=>{
   const { locationContextValue} = useContext(locationContext);
@@ -62,20 +62,27 @@ const Header=()=>{
             </div>
             <div>
             
-          <Link to="/cart">
-          <img className="cart-icon h-10" src={cartIcon}/></Link>
+            <Link to="/cart">
+                <img className={s["cart-icon"]} src={cartIcon}/>
+            </Link>
       
             </div>
             <div className={s["right"]}>
               <ul className="">
                 <li>
+                  <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" alt="">
                     <img className={s["social-icon"]} src={githubIcon} alt="GitHub icon"/>  
+                  </a>
                 </li>
                 <li>
+                  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" alt="">
                     <img className={s["social-icon"]} src={linkedInIcon} alt="linkedIn icon"/>
+                  </a>  
                 </li>
                 <li>
-                    <img className={s["social-icon"]} src={faceBookIcon} alt="FaceBook icon"/>
+                  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" alt="">
+                      <img className={s["social-icon"]} src={faceBookIcon}    alt="FaceBook icon"/> 
+                  </a>
                 </li>
               </ul>
             </div>

@@ -8,6 +8,8 @@ const MenuItemCard=({data})=>{
     
     const {name,imageId,isVeg,price,description,defaultPrice,ratings} = data;
     
+    
+    
 
    return (
     <div className={s["item-card"]}>
@@ -65,8 +67,6 @@ const MenuItemCard=({data})=>{
        
     </div>
   );
-    
-    
    
 }
 
