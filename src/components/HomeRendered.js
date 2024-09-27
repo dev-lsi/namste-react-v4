@@ -16,6 +16,7 @@ const HomeRendered = () => {
   const { coords, city } = locationContextValue;
   const { lat, lng } = coords;
   const url = url_base + "lat=" + lat + "&lng=" + lng;
+  const url2='https://www.swiggy.com/dapi/restaurants/list/v5?lat='+lat+'&lng='+lng+'&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
 
   const { restaurantsContextValue, setRestaurantsContextValue } =
     useContext(restaurantsContext);
@@ -32,7 +33,7 @@ const HomeRendered = () => {
 
   useEffect(() => {
   if (restaurantsContextValue.restaurants.length === 0) {
-       getRestaurants(url,setRestaurantsContextValue);
+       getRestaurants(url2,setRestaurantsContextValue);
        
    }
    setResList(restaurantsContextValue.restaurants);
@@ -47,6 +48,7 @@ const HomeRendered = () => {
         <Shirm />
       ) : (
         <div className={s["home-rendered"]}>
+          {console.log(data)}
           <div className={s["hero"]}>
             <h1 className={s["hero-heading"]}>{city||"City name not avaiable"}</h1>
             <h5 className={s["hero-sub-heading"]}>Lat: <span>{lat}</span> Lng: <span>{lng}</span></h5>

@@ -18,3 +18,6 @@ export const menuDineout = "https://www.swiggy.com/menu/302697/dineout";
 
 export const Stack_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.1685786&lng=79.9338798&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+  //data.cards[4].card.gridElements.nfoWithStyle.restaurants.(info or cta)
+  export const last_URL="https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.1685786&lng=79.9338798&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
