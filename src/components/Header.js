@@ -70,17 +70,17 @@ const Header=()=>{
             <div className={s["right"]}>
               <ul className="">
                 <li>
-                  <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" alt="">
+                  <a href="https://github.com/dev-lsi" target="_blank" rel="noopener noreferrer" alt="">
                     <img className={s["social-icon"]} src={githubIcon} alt="GitHub icon"/>  
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" alt="">
+                  <a href="https://www.linkedin.com/in/lachezar-ivanov-026917284/" target="_blank" rel="noopener noreferrer" alt="">
                     <img className={s["social-icon"]} src={linkedInIcon} alt="linkedIn icon"/>
                   </a>  
                 </li>
                 <li>
-                  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" alt="">
+                  <a href="https://www.facebook.com/profile.php?id=100079584917511" target="_blank" rel="noopener noreferrer" alt="">
                       <img className={s["social-icon"]} src={faceBookIcon}    alt="FaceBook icon"/> 
                   </a>
                 </li>
