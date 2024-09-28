@@ -17,6 +17,7 @@ const LoadMoreButton=()=>{
     const[page,setPage] = useState(26);
     const [btnName,setBtnName]=useState("Load More");
     const numberOfLoaded = restaurantsContextValue.restaurants.lenght;
+    const [hasResponse,setHasResponse]=useState(true);
 
     const payload0 = {"widgetOffset":{"NewListingView_category_bar_chicletranking_TwoRows":"","NewListingView_category_bar_chicletranking_TwoRows_Rendition":"","Restaurant_Group_WebView_PB_Theme":"","Restaurant_Group_WebView_SEO_PB_Theme":"","collectionV5RestaurantListWidget_SimRestoRelevance_food_seo":JSON.stringify(page),"inlineFacetFilter":"","restaurantCountWidget":""},"nextOffset":"CJY7ELQ4KICQjNPXvt7AJTDUEA=="};
 
@@ -27,7 +28,8 @@ const LoadMoreButton=()=>{
      },[]);
 
     async function getNextRestaurants(){
-               
+        if(hasResponse===true){
+            setHasResponse(false);      
         const response = await fetch(url2,{
             method:"POST",
             headers: {
@@ -35,7 +37,7 @@ const LoadMoreButton=()=>{
             },
             body: JSON.stringify(payload1)
         });
-     
+        setHasResponse(true);
         const responseData = await response.json();
          console.log(responseData);
          if(responseData.statusMessage==="read ECONNRESET"){
@@ -49,16 +51,25 @@ const LoadMoreButton=()=>{
             })
              
         }
+        }
      }
     
     
     return (
-        <div className={s["load-more-button"]}>
+        hasResponse
+        ?<div className={s["load-more-button"]}>
             <button 
             onClick={getNextRestaurants}>
                 {btnName} | Loaded: {restaurantsContextValue.restaurants.length}
             </button>
         </div>
+        :<div className={s["load-more-button"]}>
+              <button 
+              onClick={getNextRestaurants}>
+                  Loading... | Loaded: {restaurantsContextValue.restaurants.length}
+              </button>
+          </div>
+        
     )
 }
 

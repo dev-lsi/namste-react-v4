@@ -50,6 +50,18 @@ const MenuItemCard=({data})=>{
         
         
       </div>
+      {/* ADD Button*/}
+      <div className={s["controls-container"]}>
+      <button className={s["button-add"]}>
+       ADD
+      </button>
+      <h6>
+        Added:<span>4</span>
+      </h6>
+      <button className={s["button-remove"]}>
+       Remove
+      </button>
+      </div>
       {/* IMAGE CONTAINER --> RIGHT SECTION */}
       
        <div className={s["item-image-container"]}>
@@ -62,7 +74,6 @@ const MenuItemCard=({data})=>{
            }
            alt="logo"
          />
-         <button className={s["add-button"]}>Add to Cart</button>
        </div>
        
     </div>

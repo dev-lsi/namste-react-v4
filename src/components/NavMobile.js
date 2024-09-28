@@ -11,10 +11,23 @@ const NavMobile = () => {
   function toggleMenu(e) {
     setIsOpen(!isOpen);
   }
+
+  function handleAnimation(e){
+    const currClassName=e.target.className;
+    console.log(currClassName)
+    if(currClassName=='opened-menu'){
+      e.target.style.display='block';
+    }else{
+      e.target.style.display='none';
+    }
+
+  }
+  
   return (
     <nav className={s["nav-mobile"]} onClick={(e) => toggleMenu(e)}>
       <button className={s["menu-button"]}>Menu</button>
-      <ul className={isOpen ? s["opened-menu"] : s["closed-menu"]}>
+      <ul onAnimationEnd = {handleAnimation} 
+      className={isOpen ? s["opened-menu"] : s["closed-menu"]}>
         <li>
           <Link to="/"> 🏠 Home </Link>
         </li>
