@@ -15,13 +15,33 @@ const MenuCategoryHeader = ({
     } else if (openCategoryId === categoryId) {
       setOpenCategoryId(null);
     }
+    setTimeout(()=>{
+      const curr=document.getElementById(categoryId);
+      const rect = curr.getBoundingClientRect();
+        window.scrollTo({
+          top: window.scrollY-100,
+          left:0,
+          behavior: "smooth",
+        })
+      
+      
+    },200)
+   
   }
 
   return (
-    <h6 
-    className={s["menu-category-header"] + " " +`${(openCategoryId==categoryId)?s["opened-header"]:""}`} onClick={(e) => manageMenu(e)}>
-      {title}
-    </h6>
+    <a className={s["category-header-a"]} href={"#"+categoryId}>
+        <h6 
+         
+          id={categoryId}
+          className={s["menu-category-header"] + " " +`${(openCategoryId==categoryId)?s["opened-header"]:""}`} onClick={(e) => manageMenu(e)}
+         
+          
+          >
+         
+            {title}
+      </h6>
+    </a>
   );
 };
 

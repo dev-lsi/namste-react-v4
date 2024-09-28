@@ -77,6 +77,12 @@
     flex-wrap: wrap;
 }
 
+.category-header-a{
+   flex-basis: 100%;
+   display: flex;
+   justify-content: center;
+}
+
 .menu-category-header{
     flex-basis: 80%;
     padding-left: 2em;
