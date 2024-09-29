@@ -33,7 +33,10 @@
     justify-content: center;
     row-gap: 1.2em;
     padding-block: 2em;
+    
 }
+
+
 
 .default-container h4,.default-container h5{
     flex-basis: 90%;

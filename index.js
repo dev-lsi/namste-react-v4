@@ -21,7 +21,13 @@ async function startApp() {
     
     return createApp(locationData);
   }else {
-    return createApp(null);
+    const locationData = {
+      city: "",
+      coords: {lat:"N/A",lng:"N/A"},
+      isValid: false,
+    };
+    
+    return createApp(locationData);
   }
   
 }

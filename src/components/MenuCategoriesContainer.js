@@ -40,6 +40,14 @@ const MenuCategoriesContainer = () => {
           openCategoryId={openCategoryId}
         />
       ))}
+      <select className="bg-slate-700 placeholder:2">
+        <option value={199}>hi1</option>
+        <option value={200}>hi2</option>
+        <option value={201}>hi3</option>
+        <option value={302}>hi4</option>
+        <option value={304}>hi5</option>
+        
+      </select>
     </div>
   );
 };

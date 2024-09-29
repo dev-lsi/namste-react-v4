@@ -5,12 +5,13 @@ import { locationContext } from "../utils/context";
 
 const HomePage = () => {
   const {locationContextValue} = useContext(locationContext);
-  const {isValid} = locationContextValue;
+  const {isValid,coords} = locationContextValue;
+  const {lat,lng}=coords;
   
 
   return isValid 
     ? <HomeRendered /> 
-    : <HomeDefault />
+    : <HomeDefault lat={lat}/>
 };
 
 export default HomePage;
