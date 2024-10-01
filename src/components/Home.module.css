@@ -348,6 +348,11 @@
   padding-bottom: 6em;
 }
 
+.lmbd{
+  flex-basis: 100%;
+  text-align: center;
+}
+
 .load-more-button {
   max-width: fit-content;
   height: 2em;
