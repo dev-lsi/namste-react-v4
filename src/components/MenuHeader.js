@@ -25,7 +25,7 @@ const MenuHeader = () => {
   const { nextCloseTime, opened } = availability;
   const { deliveryTime } = sla;
 
-  console.log(restaurantData[0]);
+  
 
   const resImage = (
     <img

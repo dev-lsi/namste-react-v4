@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import App from "../../App";
 import HomePage from "../components/HomePage";
 import About from "../components/About";
@@ -46,5 +46,5 @@ export function createApp(location) {
   ]);
 
   const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<RouterProvider router={router} />);
+  root.render(<RouterProvider router={router}/>);
 }

@@ -7,3 +7,7 @@ export const locationContext = createContext({
 });
 
 export const restaurantsContext = createContext(null);
+
+export const cartCTX = createContext({
+
+});

@@ -1,13 +1,18 @@
 import s from "./MenuPage.module.css";
 import MenuItemCard from "./MenuItemCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
+
 
 const MenuCategoryHeader = ({
   title,
   openCategoryId,
   setOpenCategoryId,
   categoryId,
+  hasAdded,
+  setHasAdded
 }) => {
+  
+  
   function manageMenu(e) {
     if (openCategoryId !== categoryId) {
       setOpenCategoryId(null);
@@ -31,16 +36,19 @@ const MenuCategoryHeader = ({
 
   return (
     <a className={s["category-header-a"]} href={"#"+categoryId}>
-        <h6 
-         
+        <div 
           id={categoryId}
           className={s["menu-category-header"] + " " +`${(openCategoryId==categoryId)?s["opened-header"]:""}`} onClick={(e) => manageMenu(e)}
-         
-          
           >
-         
-            {title}
-      </h6>
+           <h6>{title}</h6>
+           <h6>
+              Added: 
+                <span className={hasAdded===0?"text-red-500 text-lg":"text-green-500 text-lg"}>
+                   { hasAdded }
+                </span> 
+            </h6>
+            
+        </div>
     </a>
   );
 };
@@ -50,11 +58,14 @@ const MenuItemsContainer = ({
   categoryId,
   openCategoryId,
   setOpenCategoryId,
+  hasAdded,
+  setHasAdded
+  
 }) => {
   return categoryId === openCategoryId ? (
     <div className={s["items-container"]}>
       {items.map((i) => (
-        <MenuItemCard key={i.card.info.name} data={i.card.info} />
+        <MenuItemCard key={i.card.info.name} data={i.card.info} hasAdded={hasAdded} setHasAdded={setHasAdded} />
       ))}
     </div>
   ) : (
@@ -69,6 +80,8 @@ const MenuCategory = ({
   setOpenCategoryId,
 }) => {
   const { title, items } = data;
+  const [hasAdded,setHasAdded] = useState(0);
+  
 
   return (
     <div className={s["menu-category"]}>
@@ -77,12 +90,16 @@ const MenuCategory = ({
         categoryId={categoryId}
         openCategoryId={openCategoryId}
         setOpenCategoryId={setOpenCategoryId}
+        hasAdded={hasAdded}
+        setHasAdded={setHasAdded}
       />
       <MenuItemsContainer
         items={items}
         categoryId={categoryId}
         openCategoryId={openCategoryId}
         setOpenCategoryId={setOpenCategoryId}
+        hasAdded={hasAdded}
+        setHasAdded={setHasAdded}
       />
     </div>
   );

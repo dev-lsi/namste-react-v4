@@ -10,11 +10,13 @@ const MenuCategoriesContainer = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [openCategoryId, setOpenCategoryId] = useState(null);
+  
 
    useEffect(()=>{
-    if(id&&(!data)){
-      getMenuData(resMenu+id,setData)
-      getDineout(id);
+    if(id){
+      getMenuData(resMenu+id,setData);
+
+      //getDineout(id);
     }
    },[]);
 
@@ -38,16 +40,11 @@ const MenuCategoriesContainer = () => {
           categoryId={c.title}
           setOpenCategoryId={setOpenCategoryId}
           openCategoryId={openCategoryId}
+          // hasAdded={hasAdded} 
+          // setHasAdded={setHasAdded}
         />
       ))}
-      <select className="bg-slate-700 placeholder:2">
-        <option value={199}>hi1</option>
-        <option value={200}>hi2</option>
-        <option value={201}>hi3</option>
-        <option value={302}>hi4</option>
-        <option value={304}>hi5</option>
-        
-      </select>
+     
     </div>
   );
 };
