@@ -5,7 +5,7 @@ import App from "../../App";
 import HomePage from "../components/HomePage";
 import About from "../components/About";
 import Contacts from "../components/Contacts";
-import LoginLogout from "../components/LoginLogout";
+import Login from "../components/Login";
 import Cart from "../components/Cart";
 import MenuPage from "../components/MenuPage";
 
@@ -35,7 +35,7 @@ export function createApp(location) {
         },
         {
           path: "/login",
-          element: <LoginLogout />,
+          element: <Login />,
         },
         {
           path: "/menu/:id",

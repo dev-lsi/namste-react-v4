@@ -35,21 +35,16 @@ const MenuCategoryHeader = ({
   }
 
   return (
-    <a className={s["category-header-a"]} href={"#"+categoryId}>
+      <a className={s["category-header-a"]} href={"#"+categoryId}>
         <div 
           id={categoryId}
           className={s["menu-category-header"] + " " +`${(openCategoryId==categoryId)?s["opened-header"]:""}`} onClick={(e) => manageMenu(e)}
           >
            <h6>{title}</h6>
-           <h6>
-              Added: 
-                <span className={hasAdded===0?"text-red-500 text-lg":"text-green-500 text-lg"}>
-                   { hasAdded }
-                </span> 
-            </h6>
+           
             
         </div>
-    </a>
+      </a>
   );
 };
 

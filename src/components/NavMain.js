@@ -14,11 +14,7 @@ const NavMain = () => {
         </li>
         <li>
           <Link to="/contacts">Contact me</Link>
-        </li>
-        
-        <li>
-          <Link to="/login">Log In</Link>
-        </li>
+        </li>       
       </ul>
     </nav>
   );

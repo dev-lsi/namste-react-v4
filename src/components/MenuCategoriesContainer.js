@@ -6,19 +6,13 @@ import MenuCategory from "./MenuCategory";
 import { getMenuData } from "../utils/getMenuData";
 import Shirm from "./Shirm";
 
-const MenuCategoriesContainer = () => {
+const MenuCategoriesContainer = ({data}) => {
   const { id } = useParams();
-  const [data, setData] = useState(null);
+  
   const [openCategoryId, setOpenCategoryId] = useState(null);
   
 
-   useEffect(()=>{
-    if(id){
-      getMenuData(resMenu+id,setData);
-
-      //getDineout(id);
-    }
-   },[]);
+   
 
    const getDineout=async (id)=>{
     const response=
@@ -40,8 +34,6 @@ const MenuCategoriesContainer = () => {
           categoryId={c.title}
           setOpenCategoryId={setOpenCategoryId}
           openCategoryId={openCategoryId}
-          // hasAdded={hasAdded} 
-          // setHasAdded={setHasAdded}
         />
       ))}
      
