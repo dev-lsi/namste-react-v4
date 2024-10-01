@@ -58,6 +58,11 @@ const Cart = () => {
       )}
 
       <h4>Total: {!cart?0:calculateTotal(cart)}</h4>
+      <button
+        className="border-2 border-slate-400 mr-2 mb-2"
+      >
+        {!cart||Object.keys(cart).length===0?"Empty order":"Submit order"}
+      </button>
     </div>
   );
 };
