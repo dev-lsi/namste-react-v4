@@ -29,7 +29,7 @@ const MenuPage = () => {
 
   return (
     
-      <div className={s["page"]}>
+      <div className={"page"}>
         <MenuPageHero />
         <MenuCategoriesContainer data={data} />
       </div>

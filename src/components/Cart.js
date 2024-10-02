@@ -18,7 +18,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="page">
+    <div className={"page" + " " + "pl-5 flex gap-y-2"}>
       <Link to={"/"}>
       <button
         className="border-2 border-slate-400 mr-2 mb-2"
