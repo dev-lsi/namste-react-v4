@@ -1,4 +1,4 @@
-import MenuHeader from "./MenuHeader";
+import MenuPageHero from "./MenuPageHero";
 import MenuCategoriesContainer from "./MenuCategoriesContainer";
 import s from "./MenuPage.module.css";
 import { useEffect, useState } from "react";
@@ -10,6 +10,7 @@ const MenuPage = () => {
   //const cart = useContext(cartCTX);
   const [data, setData] = useState(null);
   const { id } = useParams();
+  console.log(id)
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -28,8 +29,8 @@ const MenuPage = () => {
 
   return (
     
-      <div className={s["menu-page"]}>
-        <MenuHeader />
+      <div className={s["page"]}>
+        <MenuPageHero />
         <MenuCategoriesContainer data={data} />
       </div>
     

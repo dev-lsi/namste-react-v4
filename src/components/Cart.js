@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { cartCTX } from "../utils/context";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cart, setCart } = useContext(cartCTX);
@@ -19,12 +19,15 @@ const Cart = () => {
 
   return (
     <div className="page">
+      <Link to={"/"}>
       <button
         className="border-2 border-slate-400 mr-2 mb-2"
-        onClick={() => navigate(-1)}
+        //onClick={() => navigate(-1)}
       >
         {"<<- Back to Menu <<-"}
       </button>
+      </Link>
+      
       <button
         className="border-2 border-slate-400 mb-2"
         onClick={() => setCart(null)}

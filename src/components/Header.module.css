@@ -7,77 +7,53 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    row-gap: 1em;
     align-items: center;
-    column-gap: 2em;
-    row-gap: 0.2em;
-    padding-block: 0.6em;
-    padding-inline: 2em;
-    font-size: 0.6em;
-    background-color: rgb(32,32,32);
-    height:var(--header-height);
+    padding-block: 1em;
+    padding-inline: 1em;
+    background-color: var(--bg);
 }
-.left,.right{
+.left,.right,.middle nav ul {
    flex-shrink: 0;
+   display: flex;
+   column-gap: 1em;
+   justify-content: center;
+   align-items: center;
 }
-
-
 
 .logo{
-   height:calc(var(--header-height)/2)
-}
-.middle nav ul {
-    display: flex;
-    column-gap: 1em;
-}
-
-.cart-login-container{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    flex-shrink: 0;
-    column-gap: 4em;
-}
-
-.login-button{
-    font-size: 1.4em;
-    line-height: 1.4em;
-    height: 1.6em;
-    padding-bottom: 0.2em;
-    padding-inline: 0.8em;
-    border:1px solid var(--color-dark-theme);
-    border-radius: 0.8em;
+   height:3em;
 }
 
 .cart-icon-container{
     position: relative;
+    margin-right: 0.6em;
 }
 
 .cart-icon{
-    height: 3.4em;
+    height: 3em;
 }
 
 .cart-icon-counter{
  position: absolute;
- top:-0.2em;
- right:-0.8em;
- font-size: 1.4em;
- padding-inline: 0.2em;
- border:1px solid antiquewhite;
- border-radius: 1.4em;
- /* background-color: rgb(45, 90, 0); */
+ top:-0.1em;
+ right:-0.1em;
+ padding: 0.2em;
+ border:1px solid var(--color);
+ border-radius: 1em;
 }
 
 .red{
-    background-color: rgb(101, 0, 0);
+    background-color: rgb(100, 0, 0);
 }
 
 .green{
-    background-color: rgb(0, 101, 0);
+    background-color: rgb(0, 100, 0);
 }
 
 .right ul{
    display: flex;
-   column-gap: 0.8em;
+   column-gap: 1em;
    justify-content: center;
 }
 
@@ -96,25 +72,25 @@
 .restaurants-info-display{
     flex-basis: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     column-gap: 2em;
-    border:1px solid var(--color-dark-theme);
+    row-gap: 0.6em;
+    border-bottom:1px solid var(--color);
     padding-inline: 1em;
     padding-block: 0.2em;
-    font-size: 1em;
-    /* background-color: rgb(0, 39, 1); */
-    background-color: rgb(32,32,32); 
+    font-size: 0.8em;
+    background-color: var(--bg); 
 }
-
 
 
 .social-icon{
     flex-shrink: 0;
-    height:2em;
-    width:2em;
-    background-color: var(--color-dark-theme);
+    height:1em;
+    width:1em;
+    background-color: var(--color);
     border-radius: 50%;
-    border:1px solid white;
+    border:1px solid var(--color);
 }
 
 @media (max-width: 480px) {

@@ -29,16 +29,19 @@ const NavMobile = () => {
       <ul onAnimationEnd = {handleAnimation} 
       className={isOpen ? s["opened-menu"] : s["closed-menu"]}>
         <li>
-          <Link to="/"> 🏠 Home </Link>
+          <Link to="/">❌ Close Menu</Link>
         </li>
         <li>
-          <Link to="/about"> 👀 About this.Project </Link>
+          <Link to="/">🏠 Home</Link>
         </li>
         <li>
-          <Link to="/contacts"> 📪 Contact me </Link>
+          <Link to="/about">👀 About</Link>
         </li>
         <li>
-          <Link to="/login"> ✒ Log In </Link>
+          <Link to="/contacts">📪 Contact</Link>
+        </li>
+        <li>
+          <Link to="/login">✒ Log In</Link>
         </li>
         <li>
         

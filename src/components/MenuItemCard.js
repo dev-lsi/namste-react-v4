@@ -5,7 +5,7 @@ import { RES_IMAGES_URL } from "../utils/constants";
 import { useState, useContext } from "react";
 import { cartCTX } from "../utils/context";
 
-const MenuItemCard = ({ data, hasAdded, setHasAdded }) => {
+const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
   const {
     id,
     name,
@@ -24,18 +24,21 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded }) => {
       ctx[id] = { ...data, count: 1 };
       setCart({ ...ctx });
       setHasAdded(hasAdded+1);
+      setCh(ch+1)
     } else {
       if (!cart[id]) {
         const ctx = {};
         ctx[id] = { ...data, count: 1 };
         setCart({ ...cart, ...ctx });
         setHasAdded(hasAdded+1);
+        setCh(ch+1)
       } else {
         const count = Number(cart[id].count) + 1;
         const ctx = {};
         ctx[id] = { ...data, count: count };
         setCart({ ...cart, ...ctx });
         setHasAdded(hasAdded+1);
+        setCh(ch+1)
       }
     }
     
@@ -52,11 +55,12 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded }) => {
             delete ctx[id];
             setCart({ ...ctx });
             setHasAdded(hasAdded-1);
+            setCh(ch-1);
           } else {
             ctx[id].count = count;
             setCart({ ...ctx });
             setHasAdded(hasAdded-1);
-
+            setCh(ch-1);
           }
         }
       }

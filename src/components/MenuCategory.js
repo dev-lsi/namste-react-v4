@@ -8,8 +8,8 @@ const MenuCategoryHeader = ({
   openCategoryId,
   setOpenCategoryId,
   categoryId,
-  hasAdded,
-  setHasAdded
+  ch,
+  setCh
 }) => {
   
   
@@ -40,7 +40,7 @@ const MenuCategoryHeader = ({
           id={categoryId}
           className={s["menu-category-header"] + " " +`${(openCategoryId==categoryId)?s["opened-header"]:""}`} onClick={(e) => manageMenu(e)}
           >
-           <h6>{title}</h6>
+           <h6>{title}</h6><h6>{ch}</h6>
            
             
         </div>
@@ -54,13 +54,15 @@ const MenuItemsContainer = ({
   openCategoryId,
   setOpenCategoryId,
   hasAdded,
-  setHasAdded
-  
+  setHasAdded,
+  ch,
+  setCh
 }) => {
   return categoryId === openCategoryId ? (
     <div className={s["items-container"]}>
       {items.map((i) => (
-        <MenuItemCard key={i.card.info.name} data={i.card.info} hasAdded={hasAdded} setHasAdded={setHasAdded} />
+        <MenuItemCard key={i.card.info.name} data={i.card.info} hasAdded={hasAdded} setHasAdded={setHasAdded} ch={ch}
+        setCh={setCh} />
       ))}
     </div>
   ) : (
@@ -73,9 +75,11 @@ const MenuCategory = ({
   categoryId,
   openCategoryId,
   setOpenCategoryId,
+  
 }) => {
   const { title, items } = data;
   const [hasAdded,setHasAdded] = useState(0);
+  const [ch,setCh]=useState(0);
   
 
   return (
@@ -87,6 +91,8 @@ const MenuCategory = ({
         setOpenCategoryId={setOpenCategoryId}
         hasAdded={hasAdded}
         setHasAdded={setHasAdded}
+        ch={ch}
+        setCh={setCh}
       />
       <MenuItemsContainer
         items={items}
@@ -95,6 +101,8 @@ const MenuCategory = ({
         setOpenCategoryId={setOpenCategoryId}
         hasAdded={hasAdded}
         setHasAdded={setHasAdded}
+        ch={ch}
+        setCh={setCh}
       />
     </div>
   );

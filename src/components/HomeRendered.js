@@ -49,7 +49,7 @@ const HomeRendered = () => {
       {!data ? (
         <Shirm />
       ) : (
-        <div className={s["home-rendered"]}>
+        <div className={"page"}>
           {console.log(data)}
           <div className={s["hero"]}>
             <h1 className={s["hero-heading"]}>
@@ -80,6 +80,7 @@ const HomeRendered = () => {
               <div className={s["search-container"]}>
                 <input
                   className={s["search-input"]}
+                  placeholder="add search term..."
                   type="text"
                   value={searchTerm}
                   onChange={(e) => {

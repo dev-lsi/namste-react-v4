@@ -4,7 +4,7 @@ import { cities } from "../utils/citiesWithCoordinates.js";
 
 const HomeDefault = ({lat}) => {
   return (
-    <div className={s["home-default"]}>
+    <div className={"page"}>
       <h1 className={s["bg-text-h1"]}>Choose location</h1>
       <h4 className={s["bg-text-h4"]}>Choose location</h4>
       <h1 className={s["bg-text-h1"]}>Choose location</h1>

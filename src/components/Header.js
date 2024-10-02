@@ -54,81 +54,37 @@ const Header = () => {
         <img className={s["logo"]} src={logo} alt="logo"></img>
       </div>
       <div className={s["middle"]}>
-        {windowWidth >= 500 ? <NavMain /> : <NavMobile />}
+        {windowWidth >= 600 ? <NavMain /> : <NavMobile />}
       </div>
-      <div className={s["cart-login-container"]}>
-        <Link to="/cart">
+      <Link to="/cart">
           <div className={s["cart-icon-container"]}>
             <img className={s["cart-icon"]} src={cartIcon} />
             <p
               className={
-                 (!cart) || (Object.keys(cart).length===0)
-                ? s["cart-icon-counter"]+ " " +s["red"]
-                : s["cart-icon-counter"]+" "+s["green"]
-                
+                !cart || Object.keys(cart).length === 0
+                  ? s["cart-icon-counter"] + " " + s["red"]
+                  : s["cart-icon-counter"] + " " + s["green"]
               }
             >
               {!cart ? 0 : Object.keys(cart).length}
             </p>
           </div>
         </Link>
+
+      <div className={s["right"]}>
         <Link to="/login">
-            <button className={s["login-button"]}>Log In</button>
+          <button className={s["login-button"]}>Log In</button>
         </Link>
       </div>
-      <div className={s["right"]}>
-        <ul className="">
-          <li>
-            <a
-              href="https://github.com/dev-lsi"
-              target="_blank"
-              rel="noopener noreferrer"
-              alt=""
-            >
-              <img
-                className={s["social-icon"]}
-                src={githubIcon}
-                alt="GitHub icon"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/lachezar-ivanov-026917284/"
-              target="_blank"
-              rel="noopener noreferrer"
-              alt=""
-            >
-              <img
-                className={s["social-icon"]}
-                src={linkedInIcon}
-                alt="linkedIn icon"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/profile.php?id=100079584917511"
-              target="_blank"
-              rel="noopener noreferrer"
-              alt=""
-            >
-              <img
-                className={s["social-icon"]}
-                src={faceBookIcon}
-                alt="FaceBook icon"
-              />
-            </a>
-          </li>
-        </ul>
-      </div>
+
       <div className={s["restaurants-info-display"]}>
-        <p>City:{city}</p>
+        <p>{city}</p>
         <p>
-          Coords: lat={lat} lng={lng}
+          lat={lat} lng={lng}
         </p>
-        <p>{restaurants ? restaurants.length : "0"} Restaurants Loaded</p>
+        <p>{restaurants ? restaurants.length : "0 "} :Loaded</p>
         <p>📡: {isOnline ? " ✅ connected" : "⭕ offline"}</p>
+        <p>User: 👤</p>
       </div>
     </div>
   );

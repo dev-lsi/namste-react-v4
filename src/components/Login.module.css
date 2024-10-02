@@ -1,46 +1,18 @@
-.login-page{
-    padding-block: calc(var(--header-height));
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.login-page>*{
-    flex-basis: 90%;
-}
-
-.login-form{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 1em;
-    padding: 2em;
-}
 
 .row{
     flex-basis: 100%;
     display: flex;
     justify-content: center;
+    column-gap: 0.8em;
+    height:1.4em;
 }
+
 .row label{
-    width:5em;
+    width:6em;
 }
-.row input{
-    background-color: darkgray;
-}
-
-button{
-    border:1px solid var(--color-dark-theme);
-    border-radius: 1em;
-    height:2em;
-    padding-inline: 1em;
+.signup-link-p{
+    text-align: center;
 }
 
-button:hover{
-    border:1px solid var(--color-dark-theme);
-    background-color:var(--color-dark-theme) ;
-    color:var(--bg-dark-theme);
-}
 
-.login-form input{
-   
-}
+    

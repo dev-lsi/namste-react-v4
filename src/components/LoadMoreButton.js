@@ -57,18 +57,18 @@ const LoadMoreButton=()=>{
     
     return (
         hasResponse
-        ?(<div className={s["lmbd"]}>
+        ?(
             <button className={s["load-more-button"]}
-            onClick={getNextRestaurants}>
+                onClick={getNextRestaurants}>
                 {btnName} | Loaded: {restaurantsContextValue.restaurants.length}
             </button>
-        </div>
-        ):(<div className={s["lmbd"]}>
+       
+        ):(
               <button className={s["load-more-button"]}
                   onClick={getNextRestaurants}>
                   Loading... | Loaded: {restaurantsContextValue.restaurants.length}
               </button>
-          </div>
+          
         )
     )
 }

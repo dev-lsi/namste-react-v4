@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { restaurantsContext } from "../utils/context";
 import Shirm from "./Shirm";
 
-const MenuHeader = () => {
+const MenuPageHero = () => {
   const { id } = useParams();
 
   const { restaurantsContextValue } = useContext(restaurantsContext);
@@ -57,4 +57,4 @@ const MenuHeader = () => {
   );
 };
 
-export default MenuHeader;
+export default MenuPageHero;

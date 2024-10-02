@@ -3,15 +3,7 @@
 }
 /* Home Default..................................... */
 /* .................................................. */
-.home-default{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: var(--bg-dark-theme);
-  padding-top: var(--header-height);
-  row-gap: 1em;
-  min-height: 200vh;
-}
+
 .bg-text-h1{
     font:900;
     color:black;
@@ -22,21 +14,17 @@
 }
 
 .default-container{
-    backdrop-filter: blur(1px);;
+    backdrop-filter: blur(2px);;
     position: fixed;
     left:2em;
     right:2em;
-    top:calc(var(--header-height));
-    border:1px solid var(--color-dark-theme);
+    border:1px solid var(--color);
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 1.2em;
     padding-block: 2em;
-    
 }
-
-
 
 .default-container h4,.default-container h5{
     flex-basis: 90%;
@@ -57,37 +45,19 @@
    row-gap: 1.2em;
 }
 
-.location-button{
-    width:8em;
-    border:1px solid var(--color-dark-theme);
-    border-radius: 1em;
-    padding-block: 0.2em;
-}
-.location-button:hover{
-    background-color: var(--color-dark-theme);
-    color:var(--bg-dark-theme);;
-}
+
+
 
 /* Home Rendered..................................... */
 /* .................................................. */
 .home-rendered{
-    padding-top: var(--header-height);
-    background-color: var(--bg-dark-theme);;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 4em;
+    row-gap: 8em;
     padding-bottom: 4em;
 }
 
-
-.home-rendered >*{
-  flex-basis: 100%;
-}
 .hero{
     background-image:url("../assets/bg01.png") ;
-    flex-basis: 100%;
-    height:16em;
+    height:14em;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -96,7 +66,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    padding-inline: 1em;
+    
 }
 .hero-heading{
     flex-basis: 100%;
@@ -104,16 +74,15 @@
     line-height: 1em;
     font-style: oblique;
     font-weight: 900;
-    /* color:var(--color-dark-theme); */
-    color:rgb(139, 1, 1) ;
-    text-shadow: antiquewhite 0 0 6px;
+    color:rgb(139, 0, 0) ;
+    text-shadow: var(--color) 0 0 6px;
     
 }
 
 .hero-sub-heading{
   flex-basis: 100%;
   text-align: center;
-  color:var(--color-dark-theme);
+  color:var(--color);
   
 }
 .hero-sub-heading span{
@@ -123,11 +92,10 @@
     font-weight: 900;
     /* color:var(--color-dark-theme); */
     color:rgb(139, 1, 1) ;
-    text-shadow: antiquewhite 0 0 6px;
+    text-shadow: var(--color) 0 0 6px;
 }
 
 .restaurants-container {
-  flex-basis: 90%;
   display: flex;
   flex-wrap: wrap;
   column-gap: 2em;
@@ -135,8 +103,8 @@
   padding-block: 3em;
   padding-inline: 4em;
   justify-content:space-between;
-  background-color: var(--bg-dark-theme);
-  border: 1px solid var(--color-dark-theme);
+  background-color: var(--bg);
+  border: 1px solid var(--color);
   min-height: 120vh;
 }
 
@@ -145,48 +113,37 @@
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   column-gap: 2em;
-  row-gap: 2em;
+  row-gap: 1em;
 }
 
-.filters-container button{
-  border:1px solid var(--color-dark-theme);
-  height: 2em;
-  padding-inline: 1em;
-  padding-block: 0.2em;
-  background-color: var(--bg-dark-theme);
-  color:var(--color-dark-theme);
-}
-.filters-container button:hover{
-  background-color: var(--color-dark-theme);
-  color:var(--bg-dark-theme);
-}
 .search-container{
+  display: flex;
   text-align: center;
-  
 }
 .search-button{
-   width:6em;
-   border-top-left-radius:1em ;
-   border-bottom-left-radius:1em;
-   margin-left: -1em;
+  margin-left: -1em;
+  background-color: var(--bg);
 }
-.search-input{
-  width: 6em; 
-  height:2em;
-  background-color: rgb(42,42,42);
-  border:1px solid var(--color-dark-theme);
-  border-right: none;
-  padding-left: 1em;
+
+.search-container input{
+ border-radius:0.7em;
 }
+
+
+ 
+
+
+
 
 .restaurant-card {
   max-width: 12vw;
   min-width: 140px;
-  border: 1px solid var(--color-dark-theme);
+  border: 1px solid var(--color);
   border-radius: 0.2em;
-  background-color: rgb(23, 23, 23);
-  color: var(--color-dark-theme);
+  background-color: rgb(24, 24, 24);
+  color: var(--color);
   box-shadow: 1em 1em rgb(49, 49, 49), -2em 2em rgb(68, 67, 67),
     3em 3em rgb(32, 32, 32), -2em -2em rgb(45, 45, 45);
   transition: display 2s;
@@ -203,7 +160,7 @@
   width: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
-  border: 1px solid var(--color-dark-theme);
+  border: 1px solid var(--color);
 }
 
 .restaurant-image {
@@ -327,9 +284,9 @@
 
 .show-menu-link {
   position: absolute;
-  color: var(--color-dark-theme);
-  background-color: var(--bg-dark-theme);;
-  border:1px solid var(--color-dark-theme);
+  color: var(--color);
+  background-color: var(--bg);
+  border:1px solid var(--color);
   text-wrap: nowrap;
   font-size: 0.6em;
   bottom: -1.6em;
@@ -342,48 +299,20 @@
   transition: all 0.15s;
 }
 .show-menu-link:hover {
-  color: var(--color-dark-theme);
+  color: var(--color);
   background-color: rgb(0, 60, 0);
   text-wrap: nowrap;
   padding-bottom: 6em;
 }
 
-.lmbd{
-  flex-basis: 100%;
-  text-align: center;
-}
-
-.load-more-button {
-  max-width: fit-content;
-  height: 2em;
-  padding-inline: 1em;
-  text-wrap: 0;
-  padding-block: 0.2em;
-  text-align: center;
-  background-color: var(--bg-dark-theme);
-  color: var(--color-dark-theme);
-  text-align: center;
-  border: 1px solid var(--color-dark-theme);
-  border-radius: 2em;
-  transition: background-color 0.15s,color 0.15s;
-}
-
-.load-more-button:hover {
-  max-width: fit-content;
-  background-color:var(--color-dark-theme);
-  color: var(--bg-dark-theme);;
- 
-}
-
 .change-location-container{
-  flex-basis: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 1em;
   column-gap: 1em;
   padding: 2em;
-  border:1px solid var(--color-dark-theme);
+  border:1px solid var(--color);
 }
 
 .change-location-container h5{
@@ -399,7 +328,5 @@
     border: 1px solid var(--color-dark-theme);;
     border-radius: 0.2em;
   }
-  .load-more-button{
-    flex-basis: 60%;
-  }
+  
 }

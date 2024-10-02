@@ -2,11 +2,6 @@
   
 }
 
-.menu-button{
-    font-size: 2em;
-    text-decoration: underline;
-}
-
 .opened-menu{
     z-index: 2;
     display:flex;
@@ -15,12 +10,11 @@
     top:0;
     left:0;
     right:0;
-    height:100vh;
-    background-color: rgba(63, 62, 62, 0.9);
-    background-color: rgba(145, 52, 2, 0.9);
+    background-color: rgba(62, 62, 62, 0.9);
     align-content: flex-start;
     padding-top: 1em;
-    font-size: 1.2em;
+    font-size: 1em;
+    height: 100vh;
 }
 
 @keyframes animateopen {
@@ -33,27 +27,25 @@
 }
 
 .opened-menu li{
-    background-color: black;
-    color:antiquewhite;
+    background-color: var(--bg);
+    color:var(--color);
     font-size: 1.6em;
     flex-basis: 100%;
     padding-block: 0.6em;
-    padding-left: 2em ;
+    padding-left: 4em ;
     display:block;
-    margin-block: 0.6em;
-   
-   
+    margin-block: 0.2em;
 }
 .opened-menu li:hover{
-    background-color: rgb(51, 51, 51);
-    color:rgb(255, 255, 255);
-    font-size: 1.6em;
-    
+    /* background-color: rgb(24, 24, 24); */
+    background-color: var(--color);
+    color: var(--bg);
+
 }
 .social-icon-mob{
-    height: 1.2em;
-    width:1.2em;
-    background-color: antiquewhite;
+    height: 1em;
+    width:1em;
+    background-color: var(--bg);
 }
 
 .social-link{
