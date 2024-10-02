@@ -1,7 +1,10 @@
 .footer{
-    background-color: var(--bg-dark-theme);
-    color:var(--color-dark-theme);
-    min-height: 20vh;
-    border-top:1px solid antiquewhite;
-    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 6em;
+    background-color: var(--bg);
+    color:var(--color);
+    height: 5em;
+    border-top:1px solid var(--color);
 }

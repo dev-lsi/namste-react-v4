@@ -45,7 +45,7 @@
 .social-icon-mob{
     height: 1em;
     width:1em;
-    background-color: var(--bg);
+    background-color: var(--color);
 }
 
 .social-link{
