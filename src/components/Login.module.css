@@ -1,5 +1,6 @@
 
 .row{
+    max-width: fit-content;
     flex-basis: 100%;
     display: flex;
     justify-content: center;
@@ -8,7 +9,7 @@
 }
 
 .row label{
-    width:6em;
+    width:5em;
 }
 .signup-link-p{
     text-align: center;

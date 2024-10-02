@@ -79,6 +79,20 @@ button:active{
   border:1px solid var(--bg);
 }
 
+form{
+  height:fit-content;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 1em;
+  max-width: fit-content;
+  border:1px solid var(--color);
+  border-radius: 1em;
+  padding-inline: 1em;
+  padding-block: 2em;
+}
+
 input{
   
   color:var(--bg);
@@ -96,16 +110,5 @@ input::placeholder{
   font-size: small;
 }
 
-form{
-  height:fit-content;
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  row-gap: 1em;
-  max-width: 20em;
-  border:1px solid var(--color);
-  border-radius: 1em;
-  padding-inline: 1em;
-  padding-block: 2em;
-}
+
 
