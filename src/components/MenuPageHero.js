@@ -1,14 +1,14 @@
 import s from "./MenuPage.module.css";
 import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { restaurantsContext } from "../utils/context";
+import { resCTX } from "../utils/context";
 import Shirm from "./Shirm";
 
 const MenuPageHero = () => {
   const { id } = useParams();
 
-  const { restaurantsContextValue } = useContext(restaurantsContext);
-  const restaurants = restaurantsContextValue.restaurants;
+  const { resCtx } = useContext(resCTX);
+  const restaurants = resCtx.restaurants;
   const restaurantData = restaurants.filter((r) => r.info.id === id);
   const {
     name,

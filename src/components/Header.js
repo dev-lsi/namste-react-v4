@@ -1,25 +1,22 @@
 import logo from "../assets/logo512.png";
-import githubIcon from "../assets/291716_github_logo_social network_social_icon.png";
-import faceBookIcon from "../assets/4202867_facebook_icon.png";
-import linkedInIcon from "../assets/107159_circle_linkedin_icon.png";
 import { useEffect, useState } from "react";
 import NavMain from "./NavMain";
 import NavMobile from "./NavMobile";
 import { useContext } from "react";
-import { locationContext, restaurantsContext, cartCTX } from "../utils/context";
+import { locCTX, resCTX, cartCTX } from "../utils/context";
 import s from "./Header.module.css";
 import { Link } from "react-router-dom";
 import cartIcon from "../assets/cart-colored.png";
 
 const Header = () => {
-  const { locationContextValue } = useContext(locationContext);
-  const { coords } = locationContextValue;
+  const { locCtx } = useContext(locCTX);
+  const { coords } = locCtx;
   const { lat, lng } = coords;
-  const city = locationContextValue.city;
-  const { cart, setCart } = useContext(cartCTX);
+  const city = locCtx.city;
+  const { cartCtx, setCartCtx } = useContext(cartCTX);
 
-  const { restaurantsContextValue } = useContext(restaurantsContext);
-  const { restaurants } = restaurantsContextValue;
+  const { resCtx } = useContext(resCTX);
+  const { restaurants } = resCtx;
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isOnline, setIsOnline] = useState(true);
@@ -61,12 +58,12 @@ const Header = () => {
             <img className={s["cart-icon"]} src={cartIcon} />
             <p
               className={
-                !cart || Object.keys(cart).length === 0
+                !cartCtx || Object.keys(cartCtx).length === 0
                   ? s["cart-icon-counter"] + " " + s["red"]
                   : s["cart-icon-counter"] + " " + s["green"]
               }
             >
-              {!cart ? 0 : Object.keys(cart).length}
+              {!cartCtx ? 0 : Object.keys(cartCtx).length}
             </p>
           </div>
         </Link>

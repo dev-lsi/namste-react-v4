@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
-import { locationContext, restaurantsContext } from "../utils/context";
+import { locCTX, resCTX } from "../utils/context";
 import { cities } from "../utils/citiesWithCoordinates";
 import { url_base } from "../utils/constants";
 import s from "./Home.module.css";
@@ -11,9 +11,9 @@ import LocationButton from "./LocationButton";
 import { getRestaurants } from "../utils/getRestaurants";
 
 const HomeRendered = () => {
-  const { locationContextValue, setLocationContextValue } =
-    useContext(locationContext);
-  const { coords, city } = locationContextValue;
+  const { locCtx, setLocCtx } =
+    useContext(locCTX);
+  const { coords, city } = locCtx;
   const { lat, lng } = coords;
   const url = url_base + "lat=" + lat + "&lng=" + lng;
   const url2 =
@@ -23,8 +23,8 @@ const HomeRendered = () => {
     lng +
     "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
-  const { restaurantsContextValue, setRestaurantsContextValue } =
-    useContext(restaurantsContext);
+  const { resCtx, setResCtx } =
+    useContext(resCTX);
 
   const [resList, setResList] = useState(null);
   const [data, setData] = useState(null);
@@ -34,15 +34,15 @@ const HomeRendered = () => {
   const [searchBtnName, setSearchBtnName] = useState("Search");
 
   // console.log(data);
-  // console.log(restaurantsContextValue.restaurants);
+  // console.log(resCtx.restaurants);
 
   useEffect(() => {
-    if (restaurantsContextValue.restaurants.length === 0) {
-      getRestaurants(url2, setRestaurantsContextValue);
+    if (resCtx.restaurants.length === 0) {
+      getRestaurants(url2, setResCtx);
     }
-    setResList(restaurantsContextValue.restaurants);
-    setData(restaurantsContextValue.restaurants);
-  }, [restaurantsContextValue]);
+    setResList(resCtx.restaurants);
+    setData(resCtx.restaurants);
+  }, [resCtx]);
 
   return (
     <div>
@@ -50,7 +50,7 @@ const HomeRendered = () => {
         <Shirm />
       ) : (
         <div className={"page"}>
-          {console.log(data)}
+         
           <div className={s["hero"]}>
             <h1 className={s["hero-heading"]}>
               {city || "City name not avaiable"}

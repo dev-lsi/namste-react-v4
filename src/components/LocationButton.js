@@ -1,24 +1,23 @@
 import { useContext } from "react";
-import { locationContext,restaurantsContext } from "../utils/context.js";
+import { locCTX, resCTX } from "../utils/context.js";
 import s from "./Home.module.css";
 const LocationButton = ({ city }) => {
   const { name, coords } = city;
-  const { locationContextValue, setLocationContextValue } =
-    useContext(locationContext);
-    const {restaurantsContextValue,setRestaurantsContextValue} = useContext(restaurantsContext);
-    
+  const { locCtx, setLocCtx } = useContext(locCTX);
+  const { resCtx, setResCtx } = useContext(resCTX);
+
   return (
     <button
       className={s["location-button"]}
       onClick={() => {
-        setRestaurantsContextValue({
-          restaurants:[]
+        setResCtx({
+          restaurants: [],
         });
-        setLocationContextValue({
-          ...locationContextValue,
+        setLocCtx({
+          ...locCtx,
           isValid: true,
           coords,
-          city:name,
+          city: name,
         });
       }}
     >

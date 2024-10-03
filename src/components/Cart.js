@@ -3,16 +3,16 @@ import { cartCTX } from "../utils/context";
 import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, setCart } = useContext(cartCTX);
+  const { cartCtx, setCartCtx } = useContext(cartCTX);
   const navigate = useNavigate();
 
-  function calculateTotal(cart) {
+  function calculateTotal(cartCtx) {
     let total = 0;
-    Object.keys(cart).map((k) => {
+    Object.keys(cartCtx).map((k) => {
     
       total += 
-      Number(cart[k]["count"]) * 
-      (Number(cart[k]["price"]||Number(cart[k]["defaultPrice"])));
+      Number(cartCtx[k]["count"]) * 
+      (Number(cartCtx[k]["price"]||Number(cartCtx[k]["defaultPrice"])));
     });
     return total;
   }
@@ -30,22 +30,22 @@ const Cart = () => {
       
       <button
         className="border-2 border-slate-400 mb-2"
-        onClick={() => setCart(null)}
+        onClick={() => setCartCtx(null)}
       >
-        {"[Clear Cart]"}
+        {"Clear Cart"}
       </button>
 
-      {!cart||cart==null ? (
-        <h1>Your cart is Empty!</h1>
+      {!cartCtx||cartCtx==null ? (
+        <h1>Your Cart is Empty!</h1>
       ) : (
         <div className="bills">
-          {Object.keys(cart).map((k) => {
-            const count = Number(cart[k]["count"]);
-            const price = Number(cart[k]["price"]||cart[k]["defaultPrice"]);
+          {Object.keys(cartCtx).map((k) => {
+            const count = Number(cartCtx[k]["count"]);
+            const price = Number(cartCtx[k]["price"]||cartCtx[k]["defaultPrice"]);
             const total = count * price;
             return (
               <div key={k} className="">
-                <h6>{cart[k]["name"]}</h6>
+                <h6>{cartCtx[k]["name"]}</h6>
                 <h6>
                   <span> {count} </span>
                   <span> {" X "} </span>
@@ -60,11 +60,11 @@ const Cart = () => {
         </div>
       )}
 
-      <h4>Total: {!cart?0:calculateTotal(cart)}</h4>
+      <h4>Total: {!cartCtx?0:calculateTotal(cartCtx)}</h4>
       <button
         className="border-2 border-slate-400 mr-2 mb-2"
       >
-        {!cart||Object.keys(cart).length===0?"Empty order":"Submit order"}
+        {!cartCtx||Object.keys(cartCtx).length===0?"Empty order":"Submit order"}
       </button>
     </div>
   );

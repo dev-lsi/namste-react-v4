@@ -1,4 +1,4 @@
-export async function getRestaurants(url,setRestaurantsContextValue) {
+export async function getRestaurants(url,setResCtx) {
 
     const response = await fetch(url);
     const responseData = await response.json();
@@ -8,5 +8,5 @@ export async function getRestaurants(url,setRestaurantsContextValue) {
     
     const restaurants = responseData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
 
-    setRestaurantsContextValue({ restaurants: [...restaurants] });
+    setResCtx({ restaurants: [...restaurants] });
   }

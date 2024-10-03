@@ -16,27 +16,27 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
     defaultPrice,
     ratings,
   } = data;
-  const { cart, setCart } = useContext(cartCTX);
+  const { cartCtx, setCartCtx } = useContext(cartCTX);
 
   function handleAdd() {
-    if (cart == null) {
+    if (cartCtx == null) {
       const ctx = {};
       ctx[id] = { ...data, count: 1 };
-      setCart({ ...ctx });
+      setCartCtx({ ...ctx });
       setHasAdded(hasAdded+1);
       setCh(ch+1)
     } else {
-      if (!cart[id]) {
+      if (!cartCtx[id]) {
         const ctx = {};
         ctx[id] = { ...data, count: 1 };
-        setCart({ ...cart, ...ctx });
+        setCartCtx({ ...cartCtx, ...ctx });
         setHasAdded(hasAdded+1);
         setCh(ch+1)
       } else {
-        const count = Number(cart[id].count) + 1;
+        const count = Number(cartCtx[id].count) + 1;
         const ctx = {};
         ctx[id] = { ...data, count: count };
-        setCart({ ...cart, ...ctx });
+        setCartCtx({ ...cartCtx, ...ctx });
         setHasAdded(hasAdded+1);
         setCh(ch+1)
       }
@@ -45,20 +45,20 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
   }
 
   function handleRemove() {
-    if (cart !== null) {
-      const ctx = { ...cart };
+    if (cartCtx !== null) {
+      const ctx = { ...cartCtx };
       if (ctx[id]) {
         let count = Number(ctx[id].count);
         if (count > 0) {
           count--;
           if (count == 0) {
             delete ctx[id];
-            setCart({ ...ctx });
+            setCartCtx({ ...ctx });
             setHasAdded(hasAdded-1);
             setCh(ch-1);
           } else {
             ctx[id].count = count;
-            setCart({ ...ctx });
+            setCartCtx({ ...ctx });
             setHasAdded(hasAdded-1);
             setCh(ch-1);
           }
@@ -105,7 +105,7 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
           ADD
         </button>
         <h6>
-          Added:<span>{!cart ? 0 : !cart[id] ? 0 : cart[id]["count"]}</span>
+          Added:<span>{!cartCtx ? 0 : !cartCtx[id] ? 0 : cartCtx[id]["count"]}</span>
         </h6>
         <button className={s["button-remove"]} onClick={handleRemove}>
           Remove

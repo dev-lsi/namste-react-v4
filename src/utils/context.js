@@ -1,13 +1,8 @@
 import { createContext } from "react";
 
-export const locationContext = createContext({
-  city: "N/A",
-  coords: null,
-  isValid: null,
-});
+// city: "N/A",coords: null,isValid: null
+export const locCTX = createContext({});
+export const resCTX = createContext(null);
+export const cartCTX = createContext({});
+export const menuCTX = createContext({});
 
-export const restaurantsContext = createContext(null);
-
-export const cartCTX = createContext({
-
-});

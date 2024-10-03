@@ -1,11 +1,11 @@
 import HomeDefault from "./HomeDefault";
 import HomeRendered from "./HomeRendered";
 import { useContext } from "react";
-import { locationContext } from "../utils/context";
+import { locCTX } from "../utils/context";
 
 const HomePage = () => {
-  const {locationContextValue} = useContext(locationContext);
-  const {isValid,coords} = locationContextValue;
+  const {locCtx} = useContext(locCTX);
+  const {isValid,coords} = locCtx;
   const {lat,lng}=coords;
   
 

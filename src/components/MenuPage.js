@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { resMenu } from "../utils/constants";
 
 const MenuPage = () => {
-  //const cart = useContext(cartCTX);
+  //const cartCtx = useContext(cartCtxCtx);
   const [data, setData] = useState(null);
   const { id } = useParams();
   console.log(id)

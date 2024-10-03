@@ -1,41 +1,33 @@
 import Header from "./src/components/Header";
 import Main from "./src/components/Main";
 import Footer from "./src/components/Footer";
-import { locationContext,restaurantsContext,cartCTX } from "./src/utils/context";
+import { locCTX, resCTX, cartCTX,menuCTX } from "./src/utils/context";
 import { useState } from "react";
 import Shirm from "./src/components/Shirm";
 
-
 const App = ({ location }) => {
-  console.log("APP rendered");
 
-  const [cart,setCart]=useState(null)
- 
-  const initialLocationContextValue = location;
-  const [locationContextValue, setLocationContextValue] = useState(
-    initialLocationContextValue
-  );
+  const [cartCtx, setCartCtx] = useState(null);
+  const [locCtx, setLocCtx] = useState(location);
+  const [resCtx, setResCtx] = useState({ restaurants: [] });
+  const [menuCtx,setMenuCtx]= useState({})
 
-  const initialRestaurantsValue = {restaurants:[]};
-  const [restaurantsContextValue,setRestaurantsContextValue]=useState(initialRestaurantsValue);
-
-  return !location?<Shirm/>: (
-
-    <restaurantsContext.Provider value={{restaurantsContextValue,setRestaurantsContextValue}}>
-    <locationContext.Provider
-      value={{ locationContextValue, setLocationContextValue }}
-    >
-      <cartCTX.Provider value={{cart,setCart}}>
-      <div className="app">
-        <Header />
-        
-        <Main />
-        
-        <Footer />
-      </div>
-      </cartCTX.Provider>
-    </locationContext.Provider>
-    </restaurantsContext.Provider>
+  return !location ? (
+    <Shirm />
+  ) : (
+    <resCTX.Provider value={{ resCtx, setResCtx }}>
+      <locCTX.Provider value={{ locCtx, setLocCtx }}>
+        <menuCTX.Provider value={{menuCtx,setMenuCtx}}>
+        <cartCTX.Provider value={{ cartCtx, setCartCtx }}>
+          <div className="app">
+            <Header />
+            <Main />
+            <Footer />
+          </div>
+        </cartCTX.Provider>
+        </menuCTX.Provider>
+      </locCTX.Provider>
+    </resCTX.Provider>
   );
 };
 export default App;
