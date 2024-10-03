@@ -2,7 +2,7 @@
     position: fixed;
     left:0;
     right:0;
-    top:0;
+    top:-100px;
     z-index:100;
     display: flex;
     flex-wrap: wrap;
@@ -106,3 +106,21 @@
 
     
 } 
+
+.show-header{
+  animation: show-header 0.6s;
+  animation-fill-mode: forwards;
+}
+.hide-header{
+  animation: hide-header 0.6s;
+  animation-fill-mode: forwards;
+}
+@keyframes show-header {
+    0%{transform: translateY(0px)}
+    100%{transform: translateY(100px)}
+}
+@keyframes hide-header {
+    0%{transform: translateY(100px)}
+    100%{transform: translateY(0px)}
+}
+

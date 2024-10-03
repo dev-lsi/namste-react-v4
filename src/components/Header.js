@@ -8,7 +8,7 @@ import s from "./Header.module.css";
 import { Link } from "react-router-dom";
 import cartIcon from "../assets/cart-colored.png";
 
-const Header = () => {
+const Header = ({isHeaderShown}) => {
   const { locCtx } = useContext(locCTX);
   const { coords } = locCtx;
   const { lat, lng } = coords;
@@ -44,9 +44,9 @@ const Header = () => {
   function handleResize() {
     setWindowWidth(window.innerWidth);
   }
-
+  useEffect(()=>console.log(isHeaderShown),[isHeaderShown])
   return (
-    <div className={s["header"]}>
+    <div className={s["header"]+" "+ s[isHeaderShown?"show-header":"hide-header"]}>
       <div className={s["left"]}>
         <img className={s["logo"]} src={logo} alt="logo"></img>
       </div>
