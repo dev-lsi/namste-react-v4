@@ -11,8 +11,7 @@ import LocationButton from "./LocationButton";
 import { getRestaurants } from "../utils/getRestaurants";
 
 const HomeRendered = () => {
-  const { locCtx, setLocCtx } =
-    useContext(locCTX);
+  const { locCtx, setLocCtx } = useContext(locCTX);
   const { coords, city } = locCtx;
   const { lat, lng } = coords;
   const url = url_base + "lat=" + lat + "&lng=" + lng;

@@ -1,16 +1,18 @@
 import MenuPageHero from "./MenuPageHero";
 import MenuCategoriesContainer from "./MenuCategoriesContainer";
 import s from "./MenuPage.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import { getMenuData } from "../utils/getMenuData";
 import { useParams } from "react-router-dom";
 import { resMenu } from "../utils/constants";
+import { cartCTX } from "../utils/context";
+
 
 const MenuPage = () => {
-  //const cartCtx = useContext(cartCtxCtx);
+  const {cartCtx,setCartCtx} = useContext(cartCTX);
   const [data, setData] = useState(null);
   const { id } = useParams();
-  console.log(id)
+  
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -31,7 +33,7 @@ const MenuPage = () => {
     
       <div className={"page"}>
         <MenuPageHero />
-        <MenuCategoriesContainer data={data} />
+        <MenuCategoriesContainer data={data} resId={id}/>
       </div>
     
   );

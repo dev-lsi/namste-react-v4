@@ -5,7 +5,8 @@ import { RES_IMAGES_URL } from "../utils/constants";
 import { useState, useContext } from "react";
 import { cartCTX } from "../utils/context";
 
-const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
+const MenuItemCard = ({ data, hasAdded, setHasAdded,headerCounter,setHeaderCounter,resId }) => {
+
   const {
     id,
     name,
@@ -16,32 +17,37 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
     defaultPrice,
     ratings,
   } = data;
-  const { cartCtx, setCartCtx } = useContext(cartCTX);
 
+  const { cartCtx, setCartCtx } = useContext(cartCTX);
+  const [addedCount,setAddedCount]=useState(0);
   function handleAdd() {
-    if (cartCtx == null) {
-      const ctx = {};
-      ctx[id] = { ...data, count: 1 };
-      setCartCtx({ ...ctx });
+    if (!cartCtx) {
+      setCartCtx({ [resId]:{[id]:{...data,itemCount:1}}});
       setHasAdded(hasAdded+1);
-      setCh(ch+1)
+      setAddedCount(addedCount+1)
+      setHeaderCounter(headerCounter+1)
     } else {
-      if (!cartCtx[id]) {
-        const ctx = {};
-        ctx[id] = { ...data, count: 1 };
-        setCartCtx({ ...cartCtx, ...ctx });
+      if (!cartCtx[resId]) {
+        setCartCtx({ ...cartCtx, [resId]:{[id]:{...data,itemCount:1}}});
         setHasAdded(hasAdded+1);
-        setCh(ch+1)
+        setAddedCount(addedCount+1)
+        setHeaderCounter(headerCounter+1)
       } else {
-        const count = Number(cartCtx[id].count) + 1;
-        const ctx = {};
-        ctx[id] = { ...data, count: count };
-        setCartCtx({ ...cartCtx, ...ctx });
+                 if(!cartCtx[resId][id]){
+        setCartCtx({ ...cartCtx,[resId]:{[id]:{...data,itemCount:1}}});
         setHasAdded(hasAdded+1);
-        setCh(ch+1)
+        setAddedCount(addedCount+1)
+        setHeaderCounter(headerCounter+1)
+                 }else if(cartCtx[resId][id]){
+                  const newCount=Number(cartCtx[resId][id].itemCount)+1
+                  setCartCtx({ ...cartCtx,[resId]:{[id]:{...data,itemCount:newCount}}});
+                  setHasAdded(hasAdded+1);
+                  setAddedCount(addedCount+1)
+                  setHeaderCounter(headerCounter+1)
+                 }
       }
     }
-    
+     console.log(cartCtx)
   }
 
   function handleRemove() {
@@ -55,12 +61,16 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
             delete ctx[id];
             setCartCtx({ ...ctx });
             setHasAdded(hasAdded-1);
-            setCh(ch-1);
+            setAddedCount(addedCount-1)
+            setHeaderCounter(headerCounter-1);
+            console.log(cartCtx[id]['count'])
           } else {
             ctx[id].count = count;
             setCartCtx({ ...ctx });
             setHasAdded(hasAdded-1);
-            setCh(ch-1);
+            setAddedCount(addedCount-1)
+            setHeaderCounter(headerCounter-1);
+            console.log(cartCtx[id]['count'])
           }
         }
       }
@@ -105,7 +115,16 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
           ADD
         </button>
         <h6>
-          Added:<span>{!cartCtx ? 0 : !cartCtx[id] ? 0 : cartCtx[id]["count"]}</span>
+          Added:
+          <span>
+            
+            {
+            !cartCtx ? 0 : !cartCtx[resId] ? 0 : !cartCtx[resId][id]? 0:cartCtx[resId][id].itemCount
+            }
+           
+           </span>
+           
+        
         </h6>
         <button className={s["button-remove"]} onClick={handleRemove}>
           Remove
@@ -120,6 +139,11 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,ch,setCh }) => {
           alt="logo"
         />
       </div>
+      <div>
+        {
+          // cartCtx?cartCtx[resId][id].id:"NULL"
+        }
+        </div>
     </div>
   );
 };

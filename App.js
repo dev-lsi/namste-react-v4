@@ -34,8 +34,6 @@ const App = ({ location }) => {
       setCurrPosY(newPosY);
   }
 
-
-
   return !location ? (
     <Shirm />
   ) : (

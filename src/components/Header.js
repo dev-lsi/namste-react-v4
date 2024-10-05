@@ -44,7 +44,7 @@ const Header = ({isHeaderShown}) => {
   function handleResize() {
     setWindowWidth(window.innerWidth);
   }
-  useEffect(()=>console.log(isHeaderShown),[isHeaderShown])
+  //useEffect(()=>console.log(isHeaderShown),[isHeaderShown])
   return (
     <div className={s["header"]+" "+ s[isHeaderShown?"show-header":"hide-header"]}>
       <div className={s["left"]}>

@@ -6,15 +6,14 @@ import MenuCategory from "./MenuCategory";
 import { getMenuData } from "../utils/getMenuData";
 import Shirm from "./Shirm";
 
-const MenuCategoriesContainer = ({data}) => {
-  const { id } = useParams();
+const MenuCategoriesContainer = ({data,resId}) => {
+  //const { id } = useParams();
   const [openCategoryId, setOpenCategoryId] = useState(null);
 
-   const getDineout=async (id)=>{
+   const getDineout=async (resId)=>{
     const response=
-    await fetch('https://www.swiggy.com/menu/' + id);
+    await fetch('https://www.swiggy.com/menu/' + resId);
     const dineout = await response.json();
-    console.log(dineout);
    }
   
 
@@ -27,6 +26,7 @@ const MenuCategoriesContainer = ({data}) => {
         <MenuCategory
           key={c.title}
           data={c}
+          resId={resId}
           categoryId={c.title}
           setOpenCategoryId={setOpenCategoryId}
           openCategoryId={openCategoryId}
