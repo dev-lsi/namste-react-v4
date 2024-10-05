@@ -5,7 +5,7 @@ import { RES_IMAGES_URL } from "../utils/constants";
 import { useState, useContext } from "react";
 import { cartCTX } from "../utils/context";
 
-const MenuItemCard = ({ data, hasAdded, setHasAdded,headerCounter,setHeaderCounter,resId }) => {
+const MenuItemCard = ({ data,resId }) => {
 
   const {
     id,
@@ -13,68 +13,49 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,headerCounter,setHeaderCount
     imageId,
     isVeg,
     price,
-    description,
     defaultPrice,
+    description,
     ratings,
   } = data;
-
   const { cartCtx, setCartCtx } = useContext(cartCTX);
-  const [addedCount,setAddedCount]=useState(0);
+  
   function handleAdd() {
     if (!cartCtx) {
-      setCartCtx({ [resId]:{[id]:{...data,itemCount:1}}});
-      setHasAdded(hasAdded+1);
-      setAddedCount(addedCount+1)
-      setHeaderCounter(headerCounter+1)
-    } else {
+      setCartCtx({[resId]:{[id]:{...data,itemCount:1}}});
+    }else if(cartCtx) {
       if (!cartCtx[resId]) {
-        setCartCtx({ ...cartCtx, [resId]:{[id]:{...data,itemCount:1}}});
-        setHasAdded(hasAdded+1);
-        setAddedCount(addedCount+1)
-        setHeaderCounter(headerCounter+1)
-      } else {
-                 if(!cartCtx[resId][id]){
-        setCartCtx({ ...cartCtx,[resId]:{[id]:{...data,itemCount:1}}});
-        setHasAdded(hasAdded+1);
-        setAddedCount(addedCount+1)
-        setHeaderCounter(headerCounter+1)
-                 }else if(cartCtx[resId][id]){
-                  const newCount=Number(cartCtx[resId][id].itemCount)+1
-                  setCartCtx({ ...cartCtx,[resId]:{[id]:{...data,itemCount:newCount}}});
-                  setHasAdded(hasAdded+1);
-                  setAddedCount(addedCount+1)
-                  setHeaderCounter(headerCounter+1)
-                 }
-      }
-    }
+       setCartCtx({ ...cartCtx,[resId]:{[id]:{...data,itemCount:1}}});
+      }else  if(cartCtx[resId]){
+        
+        if(!cartCtx[resId][id]){
+         const idctx={...data,itemCount:1}
+         setCartCtx({ ...cartCtx,[resId]:{...cartCtx[resId],[id]:idctx}});
+        }else if(cartCtx[resId][id]){
+         const newCount=Number(cartCtx[resId][id].itemCount)+1;
+         setCartCtx({ ...cartCtx,[resId]:{...cartCtx[resId],[id]:{...data,itemCount:newCount}}});
+        }
+        
+     }
+     
+  }
+    
+   
      console.log(cartCtx)
   }
 
+
   function handleRemove() {
-    if (cartCtx !== null) {
-      const ctx = { ...cartCtx };
-      if (ctx[id]) {
-        let count = Number(ctx[id].count);
-        if (count > 0) {
-          count--;
-          if (count == 0) {
-            delete ctx[id];
-            setCartCtx({ ...ctx });
-            setHasAdded(hasAdded-1);
-            setAddedCount(addedCount-1)
-            setHeaderCounter(headerCounter-1);
-            console.log(cartCtx[id]['count'])
-          } else {
-            ctx[id].count = count;
-            setCartCtx({ ...ctx });
-            setHasAdded(hasAdded-1);
-            setAddedCount(addedCount-1)
-            setHeaderCounter(headerCounter-1);
-            console.log(cartCtx[id]['count'])
-          }
-        }
-      }
-    }
+    // if (cartCtx[resId][id]) {
+    //   if (Number(carCtx[resId][id].itemCount)===1) {
+    //      delete carCtx[resId][id];
+    //      if(cartCtx[resId]=={}){
+    //       delete cartCtx[resId]; 
+    //      }
+    //   }else if (Number(carCtx[resId][id].itemCount)>1) {
+    //     newCount=Number(carCtx[resId][id].itemCount)-1;
+    //     setCartCtx({ ...cartCtx,carCtx[resId][id].itemCount:newCount });
+    //   } 
+    // }
   }
 
   return (
@@ -117,7 +98,6 @@ const MenuItemCard = ({ data, hasAdded, setHasAdded,headerCounter,setHeaderCount
         <h6>
           Added:
           <span>
-            
             {
             !cartCtx ? 0 : !cartCtx[resId] ? 0 : !cartCtx[resId][id]? 0:cartCtx[resId][id].itemCount
             }
