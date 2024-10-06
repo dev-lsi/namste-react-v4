@@ -27,16 +27,38 @@ const Cart = () => {
         {"Clear Cart"}
       </button>
 
-      {!cartCtx || cartCtx == null ? (
+      {!cartCtx ? (
         <h1>Your Cart is Empty!</h1>
       ) : (
         <div className="bills">
 
           {
+             Object.keys(cartCtx).map(r=>(
+              <div className="border-b-2 border-b-gray-500">
+                {
+                  
+                  Object.keys(cartCtx[r]).map(c=>(
+                      <div>
+                        {
+                         
+                         Object.keys(cartCtx[r][c]).map(i=>(
+                            <div >
+                              <p>{cartCtx[r][c][i].name}</p>
+                              <p>{cartCtx[r][c][i].itemCount}</p>
+                              <p>{cartCtx[r][c][i].price||cartCtx[r][c][i].defaultPrice}</p>
+                            </div>
+                          ))
+                        }
+                      </div>
+                  ))
+                }
+              </div>
+             )
+                
 
-             Object.keys(cartCtx).map(r=>
-                Object.keys(cartCtx[r]).map(i=><h3>{i}</h3>)
-              )
+             
+                
+            )
 
           }
          

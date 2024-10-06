@@ -10,8 +10,7 @@ const MenuCategoryHeader = ({
   setOpenCategoryId,
   resId,
   categoryId,
-  headerCounter,
-  setHeaderCounter
+ 
 
 }) => {
   const{cartCtx,setCartCtx} = useContext(cartCTX);
@@ -45,10 +44,15 @@ const MenuCategoryHeader = ({
           className={s["menu-category-header"] + " " +`${(openCategoryId==categoryId)?s["opened-header"]:""}`} onClick={(e) => manageMenu(e)}
           >
            <h6>{title}</h6>
-           <h6>{headerCounter}</h6>
            <h6>
             {
-           !cartCtx ? 0 : !cartCtx[resId] ? 0 : !cartCtx[resId].id? 0:cartCtx[resId].id.itemCount
+           !cartCtx
+           ? 0 
+           : !cartCtx[resId] 
+              ? 0 
+              : !cartCtx[resId][categoryId]
+                   ? 0
+                   : callcSum(cartCtx[resId][categoryId])
            }
            </h6>
         </div>
@@ -56,28 +60,29 @@ const MenuCategoryHeader = ({
   );
 };
 
+function callcSum(items){
+  console.log(items)
+  let sum=0;
+  Object.keys(items).map(i=>sum+=Number(items[i].itemCount))
+  return sum
+}
+
 const MenuItemsContainer = ({
   items,
   resId,
   categoryId,
   openCategoryId,
   setOpenCategoryId,
-  hasAdded,
-  setHasAdded,
-  headerCounter,
-  setHeaderCounter
+  
 }) => {
   return categoryId === openCategoryId ? (
     <div className={s["items-container"]}>
       {items.map((i) => (
         <MenuItemCard
-        resId={resId} 
+        resId={resId}
+        categoryId={categoryId} 
         key={i.card.info.name} 
         data={i.card.info} 
-        hasAdded={hasAdded} 
-        setHasAdded={setHasAdded} 
-        headerCounter={headerCounter}
-        setHeaderCounter={setHeaderCounter} 
         />
       ))}
     </div>

@@ -5,8 +5,7 @@ import { RES_IMAGES_URL } from "../utils/constants";
 import { useState, useContext } from "react";
 import { cartCTX } from "../utils/context";
 
-const MenuItemCard = ({ data,resId }) => {
-
+const MenuItemCard = ({ data, resId, categoryId }) => {
   const {
     id,
     name,
@@ -18,43 +17,75 @@ const MenuItemCard = ({ data,resId }) => {
     ratings,
   } = data;
   const { cartCtx, setCartCtx } = useContext(cartCTX);
-  
+
   function handleAdd() {
     if (!cartCtx) {
-      setCartCtx({[resId]:{[id]:{...data,itemCount:1}}});
-    }else if(cartCtx) {
+      setCartCtx({
+        [resId]: { [categoryId]: { [id]: { ...data, itemCount: 1 } } },
+      });
+    } else if (cartCtx) {
       if (!cartCtx[resId]) {
-       setCartCtx({ ...cartCtx,[resId]:{[id]:{...data,itemCount:1}}});
-      }else  if(cartCtx[resId]){
-        
-        if(!cartCtx[resId][id]){
-         const idctx={...data,itemCount:1}
-         setCartCtx({ ...cartCtx,[resId]:{...cartCtx[resId],[id]:idctx}});
-        }else if(cartCtx[resId][id]){
-         const newCount=Number(cartCtx[resId][id].itemCount)+1;
-         setCartCtx({ ...cartCtx,[resId]:{...cartCtx[resId],[id]:{...data,itemCount:newCount}}});
+        setCartCtx({
+          ...cartCtx,
+          [resId]: { [categoryId]: { [id]: { ...data, itemCount: 1 } } },
+        });
+      } else if (cartCtx[resId]) {
+        if (!cartCtx[resId][categoryId]) {
+          setCartCtx({
+            ...cartCtx,
+            [resId]: {
+              ...cartCtx[resId],
+              [categoryId]: { [id]: { ...data, itemCount: 1 } },
+            },
+          });
+        //.................................
+        //Down to work!....................
+        } else if (cartCtx[resId][categoryId]) {
+          if (!cartCtx[resId][categoryId][id]) {
+            setCartCtx({
+              ...cartCtx,
+              [resId]: {
+                ...cartCtx[resId],
+                [categoryId]: {
+                  ...cartCtx[resId][categoryId],
+                  [id]: { ...data, itemCount: 1 },
+                },
+              },
+            });
+          } else if (cartCtx[resId][categoryId][id]) {
+            const newCount =
+              Number(cartCtx[resId][categoryId][id].itemCount) + 1;
+            setCartCtx({
+              ...cartCtx,
+              [resId]: {
+                ...cartCtx[resId],
+                [categoryId]: {
+                  ...cartCtx[resId][categoryId],
+                  [id]: {
+                    ...data,
+                    itemCount: newCount,
+                  },
+                },
+              },
+            });
+          }
         }
-        
-     }
-     
+      }
+    }
+    console.log(cartCtx);
   }
-    
-   
-     console.log(cartCtx)
-  }
-
 
   function handleRemove() {
     // if (cartCtx[resId][id]) {
     //   if (Number(carCtx[resId][id].itemCount)===1) {
     //      delete carCtx[resId][id];
     //      if(cartCtx[resId]=={}){
-    //       delete cartCtx[resId]; 
+    //       delete cartCtx[resId];
     //      }
     //   }else if (Number(carCtx[resId][id].itemCount)>1) {
     //     newCount=Number(carCtx[resId][id].itemCount)-1;
     //     setCartCtx({ ...cartCtx,carCtx[resId][id].itemCount:newCount });
-    //   } 
+    //   }
     // }
   }
 
@@ -98,13 +129,16 @@ const MenuItemCard = ({ data,resId }) => {
         <h6>
           Added:
           <span>
-            {
-            !cartCtx ? 0 : !cartCtx[resId] ? 0 : !cartCtx[resId][id]? 0:cartCtx[resId][id].itemCount
-            }
-           
-           </span>
-           
-        
+            {!cartCtx
+              ? 0
+              : !cartCtx[resId]
+              ? 0
+              : !cartCtx[resId][categoryId]
+              ? 0
+              : !cartCtx[resId][categoryId][id]
+              ? 0
+              : cartCtx[resId][categoryId][id].itemCount}
+          </span>
         </h6>
         <button className={s["button-remove"]} onClick={handleRemove}>
           Remove
@@ -123,7 +157,7 @@ const MenuItemCard = ({ data,resId }) => {
         {
           // cartCtx?cartCtx[resId][id].id:"NULL"
         }
-        </div>
+      </div>
     </div>
   );
 };

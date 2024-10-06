@@ -21,7 +21,7 @@ const MenuCategoriesContainer = ({data,resId}) => {
     <Shirm />
   ) : (
     <div className={s["menu-categories-container"]}>
-      <h4 className={s["container-header"]}>Categories</h4>
+      <h4 className={s["container-header"]}>Menu Categories</h4>
       {data.map((c, index) => (
         <MenuCategory
           key={c.title}
