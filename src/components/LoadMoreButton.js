@@ -9,7 +9,9 @@ const LoadMoreButton = () => {
     const { coords } = locCtx;
     const { lat, lng } = coords;
     const url0 = url_base + "lat=" + lat + "&lng=" + lng;
+    
     const url1 = 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=' + lat + '&lng=' + lng + '&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
+    
     const url2 = 'https://www.swiggy.com/api/seo/getListing?lat=' + lat + '&lng=' + lng + '&isDineoutCollection=false';
 
     const { resCtx, setResCtx } = useContext(resCTX);

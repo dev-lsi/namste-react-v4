@@ -38,8 +38,8 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
               [categoryId]: { [id]: { ...data, itemCount: 1 } },
             },
           });
-        //.................................
-        //Down to work!....................
+          //.................................
+          //Down to work!....................
         } else if (cartCtx[resId][categoryId]) {
           if (!cartCtx[resId][categoryId][id]) {
             setCartCtx({
@@ -76,17 +76,48 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
   }
 
   function handleRemove() {
-    // if (cartCtx[resId][id]) {
-    //   if (Number(carCtx[resId][id].itemCount)===1) {
-    //      delete carCtx[resId][id];
-    //      if(cartCtx[resId]=={}){
-    //       delete cartCtx[resId];
-    //      }
-    //   }else if (Number(carCtx[resId][id].itemCount)>1) {
-    //     newCount=Number(carCtx[resId][id].itemCount)-1;
-    //     setCartCtx({ ...cartCtx,carCtx[resId][id].itemCount:newCount });
-    //   }
-    // }
+    if (
+      cartCtx &&
+      cartCtx[resId] &&
+      cartCtx[resId][categoryId] &&
+      cartCtx[resId][categoryId][id]
+    ) {
+      // Check if the item count is greater than 0
+      if (cartCtx[resId][categoryId][id].itemCount > 0) {
+        const newCount = Number(cartCtx[resId][categoryId][id].itemCount) - 1;
+
+        // Create a deep copy of cartCtx to avoid mutating the state directly
+        const updatedCart = { ...cartCtx };
+
+        // Update the item count
+        updatedCart[resId][categoryId][id] = {
+          ...updatedCart[resId][categoryId][id],
+          itemCount: newCount,
+        };
+
+        // Check if the item count has reached zero, then delete it
+        if (newCount === 0) {
+          delete updatedCart[resId][categoryId][id];
+
+          // Check if the category is now empty, and if so, delete the category
+          if (Object.keys(updatedCart[resId][categoryId]).length === 0) {
+            delete updatedCart[resId][categoryId];
+
+            // Check if the restaurant is now empty, and if so, delete the restaurant
+            if (Object.keys(updatedCart[resId]).length === 0) {
+              delete updatedCart[resId];
+              if (Object.keys(updatedCart).length === 0) {
+                  delete updatedCart;
+              }
+
+            }
+          }
+        }
+
+        // Update the state with the modified cart
+        setCartCtx(updatedCart);
+      }
+    }
   }
 
   return (

@@ -10,9 +10,8 @@ const MenuCategoryHeader = ({
   setOpenCategoryId,
   resId,
   categoryId,
- 
-
 }) => {
+  
   const{cartCtx,setCartCtx} = useContext(cartCTX);
   
   
