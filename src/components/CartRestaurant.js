@@ -13,7 +13,7 @@ const CartRestaurant = ({ resId }) => {
   console.log(resData)
   function calculateTotal() {
     let resTotal = 0;
-    catIds = Object.keys(cartCtx[resId]);
+    const catIds = Object.keys(cartCtx[resId]);
     const Ids = catIds.map((catId) => {
       Object.keys(cartCtx[resId][catId]).map((id) => {
         const price =
