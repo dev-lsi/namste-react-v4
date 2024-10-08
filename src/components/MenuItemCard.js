@@ -87,7 +87,7 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
         const newCount = Number(cartCtx[resId][categoryId][id].itemCount) - 1;
 
         // Create a deep copy of cartCtx to avoid mutating the state directly
-        const updatedCart = { ...cartCtx };
+        let updatedCart = { ...cartCtx };
 
         // Update the item count
         updatedCart[resId][categoryId][id] = {
@@ -105,9 +105,11 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
 
             // Check if the restaurant is now empty, and if so, delete the restaurant
             if (Object.keys(updatedCart[resId]).length === 0) {
-              delete updatedCart[resId];
-              if (Object.keys(updatedCart).length === 0) {
-                  delete updatedCart;
+                delete updatedCart[resId];
+              if ((Object.keys(updatedCart)).length === 0) {
+                console.log("empty")
+                setCartCtx(null);
+                return;
               }
 
             }

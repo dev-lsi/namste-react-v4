@@ -11,7 +11,7 @@ const MenuCategoryHeader = ({
   resId,
   categoryId,
 }) => {
-  
+
   const{cartCtx,setCartCtx} = useContext(cartCTX);
   
   
@@ -60,7 +60,6 @@ const MenuCategoryHeader = ({
 };
 
 function callcSum(items){
-  console.log(items)
   let sum=0;
   Object.keys(items).map(i=>sum+=Number(items[i].itemCount))
   return sum

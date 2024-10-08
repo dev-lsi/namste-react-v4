@@ -1,67 +1,42 @@
+import s from "./Cart.module.css";
 import { useContext } from "react";
 import { cartCTX } from "../utils/context";
 import { Link, useNavigate } from "react-router-dom";
+import CartRestaurant from "./CartRestaurant";
 
 const Cart = () => {
   const { cartCtx, setCartCtx } = useContext(cartCTX);
+  
   const navigate = useNavigate();
 
- 
-
   return (
-    <div className={"page" + " " + "pl-5 flex gap-y-2"}>
+    <div className={"page"}>
 
-      <Link to={"/"}>
+      <div className={s["cart-controls"]}>
+        <Link to={"/"}>
+          <button
+            className="cart-back-to-restaurants"
+          >
+            {"<< Back to Restaurants"}
+          </button>
+        </Link>
+
         <button
-          className="border-2 border-slate-400 mr-2 mb-2"
-          //onClick={() => navigate(-1)}
+          className="cart-clear-btn"
+          onClick={() => setCartCtx(null)}
         >
-          {"<<- Back to Menu <<-"}
+          {"Clear Cart"}
         </button>
-      </Link>
+      </div>
 
-      <button
-        className="border-2 border-slate-400 mb-2"
-        onClick={() => setCartCtx(null)}
-      >
-        {"Clear Cart"}
-      </button>
-
-      {!cartCtx ? (
-        <h1>Your Cart is Empty!</h1>
+      {(!cartCtx) ? (
+        <h3 className="text-center">Your Cart is Empty!</h3>
       ) : (
-        <div className="bills">
-
+        <div className="cart-restaurants">
           {
-             Object.keys(cartCtx).map(r=>(
-              <div className="border-b-2 border-b-gray-500">
-                {
-                  
-                  Object.keys(cartCtx[r]).map(c=>(
-                      <div>
-                        {
-                         
-                         Object.keys(cartCtx[r][c]).map(i=>(
-                            <div >
-                              <p>{cartCtx[r][c][i].name}</p>
-                              <p>{cartCtx[r][c][i].itemCount}</p>
-                              <p>{cartCtx[r][c][i].price||cartCtx[r][c][i].defaultPrice}</p>
-                            </div>
-                          ))
-                        }
-                      </div>
-                  ))
-                }
-              </div>
-             )
-                
-
-             
-                
-            )
-
+            Object.keys(cartCtx).map( (id) => <CartRestaurant key={id} resId = {id} /> )
           }
-         
+          
         </div>
       )}
 
