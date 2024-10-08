@@ -1,6 +1,6 @@
 import s from "./MenuPage.module.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { resMenu } from "../utils/constants";
 import MenuCategory from "./MenuCategory";
 import { getMenuData } from "../utils/getMenuData";
@@ -21,7 +21,11 @@ const MenuCategoriesContainer = ({data,resId}) => {
     <Shirm />
   ) : (
     <div className={s["menu-categories-container"]}>
-      <h4 className={s["container-header"]}>Menu Categories</h4>
+       <div className={s["menu-container-header-links"]}>
+       <Link to="/">{"<-Restaurants"}</Link>
+       <h4 className={s["container-header"]}>Menu</h4>
+       <Link to="/cart">{"Cart ->"}</Link>
+       </div>
       {data.map((c, index) => (
         <MenuCategory
           key={c.title}

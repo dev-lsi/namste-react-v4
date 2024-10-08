@@ -8,15 +8,23 @@
 .cart-restaurants{
     flex-basis: 100%;
     display:flex;
+    justify-content: center;
     flex-wrap: wrap;
     row-gap: 1em;
 }
 .cart-restaurant{
+    max-width: 600px;
     display:flex;
     flex-wrap: wrap;
     row-gap: 1em;
     padding: 2em;
     border:1px solid var(--color);
+}
+
+.cart-restaurant-header{
+    display:flex;
+    align-items: center;
+    column-gap: 1em;
 }
 
 .restaurant-controls{

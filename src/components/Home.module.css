@@ -3,18 +3,16 @@
 }
 /* Home Default..................................... */
 /* .................................................. */
-
-.bg-text-h1{
-    font:900;
-    color:black;
-}
-.bg-text-h4{
-    font:900;
-    color:black;
+.bg-layout{
+  position: relative;
+  height:120vh;
+  background-image: url("../assets/bg-food-03-grey.jpg");
+  background-size:cover;
+  margin-top: -10em;
 }
 
 .default-container{
-    backdrop-filter: blur(2px);;
+    backdrop-filter: blur(4px) saturate(80%);
     position: fixed;
     left:2em;
     right:2em;
@@ -23,7 +21,8 @@
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 1.2em;
-    padding-block: 2em;
+    padding-block: 1em;
+    margin-top: 10em;
 }
 
 .default-container h4,.default-container h5{
@@ -57,7 +56,7 @@
 
 .hero{
     background-image:url("../assets/bg01.png") ;
-    height:14em;
+    height:16em;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -66,15 +65,41 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    animation: animatebg 0.6s ease-in-out;
+    animation: animatebg 0.8s ease-in-out;
     animation-fill-mode: forwards;
-    
-} 
+    overflow: hidden;
+}
 
 @keyframes animatebg {
   0%{transform:rotateX(90deg)}
   100%{transform:rotateX(0deg)}
 } 
+
+.hero-cover{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left:0;
+  width:100%;
+  /* backdrop-filter: sepia(100%);
+  transition: backdrop-filter 0.25s; */
+  /* animation: animatecover 60s linear infinite; */
+}
+.hero-cover:hover{
+  backdrop-filter: sepia(10%);
+}
+
+@keyframes animatecover {
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+} 
+
+/* @keyframes animatecover {
+  0%{transform:translateX(0%)}
+  100%{transform:translateX(100%)}
+}  */
+
+
 
 
 .hero-heading{
@@ -108,10 +133,10 @@
 .restaurants-container {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2em;
+  column-gap: 3em;
   row-gap: 4em;
   padding-block: 3em;
-  padding-inline: 4em;
+  padding-inline: 9em;
   justify-content:space-between;
   background-color: var(--bg);
   border: 1px solid var(--color);
@@ -142,14 +167,9 @@
 }
 
 
- 
-
-
-
-
 .restaurant-card {
-  max-width: 12vw;
-  min-width: 140px;
+  max-width: 20%;
+  min-width: 200px;
   border: 1px solid var(--color);
   border-radius: 0.2em;
   background-color: rgb(24, 24, 24);
@@ -159,11 +179,67 @@
   transition: display 2s;
 }
 
-.restaurant-card-shifter {
-  max-width: 12vw;
-  min-width: 140px;
-  height: 0;
+@media (max-width: 400px) {
+  .restaurant-card {
+    max-width: 94%;
+  }
+  .restaurant-card-shifter {
+    max-width: 94%;
+    height: 0;
+  }
+  .restaurants-container{
+    padding-inline: 1em;
+  }
+  
 }
+
+@media (min-width: 401px) and (max-width:700px ) {
+  .restaurant-card {
+    min-width: 40%;
+  }
+  .restaurant-card-shifter {
+    min-width: 40%;
+    height: 0;
+  }
+  .restaurants-container{
+    padding-inline: 2em;
+  }
+  
+}
+
+@media (min-width: 701px)and (max-width:1000px ) {
+  .restaurant-card {
+    min-width: 20%;
+    max-width: 25%;
+  }
+  .restaurant-card-shifter {
+    min-width: 20%;
+    max-width: 25%;
+    height: 0;
+  }
+  .restaurants-container{
+    padding-inline: 4em;
+  }
+  
+}
+
+@media (min-width: 1001px){
+  .restaurant-card {
+    min-width: 16%;
+    max-width: 20;
+  }
+  .restaurant-card-shifter {
+    min-width: 16%;
+    max-width: 20;
+    height: 0;
+  }
+  .restaurants-container{
+    padding-inline: 6em;
+  }
+  
+}
+
+
 
 .restaurant-image-container {
   position: relative;
@@ -330,13 +406,4 @@
   text-align: center;
 }
 
-@media (max-width: 420px) {
-  .restaurant-card {
-    max-width: 800%;
-    
-    padding-inline: 0;
-    border: 1px solid var(--color-dark-theme);;
-    border-radius: 0.2em;
-  }
-  
-}
+

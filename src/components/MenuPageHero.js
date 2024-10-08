@@ -4,9 +4,9 @@ import { useContext, useEffect } from "react";
 import { resCTX } from "../utils/context";
 import Shirm from "./Shirm";
 
-const MenuPageHero = () => {
+const MenuPageHero = (injectedId) => {
   const { id } = useParams();
-
+  
   const { resCtx } = useContext(resCTX);
   const restaurants = resCtx.restaurants;
   const restaurantData = restaurants.filter((r) => r.info.id === id);

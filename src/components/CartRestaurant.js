@@ -1,6 +1,7 @@
 import s from "./Cart.module.css";
 import CartItem from "./CartItem";
-import { useContext, useState } from "react";
+import { useContext, useState} from "react";
+import { Link } from "react-router-dom";
 import { cartCTX, resCTX } from "../utils/context";
 import CartCategory from "./CartCategory";
 
@@ -29,14 +30,21 @@ const CartRestaurant = ({ resId }) => {
 
   return (
     <div className={s["cart-restaurant"]}>
+      <div className={s["cart-restaurant-header"]}>
       <h4>{resData.info.name}</h4>
+      <Link to={"/menu/" + resId}><button>Go to Menu</button></Link> 
+      </div>
       {Object.keys(cartCtx[resId]).map((catId) => (
         <CartCategory key={catId} catId={catId} resId={resId} />
       ))}
       <div className={s["restaurant-controls"]}>
         <h5>Total: {calculateTotal()} &#8377; </h5>
         <button>Submit This Order</button>
-        <button>Delete This Order</button>
+        <button onClick={()=>{
+          const cartCtxMutated={...cartCtx};
+          delete cartCtxMutated[resId];
+          setCartCtx({...cartCtxMutated});
+        }}>Delete This Order</button>
       </div>
     </div>
   );

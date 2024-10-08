@@ -32,7 +32,7 @@ const Cart = () => {
       {(!cartCtx) ? (
         <h3 className="text-center">Your Cart is Empty!</h3>
       ) : (
-        <div className="cart-restaurants">
+        <div className={s["cart-restaurants"]}>
           {
             Object.keys(cartCtx).map( (id) => <CartRestaurant key={id} resId = {id} /> )
           }

@@ -21,7 +21,7 @@
 }
 
 .page{
-  padding-top: 10em;
+  padding-top: 8em;
   padding-bottom: 4em;
   display: flex;
   flex-wrap: wrap;
@@ -63,7 +63,8 @@ h6,p,a,ul li a,form,input,button {
 
 button{
   max-width: fit-content;
-  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
   padding-inline: 0.8em;
   border:1px solid var(--color);
   border-radius: 0.8em;

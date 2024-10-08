@@ -54,11 +54,19 @@
     row-gap: 0.4em;
 }
 
-.container-header{
+.menu-container-header-links{
     flex-basis: 100%;
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content:space-evenly;
+    column-gap: 2em;
+    align-items: center;
+    margin-block: 2em;
+}
+
+.container-header{
     text-align: center;
     text-decoration:underline;
-    margin-bottom: 1.2em;
 }
 
 
