@@ -63,6 +63,7 @@ h6,p,a,ul li a,form,input,button {
 
 button{
   max-width: fit-content;
+  text-wrap: nowrap;
   padding-top: 0.2em;
   padding-bottom: 0.4em;
   padding-inline: 0.8em;

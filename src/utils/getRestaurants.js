@@ -6,7 +6,7 @@ export async function getRestaurants(url,setResCtx) {
     // const restaurants_old =
     //   responseData.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants;
     
-    const restaurants = responseData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+    const restaurants = (responseData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)||(responseData.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants)
 
     setResCtx({ restaurants: [...restaurants] });
   }

@@ -42,8 +42,10 @@ const Cart = () => {
 
       <button className="border-2 border-slate-400 mr-2 mb-2">
         {!cartCtx || Object.keys(cartCtx).length === 0
-          ? "Empty order"
-          : "Submit order"}
+          ? "Nothing to Submit"
+          : Object.keys(cartCtx).length===1
+          ?"Submit this order"
+          :"Submit all - " + Object.keys(cartCtx).length + " - Orders"}
       </button>
     </div>
   );

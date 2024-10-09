@@ -28,6 +28,16 @@
     column-gap: 1em;
 }
 
+.restaurant-name{
+    font-family:Roboto, sans-serif;
+    font-style: italic;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color:var(--color);
+    letter-spacing: 0.05em;
+    font-weight: 200;
+}
+
 .restaurant-controls{
     display: flex;
     justify-content: center;
@@ -46,7 +56,7 @@
     flex-basis: 100%;
     display:flex;
     flex-wrap: wrap;
-    row-gap: 0.2em;
+    row-gap: 0.6em;
     align-items: center;background-color: rgb(38, 40, 40);
    
 }

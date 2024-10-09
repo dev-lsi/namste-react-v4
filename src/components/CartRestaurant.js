@@ -31,7 +31,7 @@ const CartRestaurant = ({ resId }) => {
   return (
     <div className={s["cart-restaurant"]}>
       <div className={s["cart-restaurant-header"]}>
-      <h4>{resData.info.name}</h4>
+      <h4 className={s["restaurant-name"]}>{resData.info.name}</h4>
       <Link to={"/menu/" + resId}><button>Go to Menu</button></Link> 
       </div>
       {Object.keys(cartCtx[resId]).map((catId) => (
@@ -43,7 +43,12 @@ const CartRestaurant = ({ resId }) => {
         <button onClick={()=>{
           const cartCtxMutated={...cartCtx};
           delete cartCtxMutated[resId];
-          setCartCtx({...cartCtxMutated});
+          if(Object.keys(cartCtxMutated).length===0){
+            setCartCtx(null);
+          }else{
+            setCartCtx({...cartCtxMutated});
+          }
+          
         }}>Delete This Order</button>
       </div>
     </div>

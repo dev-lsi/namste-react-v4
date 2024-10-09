@@ -9,6 +9,8 @@
   background-image: url("../assets/bg-food-03-grey.jpg");
   background-size:cover;
   margin-top: -10em;
+  margin-bottom: -4em;
+  overflow: hidden;
 }
 
 .default-container{
@@ -16,6 +18,7 @@
     position: fixed;
     left:2em;
     right:2em;
+    top: 10%;
     border:1px solid var(--color);
     display:flex;
     flex-wrap: wrap;
