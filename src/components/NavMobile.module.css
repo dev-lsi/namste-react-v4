@@ -1,5 +1,5 @@
 .nav-mobile{
-  
+    
 }
 
 .opened-menu{
@@ -10,11 +10,11 @@
     top:0;
     left:0;
     right:0;
-    background-color: rgba(62, 62, 62, 0.9);
+    height:120vh;
+    background-color: rgb(22, 22, 22);
     align-content: flex-start;
     padding-top: 1em;
     font-size: 1em;
-    height: 100vh;
 }
 
 @keyframes animateopen {
@@ -32,26 +32,53 @@
     font-size: 1.6em;
     flex-basis: 100%;
     padding-block: 0.6em;
-    padding-left: 4em ;
     display:block;
     margin-block: 0.2em;
+    
 }
-.opened-menu li:hover{
-    /* background-color: rgb(24, 24, 24); */
+.opened-menu li :hover{
     background-color: var(--color);
     color: var(--bg);
-
 }
-.social-icon-mob{
+/* .social-icon-mob{
     height: 1em;
-    width:1em;
+    width:4em;
     background-color: var(--color);
-}
+} */
 
 .social-link{
-    display: flex;
-    column-gap: 1em;
-}
+   
+    background-color: rgb(22, 22, 22);
+} 
 .closed-menu li{
     display:none;
+}
+
+.link-div{
+    display:flex;
+    flex-wrap: nowrap;
+    padding-inline: 2em;
+} 
+
+.link-div span:hover{
+    /* background-color: var(--color);
+    color: var(--bg); */
+}
+
+
+.span-icon{
+  flex-basis: 20%;
+}
+.span-icon img{
+   height: 1em;
+   width: 1em;
+   background-color: antiquewhite;
+    
+  }
+
+.span-name{
+    flex-basis: 80%;
+    text-wrap: nowrap;
+    padding-left: 3em;
+   
 }

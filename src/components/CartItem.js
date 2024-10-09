@@ -33,26 +33,46 @@ const CartItem = ({ resId, catId, itemId }) => {
                   },
                 });
               }}> ➕ </button>
-              <button onClick={()=>{
-                
-                if(cartCtx[resId][catId][itemId].itemCount===0){
-                  return;
-                }
-                const newCount=(cartCtx[resId][catId][itemId].itemCount)-1;
 
-                setCartCtx({
-                  ...cartCtx,
-                  [resId]: {
-                    ...cartCtx[resId],
-                    [catId]: {
-                      ...cartCtx[resId][catId],
-                      [itemId]: {
-                        ...cartCtx[resId][catId][itemId],
-                        itemCount: newCount,
+              {/* Button Remove 1pcs of Item */}
+              <button onClick={()=>{
+                //If has onli one Item
+                const mutatedCtx={...cartCtx};
+                if(cartCtx[resId][catId][itemId].itemCount===1){
+                  delete mutatedCtx[resId][catId][itemId];
+                  if(Object.keys(mutatedCtx[resId][catId]).length===0){
+                    delete mutatedCtx[resId][catId];
+                    if(Object.keys(mutatedCtx[resId]).length===0){
+                      delete mutatedCtx[resId];
+                      if(Object.keys(mutatedCtx).length===0){
+                        setCartCtx(null);
+                        return;
+                      }
+                    }
+                  }
+                   setCartCtx({...mutatedCtx});
+                  
+                 
+                //if items are more than ONE  
+                }else if(cartCtx[resId][catId][itemId].itemCount>1){
+                  const newCount=(cartCtx[resId][catId][itemId].itemCount)-1;
+                  setCartCtx({
+                    ...cartCtx,
+                    [resId]: {
+                      ...cartCtx[resId],
+                      [catId]: {
+                        ...cartCtx[resId][catId],
+                        [itemId]: {
+                          ...cartCtx[resId][catId][itemId],
+                          itemCount: newCount,
+                        },
                       },
                     },
-                  },
-                });
+                  });
+                }
+                
+
+                
               }}> ➖ </button>
             </div>
         </div>

@@ -26,6 +26,7 @@ const HomeRendered = () => {
     useContext(resCTX);
 
   const [resList, setResList] = useState(null);
+  
   const [data, setData] = useState(null);
 
   const [buttonName, setButtonName] = useState("Show Top Rated");

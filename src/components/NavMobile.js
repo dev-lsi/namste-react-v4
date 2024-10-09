@@ -1,4 +1,3 @@
-
 import githubIcon from "../assets/291716_github_logo_social network_social_icon.png";
 import faceBookIcon from "../assets/4202867_facebook_icon.png";
 import linkedInIcon from "../assets/107159_circle_linkedin_icon.png";
@@ -12,69 +11,125 @@ const NavMobile = () => {
     setIsOpen(!isOpen);
   }
 
-  function handleAnimation(e){
-    const currClassName=e.target.className;
-    console.log(currClassName)
-    if(currClassName=='opened-menu'){
-      e.target.style.display='block';
-    }else{
-      e.target.style.display='none';
+  function handleAnimation(e) {
+    const currClassName = e.target.className;
+    console.log(currClassName);
+    if (currClassName == "opened-menu") {
+      e.target.style.display = "block";
+    } else {
+      e.target.style.display = "none";
     }
-
   }
-  
+
   return (
     <nav className={s["nav-mobile"]} onClick={(e) => toggleMenu(e)}>
       <button className={s["menu-button"]}>Menu</button>
-      <ul onAnimationEnd = {handleAnimation} 
-      className={isOpen ? s["opened-menu"] : s["closed-menu"]}>
+      <ul
+        onAnimationEnd={handleAnimation}
+        className={isOpen ? s["opened-menu"] : s["closed-menu"]}
+      >
         <li>
-          <Link to="/">❌ Close Menu</Link>
+          <Link to="/">
+            <div className={s["link-div"]}>
+              <span className={s["span-icon"]}>❌</span>
+              <span className={s["span-name"]}>Close Menu</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <Link to="/">🏠 Home</Link>
+          <Link to="/">
+            <div className={s["link-div"]}>
+              <span className={s["span-icon"]}>🏠</span>
+              <span className={s["span-name"]}>Home</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <Link to="/about">👀 About</Link>
+          <Link to="/about">
+            <div className={s["link-div"]}>
+              <span className={s["span-icon"]}>👀</span>
+              <span className={s["span-name"]}>About</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <Link to="/contacts">📪 Contact</Link>
+          <Link to="/contacts">
+            <div className={s["link-div"]}>
+              <span className={s["span-icon"]}>📪</span>
+              <span className={s["span-name"]}>Contact</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <Link to="/login">✒ Log In</Link>
+          <Link to="/login">
+            <div className={s["link-div"]}>
+              <span className={s["span-icon"]}>✒</span>
+              <span className={s["span-name"]}>Login</span>
+            </div>
+          </Link>
         </li>
         <li>
-        
-          <a className={s["social-link"]} href="https://www.github.com" target="_blank" rel="noopener noreferrer" alt="">
-          <img 
-              className={s["social-icon-mob"]}
-              src={githubIcon}
-              alt="GitHub icon"
-            />
-          GitHub
+          <a
+            className={s["social-link"]}
+            href="https://www.github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            alt=""
+          >
+            <div className={s["link-div"]}>
+              <span className={s["span-icon"]}>
+                <img
+                  className={s["social-icon-mob"]}
+                  src={githubIcon}
+                  alt="GitHub icon"
+                />
+              </span>
+
+              <span className={s["span-name"]}>GitHub</span>
+            </div>
           </a>
-         
         </li>
         <li>
-          <a className={s["social-link"]} href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" alt="">
-            <img
-              className={s["social-icon-mob"]}
-              src={linkedInIcon}
-              alt="linkedIn icon"
-            />
-            LinkedIn
+          <a
+            className={s["social-link"]}
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            alt=""
+          >
+            <div className={s["link-div"]}>
+              <span className={s["span-icon"]}>
+                <img
+                  className={s["social-icon-mob"]}
+                  src={linkedInIcon}
+                  alt="linkedIn icon"
+                />
+              </span>
+
+              <span className={s["span-name"]}>LinkedIn</span>
+            </div>
           </a>
         </li>
         <li>
-          <a className={s["social-link"]} href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" alt="">
-            <img
-              className={s["social-icon-mob"]}
-              src={faceBookIcon}
-              alt="FaceBook icon"
-            />
-            Facebook
+          <a
+            className={s["social-link"]}
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            alt=""
+          >
+            <div className={s["link-div"]}>
+              <span className={s["span-icon"]}>
+                <img
+                  className={s["social-icon-mob"]}
+                  src={faceBookIcon}
+                  alt="FaceBook icon"
+                />
+              </span>
+
+              <span className={s["span-name"]}>FaceBook</span>
+            </div>
           </a>
-          
         </li>
       </ul>
     </nav>
