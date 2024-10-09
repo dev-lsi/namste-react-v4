@@ -21,6 +21,10 @@ const HomeRendered = () => {
     "&lng=" +
     lng +
     "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+    const url2Proxy = 'https://corsproxy.io/?' + encodeURIComponent('https://www.swiggy.com/dapi/restaurants/list/v5?lat=')+lat +
+    "&lng=" +
+    lng +
+    "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
   const { resCtx, setResCtx } =
     useContext(resCTX);
@@ -38,7 +42,7 @@ const HomeRendered = () => {
 
   useEffect(() => {
     if (resCtx.restaurants.length === 0) {
-      getRestaurants(url2, setResCtx);
+      getRestaurants(url2Proxy, setResCtx);
     }
     setResList(resCtx.restaurants);
     setData(resCtx.restaurants);
