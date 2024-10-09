@@ -25,7 +25,7 @@ const LoadMoreButton = () => {
     lng +
     "&isDineoutCollection=false";
 
-  const urlProxy = "https://corsproxy.io/?" + encodeURIComponent('https://www.swiggy.com/api/seo/getListing?lat=',)+lat+"&lng="+lng+"&isDineoutCollection=false";
+  const urlProxy = "https://proxy.cors.sh/" + 'https://www.swiggy.com/api/seo/getListing?lat='+lat+"&lng="+lng+"&isDineoutCollection=false";
 
   const { resCtx, setResCtx } = useContext(resCTX);
   const data = resCtx.restaurants;
@@ -79,7 +79,7 @@ const LoadMoreButton = () => {
   async function getNextRestaurants() {
     if (hasResponse === true) {
       setHasResponse(false);
-      const response = await fetch(url2, {
+      const response = await fetch(urlProxy, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
