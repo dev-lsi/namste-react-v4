@@ -4,7 +4,7 @@ import s from "./MenuPage.module.css";
 import { useEffect, useState,useContext } from "react";
 import { getMenuData } from "../utils/getMenuData";
 import { useParams } from "react-router-dom";
-import { resMenu } from "../utils/constants";
+import { resMenu,resMenuProxy } from "../utils/constants";
 import { cartCTX } from "../utils/context";
 
 
@@ -23,7 +23,7 @@ const MenuPage = () => {
 
   useEffect(()=>{
     
-      getMenuData(resMenu+id,setData);
+      getMenuData(resMenuProxy + id,setData);
 
       //getDineout(id);
     

@@ -9,6 +9,7 @@ import Shirm from "./Shirm";
 const MenuCategoriesContainer = ({data,resId}) => {
   //const { id } = useParams();
   const [openCategoryId, setOpenCategoryId] = useState(null);
+  
 
    const getDineout=async (resId)=>{
     const response=
