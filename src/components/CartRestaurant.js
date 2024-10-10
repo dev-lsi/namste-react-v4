@@ -30,15 +30,17 @@ const CartRestaurant = ({ resId }) => {
 
   return (
     <div className={s["cart-restaurant"]}>
-      <div className={s["cart-restaurant-header"]}>
+      
       <h4 className={s["restaurant-name"]}>{resData.info.name}</h4>
+      
+     
       <Link to={"/menu/" + resId}><button>Go to Menu</button></Link> 
-      </div>
       {Object.keys(cartCtx[resId]).map((catId) => (
         <CartCategory key={catId} catId={catId} resId={resId} />
       ))}
       <div className={s["restaurant-controls"]}>
         <h5>Total: {calculateTotal()} &#8377; </h5>
+        <div className={s["restaurant-controls-buttons"]}> 
         <button>Submit This Order</button>
         <button onClick={()=>{
           const cartCtxMutated={...cartCtx};
@@ -49,7 +51,8 @@ const CartRestaurant = ({ resId }) => {
             setCartCtx({...cartCtxMutated});
           }
           
-        }}>Delete This Order</button>
+        }}>Delete This Order</button></div>
+        
       </div>
     </div>
   );

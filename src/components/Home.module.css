@@ -1,136 +1,205 @@
 .home {
   position: relative;
-}
-/* Home Default..................................... */
-/* .................................................. */
-.bg-layout{
-  position: relative;
-  height:120vh;
-  background-image: url("../assets/bg-food-03-grey.jpg");
-  background-size:cover;
-  margin-top: -10em;
-  margin-bottom: -4em;
   overflow: hidden;
 }
 
-.default-container{
-    backdrop-filter: blur(4px) saturate(80%);
-    position: fixed;
-    left:2em;
-    right:2em;
-    top: 10%;
-    border:1px solid var(--color);
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 1.2em;
-    padding-block: 1em;
-    margin-top: 10em;
+/* Home Default..................................... */
+/* .................................................. */
+.bg-layout {
+  position: relative;
+  height: 120vh;
+  background-image: url("../assets/bg-food-03-grey.jpg");
+  background-position: center;
+  background-size: cover;
+  margin-top: -10em;
+  margin-bottom: -4em;
+  overflow: hidden;
+
+  overflow: hidden;
 }
 
-.default-container h4,.default-container h5{
-    flex-basis: 90%;
-    background:none;
-    font : bold;
-    width:100%;
-    text-align: center;
-    
+@keyframes rotateBG {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(2deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes scaleBG {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes opacity-anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.default-container-controls{
-   margin-top: 2em;
-   flex-basis: 90%;
-   display:flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   column-gap: 0.6em;
-   row-gap: 1.2em;
+.default-container {
+  backdrop-filter: blur(2px) saturate(80%);
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  right: 18%;
+  /* border: 1px solid var(--color); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 1.2em;
 }
 
+@media (max-width:700px) {
+  .default-container{
+    left: 2em;
+    right: 2em;
+  }
+  
+}
 
+.default-container h4,
+.default-container h5 {
+  opacity: 1;
+  flex-basis: 90%;
+  background: none;
+  font: bold;
+  width: 100%;
+  text-align: center;
+  animation: opacity-anim 2s forwards;
+}
 
+.default-container-controls {
+  margin-top: 2em;
+  flex-basis: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.6em;
+  row-gap: 1.2em;
+}
+.default-container-controls > * {
+  opacity: 0;
+}
+
+.default-container-controls :nth-child(1) {
+  animation: opacity-anim 0.4s 0s forwards;
+}
+.default-container-controls :nth-child(2) {
+  animation: opacity-anim 0.4s 0.4s forwards;
+}
+.default-container-controls :nth-child(3) {
+  animation: opacity-anim 0.4s 0.8s forwards;
+}
+.default-container-controls :nth-child(4) {
+  animation: opacity-anim 0.4s 1.2s forwards;
+}
+.default-container-controls :nth-child(5) {
+  animation: opacity-anim 0.4s 1.6s forwards;
+}
+.default-container-controls :nth-child(6) {
+  animation: opacity-anim 0.4s 2s forwards;
+}
+.default-container-controls :nth-child(7) {
+  animation: opacity-anim 0.4s 2.4s forwards;
+}
 
 /* Home Rendered..................................... */
 /* .................................................. */
-.home-rendered{
-    row-gap: 8em;
-    padding-bottom: 4em;
+.home-rendered {
+  row-gap: 8em;
+  padding-bottom: 4em;
 }
 
-.hero{
-    background-image:url("../assets/bg01.png") ;
-    height:16em;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    animation: animatebg 0.8s ease-in-out;
-    animation-fill-mode: forwards;
-    overflow: hidden;
+.hero {
+  background-image: url("../assets/bg01.png");
+  height: 16em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: animatebg 0.8s ease-in-out;
+  animation-fill-mode: forwards;
+  overflow: hidden;
 }
 
 @keyframes animatebg {
-  0%{transform:rotateX(90deg)}
-  100%{transform:rotateX(0deg)}
-} 
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
 
-.hero-cover{
+.hero-cover {
   position: fixed;
-  top:0;
+  top: 0;
   bottom: 0;
-  left:0;
-  width:100%;
+  left: 0;
+  width: 100%;
   /* backdrop-filter: sepia(100%);
   transition: backdrop-filter 0.25s; */
   /* animation: animatecover 60s linear infinite; */
 }
-.hero-cover:hover{
+.hero-cover:hover {
   backdrop-filter: sepia(10%);
 }
 
 @keyframes animatecover {
-  0%{transform:translateX(-100%)}
-  100%{transform:translateX(100%)}
-} 
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 
 /* @keyframes animatecover {
   0%{transform:translateX(0%)}
   100%{transform:translateX(100%)}
 }  */
 
-
-
-
-.hero-heading{
-    flex-basis: 100%;
-    text-align: center;
-    line-height: 1em;
-    font-style: oblique;
-    font-weight: 900;
-    color:rgb(139, 0, 0) ;
-    text-shadow: var(--color) 0 0 6px;
-    margin-bottom: 1em;
-    
-}
-
-.hero-sub-heading{
+.hero-heading {
   flex-basis: 100%;
   text-align: center;
-  color:var(--color);
-  
+  line-height: 1em;
+  font-style: oblique;
+  font-weight: 900;
+  color: rgb(139, 0, 0);
+  text-shadow: var(--color) 0 0 6px;
+  margin-bottom: 1em;
 }
-.hero-sub-heading span{
+
+.hero-sub-heading {
   flex-basis: 100%;
-    text-align: center;
-    font-style: oblique;
-    font-weight: 900;
-    /* color:var(--color-dark-theme); */
-    color:rgb(139, 1, 1) ;
-    text-shadow: var(--color) 0 0 6px;
+  text-align: center;
+  color: var(--color);
+}
+.hero-sub-heading span {
+  flex-basis: 100%;
+  text-align: center;
+  font-style: oblique;
+  font-weight: 900;
+  /* color:var(--color-dark-theme); */
+  color: rgb(139, 1, 1);
+  text-shadow: var(--color) 0 0 6px;
 }
 
 .restaurants-container {
@@ -140,15 +209,15 @@
   row-gap: 4em;
   padding-block: 3em;
   padding-inline: 9em;
-  justify-content:space-between;
+  justify-content: space-between;
   background-color: var(--bg);
   border: 1px solid var(--color);
   min-height: 120vh;
 }
 
-.filters-container{
+.filters-container {
   flex-basis: 100%;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -156,19 +225,18 @@
   row-gap: 1em;
 }
 
-.search-container{
+.search-container {
   display: flex;
   text-align: center;
 }
-.search-button{
+.search-button {
   margin-left: -1em;
   background-color: var(--bg);
 }
 
-.search-container input{
- border-radius:0.7em;
+.search-container input {
+  border-radius: 0.7em;
 }
-
 
 .restaurant-card {
   max-width: 20%;
@@ -190,13 +258,12 @@
     max-width: 94%;
     height: 0;
   }
-  .restaurants-container{
+  .restaurants-container {
     padding-inline: 1em;
   }
-  
 }
 
-@media (min-width: 401px) and (max-width:700px ) {
+@media (min-width: 401px) and (max-width: 700px) {
   .restaurant-card {
     min-width: 40%;
   }
@@ -204,13 +271,12 @@
     min-width: 40%;
     height: 0;
   }
-  .restaurants-container{
+  .restaurants-container {
     padding-inline: 2em;
   }
-  
 }
 
-@media (min-width: 701px)and (max-width:1000px ) {
+@media (min-width: 701px) and (max-width: 1000px) {
   .restaurant-card {
     min-width: 20%;
     max-width: 25%;
@@ -220,13 +286,12 @@
     max-width: 25%;
     height: 0;
   }
-  .restaurants-container{
+  .restaurants-container {
     padding-inline: 4em;
   }
-  
 }
 
-@media (min-width: 1001px){
+@media (min-width: 1001px) {
   .restaurant-card {
     min-width: 16%;
     max-width: 20;
@@ -236,13 +301,10 @@
     max-width: 20;
     height: 0;
   }
-  .restaurants-container{
+  .restaurants-container {
     padding-inline: 6em;
   }
-  
 }
-
-
 
 .restaurant-image-container {
   position: relative;
@@ -272,101 +334,97 @@
   padding-inline: 0.4em;
 }
 
-.sub-1{
+.sub-1 {
   flex-basis: 100%;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
 }
 
-.sub-2{
+.sub-2 {
   flex-basis: 100%;
-  display:flex;
+  display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   column-gap: 2em;
 }
-.restaurant-info{
+.restaurant-info {
   flex-basis: 100%;
 }
 
-.name{
+.name {
   flex-basis: 100%;
   font-size: 1.4em;
   text-align: center;
   line-height: 1.1em;
   height: 2.2em;
-  font:bold;
+  font: bold;
   margin-bottom: 0.2em;
 }
-.area{
+.area {
   text-align: center;
   flex-basis: 100%;
   line-height: 1.2em;
 }
-.area-logo{
-  
+.area-logo {
 }
-.area-name{
+.area-name {
   font-size: 1.2em;
 }
 
-.delivery-time{
+.delivery-time {
   flex-basis: 100%;
   justify-content: center;
   text-align: center;
   line-height: 1.2em;
-  
 }
-.delivery-time-logo{}
-.delivery-time-number{
+.delivery-time-logo {
+}
+.delivery-time-number {
   font-size: 1.2em;
-  color:greenyellow;
+  color: greenyellow;
 }
-.delivery-time-min{}
+.delivery-time-min {
+}
 
-.open-closed{
-  
+.open-closed {
 }
-.open{
+.open {
   font-size: 1.4em;
-  color:greenyellow;
+  color: greenyellow;
 }
-.closed{
+.closed {
   font-size: 1.4em;
-  color:red;
+  color: red;
 }
 
-
-.rating{
-
+.rating {
 }
-.rating-logo{
+.rating-logo {
   font-size: 1.4em;
 }
 
-.rating-number{
-  color:yellow;
-  font-size:1.4em ;
+.rating-number {
+  color: yellow;
+  font-size: 1.4em;
 }
 
-.cuisines-container{
+.cuisines-container {
   flex-basis: 100%;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
-
 }
-.cuisines-header{
+.cuisines-header {
   flex-basis: 100%;
   text-align: center;
-  font-size:1.4em;
-  color:goldenrod;
+  font-size: 1.4em;
+  color: goldenrod;
   text-decoration: underline;
 }
-.cuisines-list{
+.cuisines-list {
   flex-basis: 100%;
   text-align: center;
-  font-size:1.2em;
-  color:goldenrod;
+  font-size: 1.2em;
+  color: goldenrod;
 }
 
 /* Controls.................................................. */
@@ -375,11 +433,11 @@
   position: absolute;
   color: var(--color);
   background-color: var(--bg);
-  border:1px solid var(--color);
+  border: 1px solid var(--color);
   text-wrap: nowrap;
   font-size: 0.6em;
   bottom: -1.6em;
-  right:-2.2em;
+  right: -2.2em;
   padding-inline: 1em;
   padding-bottom: 4em;
   padding-top: 0.2em;
@@ -394,19 +452,17 @@
   padding-bottom: 6em;
 }
 
-.change-location-container{
+.change-location-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 1em;
   column-gap: 1em;
   padding: 2em;
-  border:1px solid var(--color);
+  border: 1px solid var(--color);
 }
 
-.change-location-container h5{
+.change-location-container h5 {
   flex-basis: 100%;
   text-align: center;
 }
-
-

@@ -5,10 +5,14 @@ const LocationButton = ({ city }) => {
   const { name, coords } = city;
   const { locCtx, setLocCtx } = useContext(locCTX);
   const { resCtx, setResCtx } = useContext(resCTX);
+  
+    
+ 
 
   return (
     <button
       className={s["location-button"]}
+      
       onClick={() => {
         setResCtx({
           restaurants: [],
@@ -19,6 +23,12 @@ const LocationButton = ({ city }) => {
           coords,
           city: name,
         });
+        window.scroll({
+          top: 0,
+          left:0,
+          behavior: "smooth",
+        });
+        
       }}
     >
       {name}

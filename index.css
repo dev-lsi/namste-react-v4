@@ -29,6 +29,8 @@
   background-color: var(--bg);
   row-gap: 2em;
   min-height: 100vh;
+  overflow-x: hidden;
+  text-overflow: clip;
 }
 
 .page >*{
