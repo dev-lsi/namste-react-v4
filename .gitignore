@@ -1,3 +1,8 @@
 /node_modules
 /dist
 .parcel-cache
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
