@@ -2,7 +2,7 @@
     position: fixed;
     left:0;
     right:0;
-    top:-100px;
+    top:-120px;
     z-index:100;
     display: flex;
     flex-wrap: wrap;
@@ -118,10 +118,11 @@
 }
 @keyframes show-header {
     0%{transform: translateY(0px)}
-    100%{transform: translateY(100px)}
+    100%{transform: translateY(120px)}
 }
+
 @keyframes hide-header {
-    0%{transform: translateY(100px)}
+    0%{transform: translateY(120px)}
     100%{transform: translateY(0px)}
 }
 

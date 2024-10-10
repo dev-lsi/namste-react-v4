@@ -1,6 +1,7 @@
 import { useState } from "react";
 import s from "./Login.module.css";
 import { useLocation, useParams } from "react-router-dom";
+import { Authenticator } from '@aws-amplify/ui-react';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ const Login = () => {
 
   return (
     <div className={"page"}>
+      <Authenticator></Authenticator>
       <form onSubmit={handleSubmit} className={s["login-form"]}>
         <div className={s["row"]}>
           <label htmlFor="username">Username:</label>
@@ -64,23 +66,17 @@ const Login = () => {
           <button type="submit">Login</button>
         </div>
         <div className={s["row"]}>
-          <p className={s["signup-link-p"]}>
-           
-          </p>
+          <p className={s["signup-link-p"]}></p>
         </div>
         <div className={s["row"]}>
-          <p className={s["signup-link-p"]}>
-            Not Registered yet?...
-          </p>
+          <p className={s["signup-link-p"]}>Not Registered yet?...</p>
         </div>
         <div className={s["row"]}>
-        <a
-              href=""
-              className="text-blue-800 hover:text-blue-700 active:text-blue-900 underline underline-offset-4 "
-            >
-              {" "}
-              Create new account here!
-            </a>
+          <h5 className="text-blue-800 hover:text-blue-700 active:text-blue-900 underline underline-offset-4 "
+          >
+            {" "}
+            Create new account here!
+          </h5>
         </div>
       </form>
     </div>

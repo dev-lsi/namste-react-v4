@@ -11,11 +11,13 @@ const CartItem = ({ resId, catId, itemId }) => {
      
         <p className={s["item-name"]}>{item.name || title}</p>
         <div className={s["item-info"]}>
+            <div className={s["item-info-prices"]}>
             <p className={s["item-count"]}>{item.itemCount}</p>
             <p> ✖ </p>
             <p className={s["item-price"]}>
               {item.price || item.defaultPrice} &#8377;
             </p>
+            </div>
             <div className={s["item-controls"]}>
               <button onClick={()=>{
                 const newCount=(cartCtx[resId][catId][itemId].itemCount)+1;

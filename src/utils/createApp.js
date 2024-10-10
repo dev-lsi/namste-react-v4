@@ -9,6 +9,7 @@ import Login from "../components/Login";
 import Cart from "../components/Cart";
 import MenuPage from "../components/MenuPage";
 
+
 export function createApp(location) {
   
 
@@ -46,5 +47,8 @@ export function createApp(location) {
   ]);
 
   const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<RouterProvider router={router}/>);
-}
+  root.render(
+    
+      <RouterProvider router={router}/>
+    );
+  }

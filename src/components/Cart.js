@@ -30,7 +30,7 @@ const Cart = () => {
       </div>
 
       {(!cartCtx) ? (
-        <h3 className="text-center">Your Cart is Empty!</h3>
+        <h3 className="text-center text-orange-700">Your Cart is Empty!</h3>
       ) : (
         <div className={s["cart-restaurants"]}>
           {

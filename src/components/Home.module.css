@@ -1,5 +1,4 @@
 .home {
-  position: relative;
   overflow: hidden;
 }
 
@@ -14,7 +13,6 @@
   margin-top: -10em;
   margin-bottom: -4em;
   overflow: hidden;
-
   overflow: hidden;
 }
 
@@ -64,8 +62,8 @@
 
 @media (max-width:700px) {
   .default-container{
-    left: 2em;
-    right: 2em;
+    left: 1em;
+    right: 1em;
   }
   
 }
@@ -92,10 +90,16 @@
 }
 .default-container-controls > * {
   opacity: 0;
+  
+}
+
+.default-container-controls button{
+  width:20em;
 }
 
 .default-container-controls :nth-child(1) {
   animation: opacity-anim 0.4s 0s forwards;
+  
 }
 .default-container-controls :nth-child(2) {
   animation: opacity-anim 0.4s 0.4s forwards;
