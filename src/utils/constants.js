@@ -13,6 +13,9 @@ export const resMenu =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.960059122809971&lng=77.57337538383284&catalog_qa=undefined&restaurantId=";
 export const resMenuProxy = 'https://corsproxy.io/?' + encodeURIComponent(resMenu);
 
+export const resMenuProba='https://corsproxy.io/?' + encodeURIComponent("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&catalog_qa=undefined&restaurantId=");
+
+
 export const resMenuURL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.960059122809971&lng=77.57337538383284&restaurantId=";
 

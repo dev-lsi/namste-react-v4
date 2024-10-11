@@ -12,8 +12,8 @@ const MenuItemDescription=(data)=>{
     }
     return (
         <div className={s["description-container"]}>
-          <h6 className={s["description-header"]} 
-          onClick={()=>toggle()}>{isOpen=="shown"?"Hide description <<":"Show Description >"}</h6>
+          <h5 className={s["description-header"]} 
+          onClick={()=>toggle()}>{isOpen=="shown"?"Hide description <<":"Show Description >"}</h5>
           <p className={s["description-text"] + " " + s[isOpen]}>
             {data.data}
           </p>

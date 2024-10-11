@@ -123,67 +123,66 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
 
   return (
     <div className={s["item-card"]}>
-     <div className={s["info-row"]}>
-     <div className={s["item-info-container"]}>
-        <h4 className={s["item-name"]}>{name}</h4>
-        <div className={s["item-data-set"]}>
-          <h5>
-            Veg:
-            {isVeg ? (
-              <span className="text-green-500"> Yes</span>
-            ) : (
-              <span className="text-orange-500"> No</span>
-            )}
-          </h5>
-          <div>
-            {ratings.aggregatedRating.rating && (
-              <h5>
-                <span>{ratings.aggregatedRating.rating}⭐</span>
-              </h5>
-            )}
-          </div>
-          <h5 className={s["item-price"]}>
-            <span className={s["item-price-logo"]}>Price:</span>
-            <span className={s["item-price-number"]}>
-              {price || defaultPrice}
-            </span>
-            <span className={s["item-currency-symbol"]}>&#8377;</span>
-          </h5>
-        </div>
-        {description && description.length !== 0 && (
-          <MenuItemDescription data={description} />
-        )}
-      </div>
       
+        <div className={s["item-info-container"]}>
+          <h4 className={s["item-name"]}>{name}</h4>
+          <div className={s["item-data-set"]}>
+            <h5>
+              Veg:
+              {isVeg ? (
+                <span className="text-green-500"> Yes</span>
+              ) : (
+                <span className="text-orange-500"> No</span>
+              )}
+            </h5>
+            <div>
+              {ratings.aggregatedRating.rating && (
+                <h5>
+                  <span>{ratings.aggregatedRating.rating}⭐</span>
+                </h5>
+              )}
+            </div>
+            <h5 className={s["item-price"]}>
+              <span className={s["item-price-logo"]}>Price:</span>
+              <span className={s["item-price-number"]}>
+                {price || defaultPrice}
+              </span>
+              <span className={s["item-currency-symbol"]}>&#8377;</span>
+            </h5>
+          </div>
+          {description && description.length !== 0 && (
+            <MenuItemDescription data={description} />
+          )}
+        </div>
 
-      {/* IMAGE CONTAINER --> RIGHT SECTION */}
+        {/* IMAGE CONTAINER --> RIGHT SECTION */}
 
-      <div className={s["item-image-container"]}>
-        <img
-          className={s["item-image"]}
-          src={!imageId ? logo : RES_IMAGES_URL + imageId}
-          alt="logo"
-        />
-      </div>
-     </div>
+        <div className={s["item-image-container"]}>
+          <img
+            className={s["item-image"]}
+            src={!imageId ? logo : RES_IMAGES_URL + imageId}
+            alt="logo"
+          />
+        </div>
+     
       {/* CONTROLS..............*/}
       <div className={s["controls-container"]}>
         <button className={s["button-add"]} onClick={handleAdd}>
           Add
         </button>
-       
-          <h4>
-            {!cartCtx
-              ? 0
-              : !cartCtx[resId]
-              ? 0
-              : !cartCtx[resId][categoryId]
-              ? 0
-              : !cartCtx[resId][categoryId][id]
-              ? 0
-              : cartCtx[resId][categoryId][id].itemCount}
-          </h4>
-       
+
+        <h4>
+          {!cartCtx
+            ? 0
+            : !cartCtx[resId]
+            ? 0
+            : !cartCtx[resId][categoryId]
+            ? 0
+            : !cartCtx[resId][categoryId][id]
+            ? 0
+            : cartCtx[resId][categoryId][id].itemCount}
+        </h4>
+
         <button className={s["button-remove"]} onClick={handleRemove}>
           Remove
         </button>

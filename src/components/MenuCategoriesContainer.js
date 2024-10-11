@@ -14,9 +14,10 @@ const MenuCategoriesContainer = ({categories,resId}) => {
     <Shirm />
   ) : (
     <div className={s["menu-categories-container"]}>
+       <h3 className={s["container-heading"]}>Menu</h3>
        <div className={s["menu-container-header-links"]}>
        <Link to="/">{"<-Restaurants"}</Link>
-       <h3 className={s["container-header"]}>Menu</h3>
+       
        <Link to="/cart">{"Cart ->"}</Link>
        </div>
       {categories.map((c, index) => (
