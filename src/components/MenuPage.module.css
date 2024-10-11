@@ -8,6 +8,7 @@
 }
 
 .menu-page{
+    padding-top:8em;
     color:var(--color);
     background-color: var(--bg);
 }
@@ -18,27 +19,71 @@
 /* MENU PAGE HEADER etc.HERO */
 .menu-header{
     display: flex;
-    flex-wrap: nowrap;
-    column-gap: 2em;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items:top;
+    column-gap: 2em;
+   
+}
+
+.logo-name-row{
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    column-gap: 2em;
+    padding-block: 2em;
 }
 
 .res-image-container{
-    width: 10em;
-    height:10em;
+    width: 6em;
+    height:6em;
     overflow: hidden;
 }
 .res-image{
     object-position: center;
     object-fit: contain;
 }
-
 .res-info-container{
-   font-size: 0.6em;
+  
+
+}
+.res-info-name{
+color:rgb(248, 47, 47);
+font-size: 1.6em;
+}
+/* Restaurant-hero-statistics container */
+.res-stat-container{
+    flex-basis:50%;
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    column-gap: 2em;
+    border-top: 1px solid grey;
+    padding-top: 1em; 
+}
+.res-stat-close-at,
+.res-stat-open-closed,
+.res-stat-rating{
+    text-wrap: nowrap;
 }
 
-.res-info-name{
-    margin-bottom: 1.4em;
+.res-stat-close-at-number{
+    padding-left: 0.6em;
+    color:orangered
+}
+
+.cuisines-header, .cuisines-text{
+    color:goldenrod;
+}
+.cuisines-header{
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.cuisines-text{
+    font-size: 0.9em;
+    padding-left: 1em;
 }
 
 
@@ -47,7 +92,7 @@
 /* CATEGORIES CONTAINER */
 
 .menu-categories-container{
-    flex-basis: 100%;
+    flex-basis: 90%;
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -55,13 +100,13 @@
 }
 
 .menu-container-header-links{
-    flex-basis: 100%;
+    flex-basis: 90%;
     display:flex;
     flex-wrap: nowrap;
-    justify-content:space-evenly;
+    justify-content:center;
     column-gap: 2em;
     align-items: center;
-    margin-block: 2em;
+    margin-block: 1em;
 }
 
 .container-header{
@@ -87,7 +132,6 @@
     flex-basis: 80%;
     padding-inline: 2em;
     padding-block: 0.4em;
-    height: 2em;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -101,11 +145,11 @@
 
 .menu-category-header :nth-child(2){
     flex-basis: 20%;
-    font-size: 0.8em;
+    text-align: right;
 }
 
 .menu-category-header :nth-child(2) span{
-    padding-left: 0.4em;
+    
 }
 
 .opened-header{
@@ -118,7 +162,7 @@
 }
 
 .opened-header :nth-child(2){
-  font-size: 0.6em;
+ 
 }
 
 .opened-header :nth-child(2) span{
@@ -149,38 +193,39 @@
 .item-card{
     flex-basis: 100%;
     flex-shrink: 0;
-    padding-inline: 1em;
-    padding-block: 0.5em;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    column-gap: 2em;
+    flex-wrap: wrap;
     border:1px solid var(--color);
+    padding-inline: 2em;
+    padding-block: 1em;
+    font-size: 0.8em;
+}
+
+.info-row{
+    flex-basis: 100%;
+    display:flex;
+    justify-content: space-between;
 }
 
 
 /* Item Left */
  .item-info-container{
-    flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
-    font-size: 0.6em;
  }
 
  .item-name{
-    line-height:1em;
+    flex-basis: 100%;
  }
 
  .item-data-set{
     flex-basis: 100%;
-    flex-wrap: nowrap;
     display: flex;
-    column-gap: 1em;
+    column-gap: 0.6em;
  }
 
  .item-price{
     display: flex;
-    flex-wrap: nowrap;
     column-gap: 0.2em;
  }
  .item-logo{}
@@ -188,11 +233,11 @@
 
  .item-price-number{
     color:rgb(4, 180, 4);
-    font-size: larger;
+    font-size: 1.2em;
  }
  .item-currency-symbol{
     color:rgb(3, 160, 3);
-    font-size: larger;
+    font-size: 1.2em;
  }
 
 /* Item Right */
@@ -212,61 +257,44 @@
     transition: filter 0.5s;
 }
 .item-image:hover{
-    filter:grayscale(50%)
+    filter:grayscale(80%)
 }
 
 .description-header{
-    color:cornflowerblue;
+    color:rgb(11, 78, 201);
     margin-block: 0.4em;
     text-decoration: underline;
 }
 
 .description-header:hover{
     cursor: pointer;
-    color:rgb(55, 119, 237);
+    color:rgb(69, 134, 254);
     font:bold;
 }
 
 .description-text{
-    max-width: 36em;
+    max-width: 300px;
 }
 
 /* Controls...... */
 .controls-container{
+    flex-basis: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
-    font-size: 0.6em;
-    height:6.4em;
-   
+    column-gap: 2em;
 }
 
 .button-add{
-    padding-inline: 2em;
-    height: 2em;
     border:1px solid var(--color);
-    border-radius: 1em;
-    background-color: rgb(49, 97, 0);
+    background-color: rgb(74, 148, 1);
 }
 .button-remove{
-    padding-inline: 1em;
-    height: 1.8em;
     border:1px solid var(--color);
-    border-radius: 0.9em;
-    background-color: rgb(91, 1, 1);
+    background-color: rgb(119, 2, 2);
 }
 
-.controls-container h6{
-    font-size: 1em;
-    flex-basis: 100%;
-    text-align: center;
-}
-
-.controls-container h6 span{
-    font-size: 1.4em;
-    padding-left: 0.2em;
+.controls-container h4{
+    
     color:rgb(110, 218, 1);
-    flex-basis: 100%;
     text-align: center;
 }

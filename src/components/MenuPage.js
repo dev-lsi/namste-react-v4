@@ -10,7 +10,9 @@ import { cartCTX } from "../utils/context";
 
 const MenuPage = () => {
   const {cartCtx,setCartCtx} = useContext(cartCTX);
-  const [data, setData] = useState(null);
+  const [categories, setCategories] = useState(null);
+  const [restaurant, setRestaurant] = useState(null);
+
   const { id } = useParams();
   
   useEffect(() => {
@@ -23,17 +25,17 @@ const MenuPage = () => {
 
   useEffect(()=>{
     
-      getMenuData(resMenuProxy + id,setData);
-
+      getMenuData(resMenuProxy + id,setCategories,setRestaurant);
+      
       //getDineout(id);
     
    },[]);
 
   return (
     
-      <div className={"page"}>
-        <MenuPageHero />
-        <MenuCategoriesContainer data={data} resId={id}/>
+      <div className={s["menu-page"]}>
+        {!restaurant?"....":<MenuPageHero restaurant={restaurant}/>}
+        <MenuCategoriesContainer categories={categories} resId={id}/>
       </div>
     
   );

@@ -105,13 +105,12 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
 
             // Check if the restaurant is now empty, and if so, delete the restaurant
             if (Object.keys(updatedCart[resId]).length === 0) {
-                delete updatedCart[resId];
-              if ((Object.keys(updatedCart)).length === 0) {
-                console.log("empty")
+              delete updatedCart[resId];
+              if (Object.keys(updatedCart).length === 0) {
+                console.log("empty");
                 setCartCtx(null);
                 return;
               }
-
             }
           }
         }
@@ -124,7 +123,8 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
 
   return (
     <div className={s["item-card"]}>
-      <div className={s["item-info-container"]}>
+     <div className={s["info-row"]}>
+     <div className={s["item-info-container"]}>
         <h4 className={s["item-name"]}>{name}</h4>
         <div className={s["item-data-set"]}>
           <h5>
@@ -154,29 +154,8 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
           <MenuItemDescription data={description} />
         )}
       </div>
-      {/* ADD Button*/}
-      <div className={s["controls-container"]}>
-        <button className={s["button-add"]} onClick={handleAdd}>
-          ADD
-        </button>
-        <h6>
-          Added:
-          <span>
-            {!cartCtx
-              ? 0
-              : !cartCtx[resId]
-              ? 0
-              : !cartCtx[resId][categoryId]
-              ? 0
-              : !cartCtx[resId][categoryId][id]
-              ? 0
-              : cartCtx[resId][categoryId][id].itemCount}
-          </span>
-        </h6>
-        <button className={s["button-remove"]} onClick={handleRemove}>
-          Remove
-        </button>
-      </div>
+      
+
       {/* IMAGE CONTAINER --> RIGHT SECTION */}
 
       <div className={s["item-image-container"]}>
@@ -186,10 +165,28 @@ const MenuItemCard = ({ data, resId, categoryId }) => {
           alt="logo"
         />
       </div>
-      <div>
-        {
-          // cartCtx?cartCtx[resId][id].id:"NULL"
-        }
+     </div>
+      {/* CONTROLS..............*/}
+      <div className={s["controls-container"]}>
+        <button className={s["button-add"]} onClick={handleAdd}>
+          Add
+        </button>
+       
+          <h4>
+            {!cartCtx
+              ? 0
+              : !cartCtx[resId]
+              ? 0
+              : !cartCtx[resId][categoryId]
+              ? 0
+              : !cartCtx[resId][categoryId][id]
+              ? 0
+              : cartCtx[resId][categoryId][id].itemCount}
+          </h4>
+       
+        <button className={s["button-remove"]} onClick={handleRemove}>
+          Remove
+        </button>
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const App = ({ location }) => {
   function handleScroll(e) {
       //console.log(window.scrollY);
       const newPosY = window.scrollY;
-      console.log(newPosY)
+      //console.log(newPosY)
       if(newPosY>currPosY){
         setIsHeaderShown(false);
       }else{

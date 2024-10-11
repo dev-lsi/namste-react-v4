@@ -5,7 +5,7 @@ import { cartCTX } from "../utils/context";
 const CartItem = ({ resId, catId, itemId }) => {
   const { cartCtx, setCartCtx } = useContext(cartCTX);
   const item = cartCtx[resId][catId][itemId];
-  console.log(item);
+  //console.log(item);
   return (
     <div className={s["cart-item"]}>
      

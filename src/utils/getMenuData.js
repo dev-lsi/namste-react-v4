@@ -1,4 +1,4 @@
-export async function getMenuData(url,setData){
+export async function getMenuData(url,setCategories,setRestaurant){
     
     const response = await fetch(url);
     const rawMenuData = await response.json();
@@ -9,5 +9,12 @@ export async function getMenuData(url,setData){
     
     const categories = filtered.map(x=>{return{title:x.card.card.title,items:x.card.card.itemCards
     }});
-    setData([...categories]);
+
+    setCategories([...categories]);
+
+    const restaurantInfo = rawMenuData.data.cards[2].card.card.info;
+    console.log(restaurantInfo)
+    setRestaurant({...restaurantInfo});
+
+
 };

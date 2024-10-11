@@ -124,13 +124,14 @@ const HomeRendered = () => {
             {!data ? (
               <Shirm />
             ) : (
-              data.map((r, index) => (
-                <RestaurantCard
+              data.map((r, index) => {
+                //console.log(r);
+               return (<RestaurantCard
                   key={r.info.id + index}
                   restaurantData={r.info}
                   id={r.info.id}
                 />
-              ))
+              )})
             )}
             <div className={s["restaurant-card-shifter"]}></div>
             <div className={s["restaurant-card-shifter"]}></div>

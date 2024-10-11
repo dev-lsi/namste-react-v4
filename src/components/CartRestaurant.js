@@ -10,7 +10,7 @@ const CartRestaurant = ({ resId }) => {
   const { resCtx, setResCtx } = useContext(resCTX);
 
   const resData = resCtx.restaurants.filter((r) => r.info.id === resId)[0];
-  console.log(resData);
+  //console.log(resData);
   function calculateTotal() {
     let resTotal = 0;
     const catIds = Object.keys(cartCtx[resId]);

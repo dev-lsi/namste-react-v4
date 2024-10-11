@@ -6,28 +6,20 @@ import MenuCategory from "./MenuCategory";
 import { getMenuData } from "../utils/getMenuData";
 import Shirm from "./Shirm";
 
-const MenuCategoriesContainer = ({data,resId}) => {
-  //const { id } = useParams();
+const MenuCategoriesContainer = ({categories,resId}) => {
+ 
   const [openCategoryId, setOpenCategoryId] = useState(null);
-  
 
-   const getDineout=async (resId)=>{
-    const response=
-    await fetch('https://www.swiggy.com/menu/' + resId);
-    const dineout = await response.json();
-   }
-  
-
-  return !data ? (
+  return !categories ? (
     <Shirm />
   ) : (
     <div className={s["menu-categories-container"]}>
        <div className={s["menu-container-header-links"]}>
        <Link to="/">{"<-Restaurants"}</Link>
-       <h4 className={s["container-header"]}>Menu</h4>
+       <h3 className={s["container-header"]}>Menu</h3>
        <Link to="/cart">{"Cart ->"}</Link>
        </div>
-      {data.map((c, index) => (
+      {categories.map((c, index) => (
         <MenuCategory
           key={c.title}
           data={c}

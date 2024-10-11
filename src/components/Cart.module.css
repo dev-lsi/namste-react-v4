@@ -29,7 +29,7 @@
 }
 
 .cart-restaurant>*{
-    flex-basis: 96%;
+    flex-basis: 98%;
 }
 
 .cart-restaurant-header{
@@ -83,7 +83,8 @@
     row-gap: 0.6em;
     column-gap: 2em;
     align-items: center;
-    background-color: rgb(57, 59, 59);
+    background-color: rgb(39, 42, 42);
+    padding-inline: 0.6em;
    
 }
 
@@ -112,7 +113,7 @@
     align-items: center;
 }
 .item-price{
-    margin-left: 1em;
+    
     flex-basis: 20%;
     text-wrap:nowrap;
     align-items: center;
