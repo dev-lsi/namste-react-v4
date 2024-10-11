@@ -117,11 +117,11 @@ font-size: 1.6em;
 }
 .menu-container-header-links a{
     font-size: 1.4em;
-     color: blue;
+     color: lightblue;
 }
 .menu-container-header-links a:hover{
     font-size: 1.4em;
-     color: lightblue;
+     color: rgb(69, 134, 254);
 }
 
 .container-header{
@@ -215,6 +215,7 @@ font-size: 1.6em;
     padding-inline: 2em;
     padding-block: 1em;
     justify-content: space-between;
+    row-gap: 1em;
    
     
 }
@@ -305,13 +306,15 @@ font-size: 1.6em;
 }
 
 .button-add{
-    border:1px solid var(--color-borde);
-    background-color: rgb(74, 148, 1);
+    /* border:1px solid var(--color-borde); */
+    /* background-color: rgb(74, 148, 1); */
+    border:1px solid rgb(98, 196, 1);
     min-width:8em;
 }
 .button-remove{
-    border:1px solid var(--color-border);
-    background-color: rgb(119, 2, 2);
+    /* border:1px solid var(--color-border); */
+    /* background-color: rgb(119, 2, 2); */
+    border:1px solid rgb(236, 2, 2);
     min-width:8em;
 }
 
@@ -324,8 +327,8 @@ font-size: 1.6em;
 @media ( min-width:600px) {
     .item-card{
       flex-wrap: nowrap;
-      justify-content: space-around;
-    
+      justify-content: space-between;
+      row-gap: 1em;
     }
     .controls-container{
        order:1;
