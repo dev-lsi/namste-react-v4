@@ -195,7 +195,7 @@ font-size: 1.6em;
     flex-shrink: 0;
     display: flex;
     flex-wrap: wrap;
-    border:1px solid var(--color);
+    border:1px solid var(--color-border);
     padding-inline: 2em;
     padding-block: 1em;
     font-size: 0.8em;
@@ -246,7 +246,7 @@ font-size: 1.6em;
     flex-shrink: 0;
     width: 5em;
     height:5em;
-    border:1px solid var(--color);
+    border:1px solid var(--color-border);
     border-radius: 50%;
     overflow: hidden;
 }
@@ -285,11 +285,11 @@ font-size: 1.6em;
 }
 
 .button-add{
-    border:1px solid var(--color);
+    border:1px solid var(--color-borde);
     background-color: rgb(74, 148, 1);
 }
 .button-remove{
-    border:1px solid var(--color);
+    border:1px solid var(--color-border);
     background-color: rgb(119, 2, 2);
 }
 

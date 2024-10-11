@@ -67,7 +67,7 @@ const HomeRendered = () => {
             <h5 className={s["hero-sub-heading"]}>
               Lat: <span>{lat}</span> Lng: <span>{lng}</span>
             </h5>
-            <div className={s["hero-cover"]}></div>
+           
            
           </div>
 
@@ -138,8 +138,11 @@ const HomeRendered = () => {
             <div className={s["restaurant-card-shifter"]}></div>
             <div className={s["restaurant-card-shifter"]}></div>
             <div className={s["restaurant-card-shifter"]}></div>
+            <div className={s["load-more-div"]}>
+              <LoadMoreButton />
+            </div>
           </div>
-          <LoadMoreButton />
+          
           <div className={s["change-location-container"]}>
             <h5>Change current Location</h5>
             <LocationButton city={cities.Delhi} />

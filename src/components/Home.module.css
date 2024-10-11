@@ -53,17 +53,19 @@
   top: 20%;
   left: 20%;
   right: 18%;
-  /* border: 1px solid var(--color); */
+  border: 1px solid var(--color-border);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 1.2em;
+  padding: 1em;
 }
 
 @media (max-width:700px) {
   .default-container{
     left: 1em;
     right: 1em;
+    
   }
   
 }
@@ -123,24 +125,23 @@
 /* Home Rendered..................................... */
 /* .................................................. */
 .home-rendered {
-  row-gap: 8em;
-  padding-bottom: 4em;
+  row-gap: 12em;
+  padding-bottom: 6em;
 }
 
 .hero {
-  background-image: url("../assets/bg01.png");
+  /* background-image: url("../assets/bg01.png"); */
   height: 16em;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
   justify-content: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  animation: animatebg 0.8s ease-in-out;
-  animation-fill-mode: forwards;
+  background-color: rgba(34,34,34,0.8);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   overflow: hidden;
+  animation:animatebg 3s forwards;
 }
 
 @keyframes animatebg {
@@ -152,19 +153,7 @@
   }
 }
 
-.hero-cover {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  /* backdrop-filter: sepia(100%);
-  transition: backdrop-filter 0.25s; */
-  /* animation: animatecover 60s linear infinite; */
-}
-.hero-cover:hover {
-  backdrop-filter: sepia(10%);
-}
+
 
 @keyframes animatecover {
   0% {
@@ -214,8 +203,9 @@
   padding-block: 3em;
   padding-inline: 9em;
   justify-content: space-between;
-  background-color: var(--bg);
-  border: 1px solid var(--color);
+  background-color: rgba(34,34,34,0.8);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   min-height: 120vh;
 }
 
@@ -242,15 +232,21 @@
   border-radius: 0.7em;
 }
 
+.load-more-div{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2em;
+}
+
 .restaurant-card {
   max-width: 20%;
   min-width: 200px;
-  border: 1px solid var(--color);
+  border: 1px solid var(--color-border);
   border-radius: 0.2em;
   background-color: rgb(24, 24, 24);
   color: var(--color);
-  box-shadow: 1em 1em rgb(49, 49, 49), -2em 2em rgb(68, 67, 67),
-    3em 3em rgb(32, 32, 32), -2em -2em rgb(45, 45, 45);
   transition: display 2s;
 }
 
@@ -315,7 +311,7 @@
   width: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
-  border: 1px solid var(--color);
+  border: 1px solid var(--color-border);
 }
 
 .restaurant-image {
@@ -437,15 +433,15 @@
   position: absolute;
   color: var(--color);
   background-color: var(--bg);
-  border: 1px solid var(--color);
+  border: 1px solid var(--color-border);
   text-wrap: nowrap;
-  font-size: 0.6em;
+  font-size: 0.9em;
   bottom: -1.6em;
   right: -2.2em;
   padding-inline: 1em;
   padding-bottom: 4em;
   padding-top: 0.2em;
-  border-radius: 0.6em;
+  border-radius: 0.2em;
   transform: rotateZ(-45deg);
   transition: all 0.15s;
 }
@@ -463,7 +459,9 @@
   row-gap: 1em;
   column-gap: 1em;
   padding: 2em;
-  border: 1px solid var(--color);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background-color: rgba(34,34,34,0.8);
 }
 
 .change-location-container h5 {

@@ -12,7 +12,7 @@ const HomeDefault = ({ lat }) => {
               ? "Location not provided!"
               : "It looks like you are not in the delivery range of Swiggy!"}
           </h4>
-          <h5>To try the App you can choose among locations below</h5>
+          <h5>To try the App you can choose among locations below:</h5>
           <div className={s["default-container-controls"]}>
             <LocationButton city={cities.Delhi} />
             <LocationButton city={cities.Bengaluru} />

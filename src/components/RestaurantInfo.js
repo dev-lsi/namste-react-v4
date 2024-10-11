@@ -29,6 +29,7 @@ const RestaurantInfo=({restaurantData})=>{
                 <span className={s["delivery-time-min"]}> min.</span>
               </p>
             </div>
+            <div className={s["line"]}></div>
             <div className={s["sub-2"]}>
               <p className={s["open-closed"]}>{isOpen?
                 <span className={s["open"]}>Open</span>:
