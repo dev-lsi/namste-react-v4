@@ -7,6 +7,8 @@ import { locCTX, resCTX, cartCTX } from "../utils/context";
 import s from "./Header.module.css";
 import { Link } from "react-router-dom";
 import cartIcon from "../assets/cart-colored.png";
+import whiteCartIcon from "../assets/cart-white01.png"
+import { getItemsCount } from "../utils/getItemsCount";
 
 const Header = ({isHeaderShown}) => {
   const { locCtx } = useContext(locCTX);
@@ -20,6 +22,8 @@ const Header = ({isHeaderShown}) => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isOnline, setIsOnline] = useState(true);
+
+  
 
   useEffect(() => {
     const handleOnline = () => setIsOnline(true);
@@ -44,7 +48,7 @@ const Header = ({isHeaderShown}) => {
   function handleResize() {
     setWindowWidth(window.innerWidth);
   }
-  //useEffect(()=>console.log(isHeaderShown),[isHeaderShown])
+  
   return (
     <div className={s["header"]+" "+ s[isHeaderShown?"show-header":"hide-header"]}>
       <div className={s["left"]}>
@@ -55,7 +59,7 @@ const Header = ({isHeaderShown}) => {
       </div>
       <Link to="/cart">
           <div className={s["cart-icon-container"]}>
-            <img className={s["cart-icon"]} src={cartIcon} />
+            <img className={s["cart-icon"]} src={whiteCartIcon} />
             <p
               className={
                 !cartCtx || Object.keys(cartCtx).length === 0
@@ -63,7 +67,7 @@ const Header = ({isHeaderShown}) => {
                   : s["cart-icon-counter"] + " " + s["green"]
               }
             >
-              {!cartCtx ? 0 : Object.keys(cartCtx).length}
+              {!cartCtx ? 0 : getItemsCount(cartCtx)}
             </p>
           </div>
         </Link>

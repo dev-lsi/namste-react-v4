@@ -3,7 +3,7 @@
 }
 
 .opened-menu{
-    z-index: 2;
+    z-index: 100;
     display:flex;
     flex-wrap: wrap;
     position: absolute;

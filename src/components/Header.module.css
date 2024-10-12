@@ -28,18 +28,19 @@
 
 .cart-icon-container{
     position: relative;
-    margin-right: 0.6em;
+    
 }
 
 .cart-icon{
-    height: 3em;
+    height: 2em;
 }
 
 .cart-icon-counter{
  position: absolute;
- top:-0.1em;
- right:-0.1em;
- padding: 0.2em;
+ top:-0.8em;
+ right:-1.4em;
+ padding-inline: 0.4em;
+ padding-bottom:0.1em ;
  border:1px solid var(--color);
  border-radius: 1em;
 }

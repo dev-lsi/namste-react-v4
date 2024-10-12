@@ -275,10 +275,6 @@
   }
   .restaurant-card-shifter {
     min-width: 80%;
-    height: 1em;
-    background-color:antiquewhite ;
-    border:1px solid red;
-    z-index:101;
   }
   .restaurants-container {
     justify-content: center;
@@ -296,6 +292,18 @@
   aspect-ratio: 1/1;
   overflow: hidden;
   border: 1px solid var(--color-border);
+}
+
+.res-image-items-count{
+  position: absolute;
+  top:0.1;
+  left:0.1;
+  width:2em;
+  height: 2em;
+  border-radius: 1em;
+  background-color: rgb(1, 83, 12);
+  text-align: center;
+  z-index: 1000;
 }
 
 .restaurant-image {
@@ -415,7 +423,8 @@
 .show-menu-link {
   position: absolute;
   color: var(--color);
-  background-color: var(--bg);
+  background-image: linear-gradient(rgb(33, 32, 32), rgb(105, 91, 91));
+  backdrop-filter: opacity(50%) sepia(90%) blur(10px);
   border: 1px solid var(--color-border);
   text-wrap: nowrap;
   font-size: 0.9em;
@@ -427,6 +436,7 @@
   border-radius: 0.2em;
   transform: rotateZ(-45deg);
   transition: all 0.15s;
+  text-shadow: 12px,12px,-12px,-12px 2px black;
 }
 .show-menu-link:hover {
   color: var(--color);
