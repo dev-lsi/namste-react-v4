@@ -55,7 +55,7 @@
     text-decoration: underline;
     text-underline-offset: 4px;
     text-align: center;
-    color:var(--color);
+    color:orangered;
     letter-spacing: 0.05em;
     font-weight: 200;
 }
