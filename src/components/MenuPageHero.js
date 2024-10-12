@@ -71,20 +71,27 @@ const MenuPageHero = ({ restaurant }) => {
       </div>
       </div>
       <div className={s["res-stat-container"]}>
-          <h6 className={s["res-stat-rating"]}>{avgRating}⭐</h6>
+          <h4 className={s["res-stat-rating"]}>
+                <span className={s["res-stat-rating-span"]}>
+                  {avgRating}
+                </span>⭐
+          </h4>
           <h6 
             className={s["res-stat-close-at"]}>
               Closes at: 
               <span className={s["res-stat-close-at-number"]}>
               {
-               nextCloseTime.split(" ")[1].split(":",2).join(" : ")
+               nextCloseTime?nextCloseTime.split(" ")[1].split(":",2).join(" : "):"N/A"
               }
               </span>
           </h6>
           <h6 className={s["res-stat-open-closed"]}>
-            Now is {opened 
-            ? <span className="text-green-500"> Open</span> 
-            : <span className="text-red-700"> Closed</span>}
+            Now is 
+            {opened 
+            ? <span className={"text-green-500 " + s["res-stat-open-closed-number"]}> Open</span> 
+            : <span 
+            className={"text-red-700 " + s["res-stat-open-closed-number"]}> Closed</span>
+            }
           </h6>
          
         </div>
