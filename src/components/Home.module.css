@@ -252,7 +252,7 @@
   text-overflow: clip;
 }
 
-@media (min-width: 421px) and (max-width:760px) {
+@media (min-width: 481px) and (max-width:760px) {
   .restaurant-card {
     width: 40%;
    
