@@ -201,12 +201,13 @@
   column-gap: 3em;
   row-gap: 4em;
   padding-block: 3em;
-  padding-inline: 9em;
+  padding-inline: 4em;
   justify-content: space-between;
   background-color: rgba(34,34,34,0.8);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   min-height: 120vh;
+  overflow: hidden;
 }
 
 .filters-container {
@@ -241,70 +242,52 @@
 }
 
 .restaurant-card {
-  max-width: 20%;
-  min-width: 200px;
+  width:16%;
+  min-width: 160px;
   border: 1px solid var(--color-border);
   border-radius: 0.2em;
-  background-color: rgb(24, 24, 24);
+  background-color: rgba(24, 24, 24,0.94);
   color: var(--color);
-  transition: display 2s;
+  overflow:hidden;
+  text-overflow: clip;
 }
 
-@media (max-width: 400px) {
+@media (min-width: 421px) and (max-width:760px) {
   .restaurant-card {
-    max-width: 94%;
+    width: 40%;
+   
   }
   .restaurant-card-shifter {
-    max-width: 94%;
-    height: 0;
+    width: 40%;
+    height: 1em;
   }
   .restaurants-container {
+    justify-content: center;
     padding-inline: 1em;
   }
 }
 
-@media (min-width: 401px) and (max-width: 700px) {
+@media (max-width: 420px) {
   .restaurant-card {
-    min-width: 40%;
+    min-width: 80%;
+    font-size: 1.4em;
   }
   .restaurant-card-shifter {
-    min-width: 40%;
-    height: 0;
+    min-width: 80%;
+    height: 1em;
+    background-color:antiquewhite ;
+    border:1px solid red;
+    z-index:101;
   }
   .restaurants-container {
-    padding-inline: 2em;
+    justify-content: center;
+    padding-inline: 1em;
+    
+    
   }
 }
 
-@media (min-width: 701px) and (max-width: 1000px) {
-  .restaurant-card {
-    min-width: 20%;
-    max-width: 25%;
-  }
-  .restaurant-card-shifter {
-    min-width: 20%;
-    max-width: 25%;
-    height: 0;
-  }
-  .restaurants-container {
-    padding-inline: 4em;
-  }
-}
 
-@media (min-width: 1001px) {
-  .restaurant-card {
-    min-width: 16%;
-    max-width: 20;
-  }
-  .restaurant-card-shifter {
-    min-width: 16%;
-    max-width: 20;
-    height: 0;
-  }
-  .restaurants-container {
-    padding-inline: 6em;
-  }
-}
 
 .restaurant-image-container {
   position: relative;
@@ -353,12 +336,11 @@
 
 .name {
   flex-basis: 100%;
-  font-size: 1.4em;
   text-align: center;
   line-height: 1.1em;
-  height: 2.2em;
   font: bold;
-  margin-bottom: 0.2em;
+  margin-top: 0.2em ;
+  margin-bottom: 0.4em;
 }
 .area {
   text-align: center;

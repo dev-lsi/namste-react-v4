@@ -18,7 +18,7 @@ const RestaurantInfo=({restaurantData})=>{
     return (
         <div className={s["restaurant-info"]}>
             <div className={s["sub-1"]}>
-              <p className={s["name"]}>{name}</p>
+              <h3 className={s["name"]}>{name}</h3>
               <p className={s["area"]}>
                 <span className={s["area-logo"]}>Area: </span>
                 <span className={s["area-name"]}>{areaName}</span>
