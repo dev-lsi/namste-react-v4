@@ -1,4 +1,5 @@
-import logo from "../assets/logo512.png";
+// import logo from "../assets/logo512.png";
+import logo from "../assets/logo-white.png";
 import { useEffect, useState } from "react";
 import NavMain from "./NavMain";
 import NavMobile from "./NavMobile";

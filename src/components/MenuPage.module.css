@@ -1,10 +1,12 @@
 .hidden{
     display:none;
-    transition: all 1s;
+    opacity: 0;
+    transition: opacity 1s;
 }
 .shown{
     display:block;
-    transition: all 1s;
+    opacity: 1;
+    transition: opacity 1s;
 }
 
 .menu-page{
@@ -16,6 +18,7 @@
     color:var(--color);
     background-color: var(--bg);
     max-height: fit-content;
+    transition:height 4s;
 }
 .menu-page > * {
    flex-basis: 100%;
@@ -54,7 +57,7 @@
 
 }
 .res-info-name{
-color:rgb(248, 47, 47);
+color:orangered;
 font-size: 1.6em;
 }
 /* Restaurant-hero-statistics container */
@@ -119,26 +122,7 @@ font-size: 1.6em;
 
 
 
-
 /* CATEGORIES CONTAINER */
-.open-menu{
- transform-origin:top;
- animation: open-menu 0.15s ease-in forwards;
-}
-.close-menu{
-    transform-origin:top;
-    animation:close-menu 0.15s ease-in forwards;
-}
-
-@keyframes open-menu {
-    0%{ transform: scaleY(0); height:0;}
-    100%{transform: scaleY(1); height:fit-content;}
-}
-
-@keyframes close-menu {
-    0%{ transform: scaleY(1); height:fit-content;}
-    100%{transform: scaleY(0); height:0;}
-}
 
 .menu-categories-container{
     max-height: fit-content;
@@ -153,7 +137,6 @@ font-size: 1.6em;
 .menu-categories-container>*{
     max-height: fit-content;
     flex-basis: 100%;
-    text-align: center;
     justify-content: center;
 }
 
@@ -182,16 +165,6 @@ font-size: 1.6em;
     font-size: 1.4em;
      color: rgb(69, 134, 254);
 }
-
-
-
-.just-categories{
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 
 .menu-category{
     flex-basis: 100%;
@@ -425,17 +398,11 @@ font-size: 1.6em;
        justify-content: center;
        align-items: flex-start;
     }
-    .just-categories{
-        min-width: 500px;
-        max-width: 70%;
-    }
-
 
     .menu-category{
         min-width: 500px;
         max-width: 70%;
     }
-    
 
     .item-image-container{
       order:2;
@@ -444,8 +411,5 @@ font-size: 1.6em;
     .item-info-container{
      order:0;
     }
-
-    
-
 
 }

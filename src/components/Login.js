@@ -1,7 +1,7 @@
 import { useState } from "react";
 import s from "./Login.module.css";
 import { useLocation, useParams } from "react-router-dom";
-import { Authenticator } from '@aws-amplify/ui-react';
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className={"page"}>
-      <Authenticator></Authenticator>
+    
       <form onSubmit={handleSubmit} className={s["login-form"]}>
         <div className={s["row"]}>
           <label htmlFor="username">Username:</label>

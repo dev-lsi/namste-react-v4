@@ -40,6 +40,7 @@
 
 .cart-restaurant>*{
     flex-basis: 98%;
+    min-width: 320px;
 }
 
 .cart-restaurant-header{
@@ -95,7 +96,7 @@
     align-items: center;
     background-color: rgb(39, 42, 42);
     padding-inline: 0.6em;
-   
+    
 }
 
 .item-name{
@@ -113,6 +114,7 @@
 }
 
 .item-info-prices{
+    flex-basis: 40%;
     display:flex;
     column-gap: 0.1em;
 }
@@ -134,4 +136,7 @@
     flex-wrap: nowrap;
     align-items: flex-end;
     column-gap: 1em; 
+}
+.item-controls button{
+    padding-block: -1em;
 }

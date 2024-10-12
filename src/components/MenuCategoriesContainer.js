@@ -8,7 +8,7 @@ import Shirm from "./Shirm";
 
 const MenuCategoriesContainer = ({ categories, resId }) => {
   const [openCategoryId, setOpenCategoryId] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
+  
   function handleCategories() {
     setIsOpen(!isOpen);
   }
@@ -16,15 +16,12 @@ const MenuCategoriesContainer = ({ categories, resId }) => {
     <Shirm />
   ) : (
     <div className={s["menu-categories-container"]}>
-      <h3 className={s["container-heading"]} 
-      onClick={handleCategories}>
-        {isOpen ? "Close Menu" : "Open Menu"}
-      </h3>
+      <h4 className={s["container-heading"]}>Menu</h4>
       <div className={s["menu-container-header-links"]}>
         <Link to="/">{"<-Restaurants"}</Link>
         <Link to="/cart">{"Cart ->"}</Link>
       </div>
-      <div className={s["just-categories"] + " " + `${isOpen?s["open-menu"]:s["close-menu"]}`}>
+     
         {categories.map((c, index) => (
           <MenuCategory
             key={c.title}
@@ -35,7 +32,7 @@ const MenuCategoriesContainer = ({ categories, resId }) => {
             openCategoryId={openCategoryId}
           />
         ))}
-      </div>
+     
     </div>
   );
 };

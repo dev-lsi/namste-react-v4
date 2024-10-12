@@ -154,8 +154,6 @@
   }
 }
 
-
-
 @keyframes animatecover {
   0% {
     transform: translateX(-100%);
@@ -175,8 +173,8 @@
   text-align: center;
   line-height: 1em;
   font-style: oblique;
-  font-weight: 900;
-  color:orangered;
+  font-weight: 600;
+  color:rgb(212, 2, 2);
   margin-bottom: 1em;
   
 }
