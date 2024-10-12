@@ -267,10 +267,11 @@
   }
 }
 
-@media (max-width: 420px) {
+
+@media only screen and (max-width: 480px) {
   .restaurant-card {
     min-width: 80%;
-    font-size: 1.4em;
+    font-size: 2rem;
   }
   .restaurant-card-shifter {
     min-width: 80%;
