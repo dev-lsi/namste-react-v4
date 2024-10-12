@@ -200,7 +200,7 @@
   flex-wrap: wrap;
   column-gap: 3em;
   row-gap: 4em;
-  padding-block: 3em;
+  padding-block: 8em;
   padding-inline: 4em;
   justify-content: space-between;
   background-color: rgba(34,34,34,0.8);

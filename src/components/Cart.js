@@ -11,7 +11,10 @@ const Cart = () => {
 
   return (
     <div className={"page"}>
-
+      <div>
+      <h2 className="text-center">Welcome to Your Cart!</h2>
+      <h4 className="text-center">Menage orders and See details.</h4>
+      </div>
       <div className={s["cart-controls"]}>
         <Link to={"/"}>
           <button
@@ -33,6 +36,7 @@ const Cart = () => {
         <h3 className="text-center text-orange-700">Your Cart is Empty!</h3>
       ) : (
         <div className={s["cart-restaurants"]}>
+          <h2 className="basis-11/12 pl-4 pb-4">Orders</h2>
           {
             Object.keys(cartCtx).map( (id) => <CartRestaurant key={id} resId = {id} /> )
           }
