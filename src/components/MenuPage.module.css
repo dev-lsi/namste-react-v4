@@ -330,28 +330,42 @@ font-size: 1.6em;
 .button-add{
     /* border:1px solid var(--color-borde); */
     /* background-color: rgb(74, 148, 1); */
-    border:1px solid rgb(98, 196, 1);
-    min-width:8em;
+    border:2px solid rgb(81, 161, 1);
+    min-width:6em;
     background: none;
-    color:antiquewhite;
+    color:rgb(181, 169, 153);
+    font-size: 1.4em;
+    transition:all 0.15s;
+}
+.button-add:active{
+    
+    border:2px solid rgb(81, 161, 1);
+    background: none;
+    color:rgb(121, 112, 100);
+    
 }
 .button-add:hover{
-    border:1px solid rgb(141, 252, 30);
+    border:2px solid rgb(141, 252, 30);
     background: none;
-    color:antiquewhite;
+    color:rgb(252, 244, 233);
 }
 .button-remove{
-    /* border:1px solid var(--color-border); */
-    /* background-color: rgb(119, 2, 2); */
-    border:1px solid rgb(236, 2, 2);
-    min-width:8em;
+    transition:all 0.15s;
+    border:2px solid rgb(218, 1, 1);
+    min-width:6em;
     background: none;
-    color:antiquewhite;
+    color:rgb(181, 169, 153);
+    font-size: 1.4em;
+}
+.button-remove:active{
+    border:2px solid rgb(218, 1, 1);
+    background: none;
+    color:rgb(118, 109, 98);
 }
 .button-remove:hover{
-    border:1px solid rgb(253, 45, 45);
+    border:2px solid rgb(253, 45, 45);
     background: none;
-    color:antiquewhite;
+    color:rgb(252, 244, 233);
 }
 
 .controls-container h4{
