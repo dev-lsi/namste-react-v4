@@ -176,7 +176,7 @@
   line-height: 1em;
   font-style: oblique;
   font-weight: 900;
-  color: rgb(48, 131, 141);
+  color:orangered;
   margin-bottom: 1em;
   
 }
@@ -192,7 +192,7 @@
   font-style: oblique;
   font-weight: 300;
   /* color:var(--color-dark-theme); */
-  color:  rgb(139, 175, 187);
+  color:  orange;
 }
 
 .restaurants-container {

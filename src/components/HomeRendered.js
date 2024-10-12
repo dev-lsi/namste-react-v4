@@ -62,7 +62,7 @@ const HomeRendered = () => {
               {city || "City name not avaiable"}
             </h1>
             <h5 className={s["hero-sub-heading"]}>
-              <span>Restaurants Delivering Food Here</span>
+              <span>Restaurants Delivering at:</span>
             </h5>
             <h5 className={s["hero-sub-heading"]}>
               Lat: <span>{lat}</span> Lng: <span>{lng}</span>

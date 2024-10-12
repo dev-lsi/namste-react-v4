@@ -129,6 +129,7 @@ font-size: 1.6em;
 .container-heading{
     flex-basis: 100%;
     text-align: center;
+    color:orange;
 }
 
 .menu-container-header-links{
@@ -169,7 +170,7 @@ font-size: 1.6em;
 }
 
 .menu-category-header{
-    flex-basis: 80%;
+    flex-basis: 90%;
     padding-inline: 2em;
     padding-block: 0.4em;
     display: flex;
@@ -194,15 +195,11 @@ font-size: 1.6em;
 
 .opened-header{
     font-size: 1.4em;
-    flex-basis: 90%;
+    flex-basis: 96%;
     background-color:rgb(24, 24, 24) ;
-    border-radius: 0.7em;
+    border-radius: 0.9em;
     animation: open-header .25s ease-in-out;
     height: fit-content;
-}
-
-.opened-header :nth-child(2){
- 
 }
 
 .opened-header :nth-child(2) span{
@@ -210,8 +207,8 @@ font-size: 1.6em;
   }
 
 @keyframes open-header {
-    0% {height:2em; flex-basis: 80%; font-size: 1em; border-radius: 0;}
-    100% {height:2.2em; flex-basis: 90%; font-size:1.2em;border-radius:1.1em;}
+    0% { flex-basis: 90%; font-size: 1em; border-radius: 0;}
+    100% { flex-basis: 98%; font-size:1.2em;border-radius:1.1em;}
 }
 /* ." h-24 text-3xl text-center bg-red-950" */
 .menu-category-header:hover{
@@ -223,7 +220,7 @@ font-size: 1.6em;
 
 .items-container{
  font-size: 0.6em;
- flex-basis:80%;
+ flex-basis:96%;
  display:flex;
  flex-wrap: wrap;
 }
@@ -335,12 +332,22 @@ font-size: 1.6em;
     /* background-color: rgb(74, 148, 1); */
     border:1px solid rgb(98, 196, 1);
     min-width:8em;
+    background: none;
+}
+.button-add:hover{
+    border:1px solid rgb(141, 252, 30);
+    background: none;
 }
 .button-remove{
     /* border:1px solid var(--color-border); */
     /* background-color: rgb(119, 2, 2); */
     border:1px solid rgb(236, 2, 2);
     min-width:8em;
+    background: none;
+}
+.button-remove:hover{
+    border:1px solid rgb(253, 45, 45);
+    background: none;
 }
 
 .controls-container h4{
