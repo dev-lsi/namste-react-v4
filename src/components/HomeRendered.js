@@ -72,6 +72,7 @@ const HomeRendered = () => {
           </div>
 
           <div className={s["restaurants-container"]}>
+            <h2 className="text-center basis-full p-6">Restaurants delivering at this area</h2>
             <div className={s["filters-container"]}>
               <button
                 className={s["top-rated-button"]}
