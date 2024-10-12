@@ -333,10 +333,12 @@ font-size: 1.6em;
     border:1px solid rgb(98, 196, 1);
     min-width:8em;
     background: none;
+    color:antiquewhite;
 }
 .button-add:hover{
     border:1px solid rgb(141, 252, 30);
     background: none;
+    color:antiquewhite;
 }
 .button-remove{
     /* border:1px solid var(--color-border); */
@@ -344,10 +346,12 @@ font-size: 1.6em;
     border:1px solid rgb(236, 2, 2);
     min-width:8em;
     background: none;
+    color:antiquewhite;
 }
 .button-remove:hover{
     border:1px solid rgb(253, 45, 45);
     background: none;
+    color:antiquewhite;
 }
 
 .controls-container h4{
