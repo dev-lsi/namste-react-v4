@@ -27,6 +27,7 @@
 
 /* MENU PAGE HEADER etc.HERO */
 .menu-header{
+   
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -41,6 +42,8 @@
     justify-content: center;
     column-gap: 2em;
     padding-block: 2em;
+    padding-inline: 1em;
+    
 }
 
 .res-image-container{
@@ -236,17 +239,18 @@ font-size: 1.6em;
 .items-container{
     font-size: 0.6em;
     flex-basis:100%;
+    justify-content: center;
     display:flex;
     flex-wrap: wrap;
    }
 
 .item-card{
-    flex-basis: 100%;
+    flex-basis: 90%;
     flex-shrink: 0;
     display: flex;
     flex-wrap: wrap;
     border-bottom:1px solid var(--color-border);
-    padding-inline: 2em;
+    
     padding-block: 1em;
     justify-content: space-between;
     row-gap: 1em;

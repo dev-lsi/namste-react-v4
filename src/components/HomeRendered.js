@@ -61,18 +61,18 @@ const HomeRendered = () => {
             <h1 className={s["hero-heading"]}>
               {city || "City name not avaiable"}
             </h1>
-            <h5 className={s["hero-sub-heading"]}>
+            <h6 className={s["hero-sub-heading"]}>
               <span>Restaurants Delivering at:</span>
-            </h5>
-            <h5 className={s["hero-sub-heading"]}>
+            </h6>
+            <h6 className={s["hero-sub-heading"]}>
               Lat: <span>{lat}</span> Lng: <span>{lng}</span>
-            </h5>
+            </h6>
            
            
           </div>
 
           <div className={s["restaurants-container"]}>
-            <h2 className="text-center basis-full p-6">Restaurants delivering at this area</h2>
+            <h2 className="text-center basis-full p-6">Restaurants</h2>
             <div className={s["filters-container"]}>
               <button
                 className={s["top-rated-button"]}
