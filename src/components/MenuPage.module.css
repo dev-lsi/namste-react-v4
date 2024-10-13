@@ -228,15 +228,17 @@ font-size: 1.6em;
 }
 
 
+
+
+/* ItemsContainer ItemCard Related CSS ......... */
+/* ............................................. */
+/* ............................................. */
 .items-container{
- font-size: 0.6em;
- flex-basis:96%;
- display:flex;
- flex-wrap: wrap;
-}
-
-/* ItemCard CSS.............................. */
-
+    font-size: 0.6em;
+    flex-basis:100%;
+    display:flex;
+    flex-wrap: wrap;
+   }
 
 .item-card{
     flex-basis: 100%;
@@ -248,8 +250,6 @@ font-size: 1.6em;
     padding-block: 1em;
     justify-content: space-between;
     row-gap: 1em;
-   
-    
 }
 
 .info-row{
@@ -262,7 +262,7 @@ font-size: 1.6em;
 /* Item Left */
  .item-info-container{
     display: flex;
-    flex-basis: 70%;
+    flex-basis: 68%;
     flex-wrap: wrap;
  }
 
@@ -292,12 +292,15 @@ font-size: 1.6em;
     font-size: 1.2em;
  }
 
-/* Item Right */
+/* Item IMAGE IMAGE IMAGE...CSS */
 
 .item-image-container{
+    align-self: flex-start;
+    flex-basis: 30%;
     flex-shrink: 0;
-    width: 8em;
-    height:8em;
+    aspect-ratio: 1/1;
+    /* width: 8em;
+    height:8em; */
     border:1px solid var(--color-border);
     border-radius: 50%;
     overflow: hidden;
